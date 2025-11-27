@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sage Green Academia Design System - PRASHISKSHAN */
+    --background: 49 40% 95%;  /* #EDEFE6 - soft beige background */
+    --foreground: 100 16% 30%;  /* #62735B - dark sage for text */
+
+    --card: 60 25% 98%;  /* #F4F6F0 - cream card */
+    --card-foreground: 100 16% 30%;
+
+    --popover: 60 25% 98%;
+    --popover-foreground: 100 16% 30%;
+
+    --primary: 100 25% 73%;  /* #B7C9A3 - sage green primary */
+    --primary-foreground: 100 16% 30%;
+
+    --secondary: 100 15% 58%;  /* #8CA086 - muted sage accent */
+    --secondary-foreground: 60 25% 98%;
+
+    --muted: 60 20% 92%;
+    --muted-foreground: 100 10% 45%;
+
+    --accent: 100 25% 73%;  /* sage green */
+    --accent-foreground: 100 16% 30%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 25% 98%;
+
+    --border: 100 15% 85%;
+    --input: 100 15% 85%;
+    --ring: 100 25% 73%;
+
+    --radius: 1rem;
+
+    /* Gradients for depth */
+    --gradient-sage: linear-gradient(135deg, hsl(100, 25%, 73%), hsl(100, 15%, 58%));
+    --gradient-soft: linear-gradient(180deg, hsl(60, 25%, 98%), hsl(49, 40%, 95%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsla(100, 16%, 30%, 0.08);
+    --shadow-medium: 0 4px 16px hsla(100, 16%, 30%, 0.12);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 100 16% 20%;  /* dark sage */
+    --foreground: 60 25% 98%;
+
+    --card: 100 16% 25%;
+    --card-foreground: 60 25% 98%;
+
+    --popover: 100 16% 25%;
+    --popover-foreground: 60 25% 98%;
+
+    --primary: 100 25% 73%;
+    --primary-foreground: 100 16% 20%;
+
+    --secondary: 100 15% 35%;
+    --secondary-foreground: 60 25% 98%;
+
+    --muted: 100 10% 30%;
+    --muted-foreground: 100 15% 70%;
+
+    --accent: 100 25% 73%;
+    --accent-foreground: 100 16% 20%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 60 25% 98%;
+
+    --border: 100 10% 35%;
+    --input: 100 10% 35%;
+    --ring: 100 25% 73%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
