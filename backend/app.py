@@ -13,7 +13,7 @@ supabase_url = os.getenv("SUPABASE_URL")
 supabase_key = os.getenv("SUPABASE_KEY")
 
 if not supabase_url or not supabase_key:
-    raise ValueError("Missing required environment variables: SUPABASE_URL and/or SUPABASE_KEY")
+    raise ValueError("Missing required environment variables")
 
 supabase: Client = create_client(supabase_url, supabase_key)
 
@@ -21,37 +21,32 @@ supabase: Client = create_client(supabase_url, supabase_key)
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route("/")
 def index():
     return jsonify({"status": "System Operational"})
 
-
-# Route to get the feed
+# --- 1. GET FEED (Updated to count Likes & Comments) ---
 @app.route('/api/feed', methods=['GET'])
 def get_feed():
-    # 1. Who is asking for the feed?
     user_id = request.args.get('user_id')
     
     if not user_id:
         return jsonify({"error": "User ID is required"}), 400
 
     try:
-        # 2. Find who this user follows
+        # A. Find who this user follows
         follows_response = supabase.table('follows')\
             .select('following_id')\
             .eq('follower_id', user_id)\
             .execute()
             
-        # Extract just the IDs into a clean list: ['123', '456']
         following_ids = [row['following_id'] for row in follows_response.data]
-        
-        # Add the user's OWN ID so they see their own posts too
-        following_ids.append(user_id)
+        following_ids.append(user_id) # Add self
 
-        # 3. Get posts from these authors
+        # B. Get posts + Counts
+        # The syntax 'likes(count)' tells Supabase to just count them
         posts_response = supabase.table('posts')\
-            .select('*, profiles(username, avatar_url)')\
+            .select('*, profiles(username, avatar_url), likes(count), comments(count)')\
             .in_('user_id', following_ids)\
             .order('created_at', desc=True)\
             .execute()
@@ -63,35 +58,26 @@ def get_feed():
         return jsonify({"error": str(e)}), 400
     
 
-# Route to create a new post with Image Upload ---
+# --- 2. CREATE POST  ---
 @app.route('/api/posts', methods=['POST'])
 def create_post():
     try:
-        # 1. Get data from the frontend (Using form/files, not JSON)
         user_id = request.form.get('user_id')
         content = request.form.get('content')
-        file = request.files.get('file') # Catch the file
+        file = request.files.get('file')
         image_url = ""
 
-        # 2. If there is an image, upload it to Supabase Storage
         if file:
-            # Create a unique filename so they don't overwrite each other
             filename = f"{int(time.time())}_{file.filename}"
-            
-            # Read file data
             file_data = file.read()
             
-            # Upload to Supabase Storage 'posts' bucket
-            bucket_response = supabase.storage.from_('posts').upload(
+            supabase.storage.from_('posts').upload(
                 path=filename,
                 file=file_data,
                 file_options={"content-type": file.content_type}
             )
-            
-            # Get the Public URL so the frontend can display it
             image_url = supabase.storage.from_('posts').get_public_url(filename)
 
-        # 3. Save to Database
         response = supabase.table('posts').insert({
             'user_id': user_id,
             'content': content,
@@ -102,6 +88,73 @@ def create_post():
 
     except Exception as e:
         print(f"Error: {e}")
+        return jsonify({"error": str(e)}), 400
+
+
+# --- 3. TOGGLE LIKE (New Feature) ---
+@app.route('/api/posts/like', methods=['POST'])
+def toggle_like():
+    data = request.json
+    user_id = data.get('user_id')
+    post_id = data.get('post_id')
+
+    try:
+        # Check if user already liked this post
+        existing_like = supabase.table('likes')\
+            .select('*')\
+            .eq('user_id', user_id)\
+            .eq('post_id', post_id)\
+            .execute()
+
+        if len(existing_like.data) > 0:
+            # If exists -> DELETE (Unlike)
+            supabase.table('likes')\
+                .delete()\
+                .eq('user_id', user_id)\
+                .eq('post_id', post_id)\
+                .execute()
+            return jsonify({"status": "unliked"}), 200
+        else:
+            # If not exists -> INSERT (Like)
+            supabase.table('likes').insert({
+                'user_id': user_id,
+                'post_id': post_id
+            }).execute()
+            return jsonify({"status": "liked"}), 201
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+
+# --- 4. COMMENTS SYSTEM  ---
+@app.route('/api/comments', methods=['GET', 'POST'])
+def handle_comments():
+    try:
+        # GET: Fetch comments for a specific post
+        if request.method == 'GET':
+            post_id = request.args.get('post_id')
+            
+            response = supabase.table('comments')\
+                .select('*, profiles(username)')\
+                .eq('post_id', post_id)\
+                .order('created_at', desc=True)\
+                .execute()
+            
+            return jsonify(response.data), 200
+
+        # POST: Create a new comment
+        if request.method == 'POST':
+            data = request.json
+            
+            response = supabase.table('comments').insert({
+                'user_id': data['user_id'],
+                'post_id': data['post_id'],
+                'content': data['content']
+            }).execute()
+            
+            return jsonify(response.data), 201
+
+    except Exception as e:
         return jsonify({"error": str(e)}), 400
 
 

@@ -41,6 +41,30 @@ const Home = () => {
     }
   };
 
+  // Handle Like Toggle
+  const handleLike = async (postId: string) => {
+    // Optimistic UI Update 
+    setPosts(posts.map(post => {
+      if (post.id === postId) {
+        return { 
+          ...post, 
+          // Update the count safely
+          likes: [{ count: (post.likes?.[0]?.count || 0) + 1 }] 
+        };
+      }
+      return post;
+    }));
+
+    try {
+      await axios.post(`${API_URL}/posts/like`, {
+        user_id: CURRENT_USER_ID,
+        post_id: postId
+      });
+    } catch (error) {
+      console.error("Error liking post:", error);
+    }
+  };
+
   // --- UPDATED: Handle Post with Image ---
   const handlePostSubmit = async (e) => {
     e.preventDefault();
@@ -158,13 +182,16 @@ const Home = () => {
             posts.map((post, index) => (
               <PostCard 
                 key={post.id || index}
+                id={post.id}
                 author={post.profiles?.username || "Unknown User"} 
                 role="Community Member"
                 content={post.content}
                 // Pass the Image URL to the Card
                 imageUrl={post.image_url} 
-                likes={0} 
-                comments={0} 
+                likes={post.likes?.[0]?.count || 0} 
+                commentCount={post.comments?.[0]?.count || 0} 
+
+                onLike={handleLike}
                 timeAgo={new Date(post.created_at).toLocaleDateString()}
               />
             ))
