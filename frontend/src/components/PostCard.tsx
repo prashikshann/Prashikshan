@@ -1,66 +1,77 @@
-import { Heart, MessageCircle, Share2, Bookmark } from "lucide-react";
-import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { Avatar, AvatarFallback } from "./ui/avatar";
+import React from "react";
+import { MessageCircle, Heart, Share2, MoreHorizontal } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
+// 1. We update the type definition to include optional imageUrl
 interface PostCardProps {
   author: string;
   role: string;
   content: string;
-  image?: string;
-  likes?: number;
-  comments?: number;
   timeAgo: string;
+  likes: number;
+  comments: number;
+  imageUrl?: string; // <--- ADD THIS LINE (The ? means it's optional)
 }
 
-const PostCard = ({ author, role, content, image, likes = 0, comments = 0, timeAgo }: PostCardProps) => {
+const PostCard = ({ 
+  author, 
+  role, 
+  content, 
+  timeAgo, 
+  likes, 
+  comments,
+  imageUrl // <--- Destructure it here
+}: PostCardProps) => {
   return (
-    <Card className="overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow animate-fade-in">
-      <div className="p-4">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-3">
-          <Avatar className="w-10 h-10">
-            <AvatarFallback className="bg-primary/20 text-primary">
-              {author.charAt(0)}
-            </AvatarFallback>
-          </Avatar>
-          <div className="flex-1">
-            <h3 className="font-semibold text-sm text-foreground">{author}</h3>
-            <p className="text-xs text-muted-foreground">{role} · {timeAgo}</p>
+    <div className="bg-card border border-border rounded-xl p-4">
+      <div className="flex justify-between items-start mb-3">
+        <div className="flex gap-3">
+          <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-lg font-semibold">
+            {author[0]}
+          </div>
+          <div>
+            <h3 className="font-semibold text-sm">{author}</h3>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span>{role}</span>
+              <span>•</span>
+              <span>{timeAgo}</span>
+            </div>
           </div>
         </div>
+        <Button variant="ghost" size="icon" className="h-8 w-8">
+          <MoreHorizontal className="w-4 h-4" />
+        </Button>
+      </div>
 
-        {/* Content */}
-        <p className="text-sm text-foreground mb-3">{content}</p>
+      <p className="text-sm mb-4 whitespace-pre-wrap">{content}</p>
 
-        {/* Image */}
-        {image && (
-          <div className="rounded-lg overflow-hidden mb-3">
-            <img src={image} alt="Post content" className="w-full h-auto object-cover" />
-          </div>
-        )}
+      {/* 2. Logic to display the image if it exists */}
+      {imageUrl && (
+        <div className="mb-4 rounded-lg overflow-hidden border border-border">
+          <img 
+            src={imageUrl} 
+            alt="Post content" 
+            className="w-full h-auto object-cover max-h-[500px]"
+          />
+        </div>
+      )}
 
-        {/* Actions */}
-        <div className="flex items-center justify-between pt-2 border-t border-border">
-          <div className="flex gap-4">
-            <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-primary">
-              <Heart className="w-4 h-4" />
-              <span className="text-xs">{likes}</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-primary">
-              <MessageCircle className="w-4 h-4" />
-              <span className="text-xs">{comments}</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
-              <Share2 className="w-4 h-4" />
-            </Button>
-          </div>
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
-            <Bookmark className="w-4 h-4" />
+      <div className="flex items-center justify-between pt-4 border-t border-border">
+        <div className="flex gap-4">
+          <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
+            <Heart className="w-4 h-4" />
+            <span>{likes}</span>
+          </Button>
+          <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
+            <MessageCircle className="w-4 h-4" />
+            <span>{comments}</span>
           </Button>
         </div>
+        <Button variant="ghost" size="icon" className="text-muted-foreground">
+          <Share2 className="w-4 h-4" />
+        </Button>
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Bell, Send } from "lucide-react";
+import { Bell, Send, Image as ImageIcon } from "lucide-react"; // <--- Added ImageIcon
 import { Button } from "@/components/ui/button";
 import StoryCircle from "@/components/StoryCircle";
 import PostCard from "@/components/PostCard";
 import BottomNav from "@/components/BottomNav";
 
 // --- CONFIGURATION ---
-// 1. Python Backend URL
 const API_URL = 'https://prashikshan-f.onrender.com/api'; 
-// 2. TEST USER ID
 const CURRENT_USER_ID = '368f5f25-57c2-4462-83be-d3af0c1e7fb9'; 
 
 const Home = () => {
@@ -17,8 +15,8 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newPostContent, setNewPostContent] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null); // <--- New State for Image
 
-  // Hardcoded stories for now (Visual only)
   const stories = [
     { name: "Your Story", hasStory: false },
     { name: "Priya S.", hasStory: true },
@@ -28,7 +26,6 @@ const Home = () => {
 
   // --- LOGIC ---
 
-  // 1. Fetch Feed on Load
   useEffect(() => {
     fetchFeed();
   }, []);
@@ -44,33 +41,30 @@ const Home = () => {
     }
   };
 
-  // 2. Handle Create Post
+  // --- UPDATED: Handle Post with Image ---
   const handlePostSubmit = async (e) => {
     e.preventDefault();
-    if (!newPostContent.trim()) return;
+    if (!newPostContent.trim() && !selectedFile) return;
 
     try {
-      // Optimistic UI update 
-      const optimisticPost = {
-        id: Date.now(),
-        content: newPostContent,
-        created_at: new Date().toISOString(),
-        profiles: { username: "Me", avatar_url: "" }
-      };
-      setPosts([optimisticPost, ...posts]);
+      // Create FormData envelope (Required for sending files)
+      const formData = new FormData();
+      formData.append('user_id', CURRENT_USER_ID);
+      formData.append('content', newPostContent);
+      if (selectedFile) {
+        formData.append('file', selectedFile);
+      }
 
       // Send to Backend
-      await axios.post(`${API_URL}/posts`, {
-        user_id: CURRENT_USER_ID,
-        content: newPostContent,
-        image_url: "" 
-      });
+      await axios.post(`${API_URL}/posts`, formData);
       
+      // Cleanup
       setNewPostContent("");
-      fetchFeed(); // Refresh to get the real data from DB
+      setSelectedFile(null); 
+      fetchFeed(); // Refresh feed
     } catch (error) {
       console.error("Error creating post:", error);
-      alert("Failed to post. Check backend connection.");
+      alert("Failed to post.");
     }
   };
 
@@ -98,16 +92,53 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Create Post Input */}
+        {/* --- UPDATED: Create Post Input with Image Button --- */}
         <div className="px-4 py-4 border-b border-border bg-card">
-          <form onSubmit={handlePostSubmit} className="flex gap-2">
-            <input 
-              type="text"
-              placeholder="What's happening?"
-              className="flex-1 bg-muted/50 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
-              value={newPostContent}
-              onChange={(e) => setNewPostContent(e.target.value)}
+          <form onSubmit={handlePostSubmit} className="flex gap-2 items-end">
+            <div className="flex-1 flex flex-col gap-2">
+              <input 
+                type="text"
+                placeholder="What's happening?"
+                className="w-full bg-muted/50 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                value={newPostContent}
+                onChange={(e) => setNewPostContent(e.target.value)}
+              />
+              
+              {/* Preview Image if selected */}
+              {selectedFile && (
+                <div className="relative w-fit">
+                   <img 
+                     src={URL.createObjectURL(selectedFile)} 
+                     alt="Preview" 
+                     className="h-20 rounded-md border border-border" 
+                   />
+                   <button 
+                     type="button"
+                     onClick={() => setSelectedFile(null)}
+                     className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                   >
+                     ×
+                   </button>
+                </div>
+              )}
+            </div>
+
+            {/* Hidden File Input + Icon Button */}
+            <input
+              type="file"
+              id="image-upload"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => setSelectedFile(e.target.files ? e.target.files[0] : null)}
             />
+            
+            <label 
+              htmlFor="image-upload" 
+              className="p-2 cursor-pointer hover:bg-muted rounded-full text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ImageIcon className="w-5 h-5" />
+            </label>
+
             <Button size="icon" type="submit" variant="default" className="rounded-full">
               <Send className="w-4 h-4" />
             </Button>
@@ -127,12 +158,13 @@ const Home = () => {
             posts.map((post, index) => (
               <PostCard 
                 key={post.id || index}
-                // MAPPING: Database Data -> UI Component Props
                 author={post.profiles?.username || "Unknown User"} 
-                role="Community Member" // We don't have 'role' in DB yet, so we use a default
+                role="Community Member"
                 content={post.content}
-                likes={0} // Default for now
-                comments={0} // Default for now
+                // Pass the Image URL to the Card
+                imageUrl={post.image_url} 
+                likes={0} 
+                comments={0} 
                 timeAgo={new Date(post.created_at).toLocaleDateString()}
               />
             ))
