@@ -1,4 +1,5 @@
 import os
+import time 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -37,7 +38,6 @@ def get_feed():
 
     try:
         # 2. Find who this user follows
-        # We get a list of rows like: [{'following_id': '123'}, {'following_id': '456'}]
         follows_response = supabase.table('follows')\
             .select('following_id')\
             .eq('follower_id', user_id)\
@@ -63,18 +63,35 @@ def get_feed():
         return jsonify({"error": str(e)}), 400
     
 
-# Route to create a new post
+# Route to create a new post with Image Upload ---
 @app.route('/api/posts', methods=['POST'])
 def create_post():
-    data = request.json
-    
-    # 1. Get data from the frontend
-    user_id = data.get('user_id')
-    content = data.get('content')
-    image_url = data.get('image_url')
-
-    # 2. Insert into Supabase
     try:
+        # 1. Get data from the frontend (Using form/files, not JSON)
+        user_id = request.form.get('user_id')
+        content = request.form.get('content')
+        file = request.files.get('file') # Catch the file
+        image_url = ""
+
+        # 2. If there is an image, upload it to Supabase Storage
+        if file:
+            # Create a unique filename so they don't overwrite each other
+            filename = f"{int(time.time())}_{file.filename}"
+            
+            # Read file data
+            file_data = file.read()
+            
+            # Upload to Supabase Storage 'posts' bucket
+            bucket_response = supabase.storage.from_('posts').upload(
+                path=filename,
+                file=file_data,
+                file_options={"content-type": file.content_type}
+            )
+            
+            # Get the Public URL so the frontend can display it
+            image_url = supabase.storage.from_('posts').get_public_url(filename)
+
+        # 3. Save to Database
         response = supabase.table('posts').insert({
             'user_id': user_id,
             'content': content,
@@ -82,7 +99,9 @@ def create_post():
         }).execute()
         
         return jsonify(response.data), 201
+
     except Exception as e:
+        print(f"Error: {e}")
         return jsonify({"error": str(e)}), 400
 
 
