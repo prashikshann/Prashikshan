@@ -13,7 +13,11 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-card border-r border-border flex-col z-50">
+    <aside 
+      className="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-card border-r border-border flex-col z-50"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       {/* Logo */}
       <div className="p-6 border-b border-border">
         <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -23,7 +27,7 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4">
+      <nav className="flex-1 p-4" aria-label="Primary">
         <ul className="space-y-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -33,13 +37,14 @@ const Sidebar = () => {
               <li key={item.path}>
                 <Link
                   to={item.path}
+                  aria-current={isActive ? "page" : undefined}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                     isActive 
                       ? "bg-primary/10 text-primary font-medium" 
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   }`}
                 >
-                  <Icon className={`w-5 h-5 ${isActive ? "text-primary" : ""}`} />
+                  <Icon className={`w-5 h-5 ${isActive ? "text-primary" : ""}`} aria-hidden="true" />
                   <span>{item.label}</span>
                 </Link>
               </li>
@@ -50,8 +55,11 @@ const Sidebar = () => {
 
       {/* Footer */}
       <div className="p-4 border-t border-border">
-        <button className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-all">
-          <LogOut className="w-5 h-5" />
+        <button 
+          className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-all"
+          aria-label="Log out of your account"
+        >
+          <LogOut className="w-5 h-5" aria-hidden="true" />
           <span>Log Out</span>
         </button>
       </div>
