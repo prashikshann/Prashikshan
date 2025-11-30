@@ -10,6 +10,7 @@ import Chat from "./pages/Chat";
 import Create from "./pages/Create";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
 
 const queryClient = new QueryClient();
 
