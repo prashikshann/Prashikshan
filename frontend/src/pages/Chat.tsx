@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 import BottomNav from "@/components/BottomNav";
 import ReactMarkdown from "react-markdown";
 
-//const API_URL = 'https://prashikshan-f.onrender.com/api';
-const API_URL = 'http://127.0.0.1:5000/api'; 
+const API_URL = 'https://prashikshan-f.onrender.com/api';
+//const API_URL = 'http://127.0.0.1:5000/api'; 
 
 const Chat = () => {
   const [messages, setMessages] = useState([
