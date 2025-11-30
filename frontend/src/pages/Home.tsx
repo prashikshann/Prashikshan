@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Bell, Send, Image as ImageIcon } from "lucide-react"; // <--- Added ImageIcon
+import { Bell, Send, Image as ImageIcon } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import StoryCircle from "@/components/StoryCircle";
 import PostCard from "@/components/PostCard";
 import BottomNav from "@/components/BottomNav";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
-// --- CONFIGURATION ---
-const API_URL = 'https://prashikshan-f.onrender.com/api'; 
-const CURRENT_USER_ID = '368f5f25-57c2-4462-83be-d3af0c1e7fb9'; 
+// CONFIGURATION
+//const API_URL = 'http://127.0.0.1:5000/api'; 
+const API_URL = 'https://prashikshan-f.onrender.com/api';
 
 const Home = () => {
+  const navigate = useNavigate();
+  
   // --- STATE ---
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [newPostContent, setNewPostContent] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null); // <--- New State for Image
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  
+  // NEW: Store the Real User ID here (No more hardcoding!)
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
   const stories = [
     { name: "Your Story", hasStory: false },
@@ -26,13 +33,26 @@ const Home = () => {
 
   // --- LOGIC ---
 
+  // 1. Get the Real User on Load
   useEffect(() => {
-    fetchFeed();
+    const checkUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        navigate("/login"); // Protect the route
+        return;
+      }
+      
+      setCurrentUserId(user.id);
+      fetchFeed(user.id); 
+    };
+
+    checkUser();
   }, []);
 
-  const fetchFeed = async () => {
+  const fetchFeed = async (userId: string) => {
     try {
-      const response = await axios.get(`${API_URL}/feed?user_id=${CURRENT_USER_ID}`);
+      const response = await axios.get(`${API_URL}/feed?user_id=${userId}`);
       setPosts(response.data);
     } catch (error) {
       console.error("Error fetching feed:", error);
@@ -41,14 +61,40 @@ const Home = () => {
     }
   };
 
-  // Handle Like Toggle
+  // 2. Handle Post with Image
+  const handlePostSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newPostContent.trim() && !selectedFile) return;
+    if (!currentUserId) return; 
+
+    try {
+      const formData = new FormData();
+      formData.append('user_id', currentUserId); // Use Real ID
+      formData.append('content', newPostContent);
+      if (selectedFile) {
+        formData.append('file', selectedFile);
+      }
+
+      await axios.post(`${API_URL}/posts`, formData);
+      
+      setNewPostContent("");
+      setSelectedFile(null); 
+      fetchFeed(currentUserId); 
+    } catch (error) {
+      console.error("Error creating post:", error);
+      alert("Failed to post.");
+    }
+  };
+  
+  // 3. Handle Like Logic
   const handleLike = async (postId: string) => {
-    // Optimistic UI Update 
+    if (!currentUserId) return;
+
+    // Optimistic UI Update
     setPosts(posts.map(post => {
       if (post.id === postId) {
         return { 
           ...post, 
-          // Update the count safely
           likes: [{ count: (post.likes?.[0]?.count || 0) + 1 }] 
         };
       }
@@ -57,44 +103,16 @@ const Home = () => {
 
     try {
       await axios.post(`${API_URL}/posts/like`, {
-        user_id: CURRENT_USER_ID,
+        user_id: currentUserId, // Use Real ID
         post_id: postId
       });
     } catch (error) {
-      console.error("Error liking post:", error);
-    }
-  };
-
-  // --- UPDATED: Handle Post with Image ---
-  const handlePostSubmit = async (e) => {
-    e.preventDefault();
-    if (!newPostContent.trim() && !selectedFile) return;
-
-    try {
-      // Create FormData envelope (Required for sending files)
-      const formData = new FormData();
-      formData.append('user_id', CURRENT_USER_ID);
-      formData.append('content', newPostContent);
-      if (selectedFile) {
-        formData.append('file', selectedFile);
-      }
-
-      // Send to Backend
-      await axios.post(`${API_URL}/posts`, formData);
-      
-      // Cleanup
-      setNewPostContent("");
-      setSelectedFile(null); 
-      fetchFeed(); // Refresh feed
-    } catch (error) {
-      console.error("Error creating post:", error);
-      alert("Failed to post.");
+      console.error("Error liking:", error);
     }
   };
 
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
-      {/* Header */}
       <header className="sticky top-0 z-40 bg-card border-b border-border px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -107,7 +125,6 @@ const Home = () => {
       </header>
 
       <div className="max-w-2xl mx-auto">
-        {/* Stories Section */}
         <div className="px-4 py-4 border-b border-border bg-card">
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             {stories.map((story, index) => (
@@ -116,7 +133,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* --- UPDATED: Create Post Input with Image Button --- */}
+        {/* Create Post Input */}
         <div className="px-4 py-4 border-b border-border bg-card">
           <form onSubmit={handlePostSubmit} className="flex gap-2 items-end">
             <div className="flex-1 flex flex-col gap-2">
@@ -128,7 +145,6 @@ const Home = () => {
                 onChange={(e) => setNewPostContent(e.target.value)}
               />
               
-              {/* Preview Image if selected */}
               {selectedFile && (
                 <div className="relative w-fit">
                    <img 
@@ -147,7 +163,6 @@ const Home = () => {
               )}
             </div>
 
-            {/* Hidden File Input + Icon Button */}
             <input
               type="file"
               id="image-upload"
@@ -176,7 +191,7 @@ const Home = () => {
           ) : posts.length === 0 ? (
              <div className="text-center py-10">
                 <p className="text-muted-foreground">No posts yet.</p>
-                <p className="text-xs text-muted-foreground">Try creating one above!</p>
+                <p className="text-xs text-muted-foreground">Follow people to see updates!</p>
              </div>
           ) : (
             posts.map((post, index) => (
@@ -186,11 +201,9 @@ const Home = () => {
                 author={post.profiles?.username || "Unknown User"} 
                 role="Community Member"
                 content={post.content}
-                // Pass the Image URL to the Card
                 imageUrl={post.image_url} 
                 likes={post.likes?.[0]?.count || 0} 
                 commentCount={post.comments?.[0]?.count || 0} 
-
                 onLike={handleLike}
                 timeAgo={new Date(post.created_at).toLocaleDateString()}
               />

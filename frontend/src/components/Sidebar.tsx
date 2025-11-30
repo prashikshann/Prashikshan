@@ -1,67 +1,81 @@
-import { Home, Compass, PlusSquare, MessageCircle, User, LogOut } from "lucide-react";
+import React from "react";
+import { Home, Compass, MessageSquare, PlusSquare, User, LogOut } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client"; 
 
 const Sidebar = () => {
   const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
+
+  // --- FINAL FIX: LOGOUT FUNCTION ---
+const handleLogout = async () => {
+  // 1. Check if supabase client exists before calling methods
+  if (!supabase || !supabase.auth || typeof window === 'undefined') {
+      console.error("🔴 Fatal Error: Supabase client is not initialized.");
+      // If we can't sign out, we still force the visual logout.
+      window.location.href = "/login";
+      return;
+  }
   
+  console.log("🔴 Logout Button Clicked!");
+
+  try {
+    console.log("🔴 Attempting Supabase SignOut...");
+    // 2. Clear the session
+    await supabase.auth.signOut();
+    console.log("🟢 Supabase SignOut Success");
+  } catch (err) {
+    console.error("🔴 Supabase Error:", err);
+  } finally {
+    // 3. Force redirect and clear storage, regardless of database error
+    console.log("🔴 Clearing Storage & Redirecting...");
+    localStorage.clear();
+    window.location.href = "/login";
+  }
+};
+
   const navItems = [
     { icon: Home, label: "Home", path: "/" },
     { icon: Compass, label: "Explore", path: "/explore" },
     { icon: PlusSquare, label: "Create", path: "/create" },
-    { icon: MessageCircle, label: "Chat", path: "/chat" },
+    { icon: MessageSquare, label: "Chat", path: "/chat" },
     { icon: User, label: "Profile", path: "/profile" },
   ];
 
   return (
-    <aside 
-      className="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-card border-r border-border flex-col z-50"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      {/* Logo */}
-      <div className="p-6 border-b border-border">
-        <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    <aside className="hidden md:flex h-screen w-64 flex-col fixed left-0 top-0 border-r border-border bg-card px-4 py-8">
+      <div className="mb-8 px-4">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
           PRASHISKSHAN
         </h1>
-        <p className="text-xs text-muted-foreground mt-1">Academia-Industry Interface</p>
       </div>
 
-      {/* Navigation */}
-      <nav className="flex-1 p-4" aria-label="Primary">
-        <ul className="space-y-2">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = location.pathname === item.path;
-            
-            return (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                    isActive 
-                      ? "bg-primary/10 text-primary font-medium" 
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                  }`}
-                >
-                  <Icon className={`w-5 h-5 ${isActive ? "text-primary" : ""}`} aria-hidden="true" />
-                  <span>{item.label}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+      <nav className="flex-1 space-y-2">
+        {navItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-colors ${
+              isActive(item.path)
+                ? "bg-primary text-primary-foreground font-medium"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <item.icon className="w-5 h-5" />
+            <span>{item.label}</span>
+          </Link>
+        ))}
       </nav>
 
-      {/* Footer */}
-      <div className="p-4 border-t border-border">
-        <button 
-          className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-all"
-          aria-label="Log out of your account"
+      <div className="border-t border-border pt-4">
+        {/* Simplified Button Structure to ensure clicks register */}
+        <div 
+          onClick={handleLogout} 
+          className="flex w-full items-center gap-4 px-4 py-3 text-muted-foreground hover:bg-red-50 hover:text-red-500 rounded-lg transition-colors cursor-pointer"
         >
-          <LogOut className="w-5 h-5" aria-hidden="true" />
-          <span>Log Out</span>
-        </button>
+          <LogOut className="w-5 h-5" />
+          <span className="font-medium">Log Out</span>
+        </div>
       </div>
     </aside>
   );

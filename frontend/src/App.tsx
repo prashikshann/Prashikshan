@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
@@ -10,9 +10,26 @@ import Chat from "./pages/Chat";
 import Create from "./pages/Create";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
-import Feed from "./components/Feed";
+import Auth from "./pages/Auth";
+import Onboarding from "./pages/Onboarding";
 
 const queryClient = new QueryClient();
+
+// Create a wrapper component to conditionally hide the Sidebar
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  // Don't show sidebar on login or onboarding pages
+  const hideSidebar = ["/login", "/onboarding"].includes(location.pathname);
+
+  return (
+    <div className="flex min-h-screen">
+      {!hideSidebar && <Sidebar />}
+      <main className={`flex-1 ${!hideSidebar ? "md:ml-64" : ""}`}>
+        {children}
+      </main>
+    </div>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -20,20 +37,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 md:ml-64">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/explore" element={<Explore />} />
-              <Route path="/chat" element={<Chat />} />
-              <Route path="/create" element={<Create />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-        </div>
+        <Layout>
+          <Routes>
+            <Route path="/login" element={<Auth />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

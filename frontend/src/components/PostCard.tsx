@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"; 
 import axios from "axios";
  
+//const API_URL = 'http://127.0.0.1:5000/api';
 const API_URL = 'https://prashikshan-f.onrender.com/api'; 
 const CURRENT_USER_ID = '368f5f25-57c2-4462-83be-d3af0c1e7fb9'; 
 
