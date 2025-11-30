@@ -9,6 +9,7 @@ import Explore from "./pages/Explore";
 import Chat from "./pages/Chat";
 import Create from "./pages/Create";
 import NotFound from "./pages/NotFound";
+import Sidebar from "./components/Sidebar";
 
 const queryClient = new QueryClient();
 
@@ -18,15 +19,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/create" element={<Create />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex min-h-screen">
+          <Sidebar />
+          <main className="flex-1 md:ml-64">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/explore" element={<Explore />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/create" element={<Create />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
