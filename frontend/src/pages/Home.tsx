@@ -8,7 +8,7 @@ import BottomNav from "@/components/BottomNav";
 
 // --- CONFIGURATION ---
 // 1. Python Backend URL
-const API_URL = 'http://127.0.0.1:5000/api'; 
+const API_URL = 'https://prashikshan-f.onrender.com/api'; 
 // 2. TEST USER ID
 const CURRENT_USER_ID = '368f5f25-57c2-4462-83be-d3af0c1e7fb9'; 
 
