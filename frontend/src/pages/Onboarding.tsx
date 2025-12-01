@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// ✅ Using the correct path you found earlier
+
 import { supabase } from "@/integrations/supabase/client"; 
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-// ✅ LOCALHOST URL (Since your Python is running locally)
-const API_URL = 'http://127.0.0.1:5000/api'; 
+const API_URL = 'https://prashikshan-f.onrender.com/api';
+//const API_URL = 'http://127.0.0.1:5000/api'; 
 
 const Onboarding = () => {
   const navigate = useNavigate();

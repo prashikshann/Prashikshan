@@ -1,84 +1,122 @@
-import { Upload, FileText, Award, Briefcase } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Send, Image as ImageIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import BottomNav from "@/components/BottomNav";
 
+//const API_URL = 'http://127.0.0.1:5000/api';
+const API_URL = 'https://prashikshan-f.onrender.com/api';
+
 const Create = () => {
-  const createOptions = [
-    {
-      icon: FileText,
-      title: "Share Update",
-      description: "Post about your achievements and progress",
-      color: "from-primary to-accent"
-    },
-    {
-      icon: Award,
-      title: "Add Certificate",
-      description: "Upload and showcase your certificates",
-      color: "from-secondary to-primary"
-    },
-    {
-      icon: Briefcase,
-      title: "Add Project",
-      description: "Showcase your latest projects",
-      color: "from-accent to-secondary"
-    },
-    {
-      icon: Upload,
-      title: "Upload Document",
-      description: "Add important documents to your vault",
-      color: "from-primary to-secondary"
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [content, setContent] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+
+  // 1. Check Auth on Load
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        navigate("/login");
+        return;
+      }
+      setCurrentUserId(user.id);
+    };
+    getUser();
+  }, [navigate]);
+
+  // 2. Handle Submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!content.trim() && !selectedFile) return;
+    if (!currentUserId) return;
+
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      formData.append('user_id', currentUserId);
+      formData.append('content', content);
+      if (selectedFile) {
+        formData.append('file', selectedFile);
+      }
+
+      await axios.post(`${API_URL}/posts`, formData);
+      
+      // Success: Redirect to Home to see the post
+      navigate('/');
+    } catch (error) {
+      console.error("Error creating post:", error);
+      alert("Failed to create post.");
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-card border-b border-border px-4 py-3">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-xl font-bold text-foreground">Create New</h1>
-          <p className="text-sm text-muted-foreground">Share your journey with the community</p>
-        </div>
-      </header>
+      <div className="p-4 border-b border-border bg-card">
+        <h1 className="text-xl font-bold">Create Post</h1>
+      </div>
 
-      <div className="max-w-2xl mx-auto p-4 space-y-4">
-        {createOptions.map((option, index) => {
-          const Icon = option.icon;
-          return (
-            <Card
-              key={index}
-              className="p-6 hover:shadow-md transition-all cursor-pointer animate-fade-in group"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${option.color} group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground mb-1">{option.title}</h3>
-                  <p className="text-sm text-muted-foreground">{option.description}</p>
-                </div>
-              </div>
-            </Card>
-          );
-        })}
+      <div className="max-w-2xl mx-auto p-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          
+          {/* Text Area */}
+          <textarea
+            placeholder="What do you want to share today?"
+            className="w-full h-40 p-4 rounded-xl border border-border bg-card resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
 
-        <div className="pt-6">
-          <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
-            <div className="text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary/20 mx-auto flex items-center justify-center">
-                <Upload className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground">Quick Upload</h3>
-              <p className="text-sm text-muted-foreground">
-                Drag and drop files here or click to browse
-              </p>
-              <Button className="bg-primary hover:bg-primary/90">
-                Choose Files
-              </Button>
+          {/* Image Preview */}
+          {selectedFile && (
+            <div className="relative w-full">
+              <img 
+                src={URL.createObjectURL(selectedFile)} 
+                alt="Preview" 
+                className="w-full max-h-64 object-cover rounded-xl border border-border"
+              />
+              <button 
+                type="button"
+                onClick={() => setSelectedFile(null)}
+                className="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full hover:bg-black/70"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-          </Card>
-        </div>
+          )}
+
+          {/* Action Bar */}
+          <div className="flex items-center justify-between pt-2">
+            <div className="flex gap-2">
+              <input
+                type="file"
+                id="file-upload"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => setSelectedFile(e.target.files ? e.target.files[0] : null)}
+              />
+              <label 
+                htmlFor="file-upload"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
+              >
+                <ImageIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Add Photo</span>
+              </label>
+            </div>
+
+            <Button disabled={loading} className="gap-2">
+              <Send className="w-4 h-4" />
+              {loading ? "Posting..." : "Post"}
+            </Button>
+          </div>
+        </form>
       </div>
 
       <BottomNav />

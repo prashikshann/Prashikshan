@@ -1,122 +1,138 @@
-import { Search, Briefcase, Users, TrendingUp } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Search, UserPlus, UserCheck, MessageCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import BottomNav from "@/components/BottomNav";
+import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
+
+const API_URL = 'https://prashikshan-f.onrender.com/api';
+//const API_URL = 'http://127.0.0.1:5000/api';
 
 const Explore = () => {
-  const internships = [
-    {
-      company: "TechInnovate Solutions",
-      role: "Full Stack Developer Intern",
-      location: "Bangalore",
-      duration: "3 months",
-      stipend: "₹15,000/month",
-      tags: ["React", "Node.js", "MongoDB"],
-      posted: "2 days ago"
-    },
-    {
-      company: "DataScience Corp",
-      role: "ML Engineering Intern",
-      location: "Remote",
-      duration: "6 months",
-      stipend: "₹20,000/month",
-      tags: ["Python", "TensorFlow", "ML"],
-      posted: "1 week ago"
-    },
-    {
-      company: "Design Studio Pro",
-      role: "UI/UX Design Intern",
-      location: "Mumbai",
-      duration: "3 months",
-      stipend: "₹12,000/month",
-      tags: ["Figma", "UI/UX", "Prototyping"],
-      posted: "3 days ago"
-    }
-  ];
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const [users, setUsers] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
-  const categories = [
-    { icon: Briefcase, label: "Internships", count: 142 },
-    { icon: Users, label: "Companies", count: 89 },
-    { icon: TrendingUp, label: "Trending", count: 23 },
-  ];
+  // 1. Get My ID
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setCurrentUserId(user.id);
+        fetchUsers(user.id, ""); 
+      }
+    };
+    getUser();
+  }, []);
+
+  // 2. Fetch Users
+  const fetchUsers = async (myId: string, searchTerm: string) => {
+    setLoading(true);
+    try {
+      // Note: We use + here too just to be safe
+      const url = API_URL + '/explore?user_id=' + myId + '&q=' + searchTerm;
+      const response = await axios.get(url);
+      setUsers(response.data);
+    } catch (error) {
+      console.error("Search error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const text = e.target.value;
+    setQuery(text);
+    if (currentUserId) {
+      setTimeout(() => fetchUsers(currentUserId, text), 300);
+    }
+  };
+
+  const handleFollow = async (targetId: string) => {
+    if (!currentUserId) return;
+
+    setUsers(users.map(u => {
+      if (u.id === targetId) {
+        return { ...u, is_following: !u.is_following };
+      }
+      return u;
+    }));
+
+    try {
+      await axios.post(`${API_URL}/follow`, {
+        follower_id: currentUserId,
+        following_id: targetId
+      });
+      fetchUsers(currentUserId, query);
+    } catch (error) {
+      console.error("Follow error:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-card border-b border-border px-4 py-3">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-xl font-bold text-foreground mb-3">Explore Opportunities</h1>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              placeholder="Search internships, companies..."
-              className="pl-10 bg-background"
-            />
-          </div>
+      <div className="sticky top-0 z-10 bg-card border-b border-border p-4 space-y-4">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          Explore
+        </h1>
+        <div className="relative">
+          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+          <Input 
+            placeholder="Search people, colleges..." 
+            className="pl-9 bg-muted/50 border-none"
+            value={query}
+            onChange={handleSearch}
+          />
         </div>
-      </header>
+      </div>
 
-      <div className="max-w-2xl mx-auto p-4 space-y-6">
-        {/* Categories */}
-        <div className="grid grid-cols-3 gap-3">
-          {categories.map((category, index) => {
-            const Icon = category.icon;
-            return (
-              <Card
-                key={index}
-                className="p-4 hover:shadow-md transition-shadow cursor-pointer"
-              >
-                <div className="flex flex-col items-center text-center gap-2">
-                  <Icon className="w-6 h-6 text-primary" />
-                  <div>
-                    <p className="text-sm font-semibold">{category.label}</p>
-                    <p className="text-xs text-muted-foreground">{category.count}+</p>
-                  </div>
-                </div>
-              </Card>
-            );
-          })}
-        </div>
+      <div className="p-4 space-y-4">
+        {loading && <p className="text-sm text-muted-foreground text-center">Searching...</p>}
+        
+        {!loading && users.length === 0 && (
+          <p className="text-sm text-muted-foreground text-center mt-10">No users found.</p>
+        )}
 
-        {/* Internship Listings */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-foreground">Latest Internships</h2>
-          {internships.map((internship, index) => (
-            <Card key={index} className="p-5 hover:shadow-md transition-shadow animate-fade-in">
-              <div className="space-y-3">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-semibold text-foreground">{internship.role}</h3>
-                    <p className="text-sm text-muted-foreground">{internship.company}</p>
-                  </div>
-                  <Badge variant="secondary" className="bg-primary/10 text-primary">
-                    {internship.posted}
-                  </Badge>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                  <span>📍 {internship.location}</span>
-                  <span>⏱️ {internship.duration}</span>
-                  <span className="text-primary font-semibold">💰 {internship.stipend}</span>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {internship.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Apply Now
-                </Button>
+        {users.map((user) => (
+          <div key={user.id} className="flex items-center justify-between p-4 bg-card border border-border rounded-xl shadow-sm">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                {(user.full_name || user.username || "U")[0].toUpperCase()}
               </div>
-            </Card>
-          ))}
-        </div>
+              <div>
+                <h3 className="font-semibold text-sm">{user.full_name || user.username}</h3>
+                <p className="text-xs text-muted-foreground">{user.college || "Student"}</p>
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              {/* Message Button (Only if Mutual) */}
+              {user.is_mutual && (
+                <Button 
+                  size="icon" 
+                  variant="secondary"
+                  onClick={() => navigate('/dm/' + user.id)} 
+                >
+                  <MessageCircle className="w-4 h-4 text-blue-500" />
+                </Button>
+              )}
+
+              <Button 
+                size="sm" 
+                variant={user.is_following ? "outline" : "default"}
+                className={user.is_following ? "text-muted-foreground" : ""}
+                onClick={() => handleFollow(user.id)}
+              >
+                {user.is_following ? <UserCheck className="w-4 h-4 mr-1" /> : <UserPlus className="w-4 h-4 mr-1" />}
+                {user.is_following ? "Following" : "Connect"}
+              </Button>
+            </div>
+          </div>
+        ))}
       </div>
 
       <BottomNav />

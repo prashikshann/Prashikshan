@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
 import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
+import DM from "./pages/DM";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +42,7 @@ const App = () => (
           <Routes>
             <Route path="/login" element={<Auth />} />
             <Route path="/onboarding" element={<Onboarding />} />
-
+            <Route path="/dm/:friendId" element={<DM />} />
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/explore" element={<Explore />} />

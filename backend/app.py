@@ -172,6 +172,111 @@ def get_profile():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
     
+    # --- EXPLORE & FOLLOW SYSTEM ---
+
+@app.route('/api/explore', methods=['GET'])
+def explore_users():
+    try:
+        current_user_id = request.args.get('user_id')
+        search_query = request.args.get('q', '') # Get search text, default empty
+
+        # 1. Base Query: Get all profiles except self
+        query = supabase.table('profiles').select('*').neq('id', current_user_id)
+        
+        # 2. If searching, filter by username or full_name
+        if search_query:
+            # ilike is case-insensitive search
+            query = query.or_(f"username.ilike.%{search_query}%,full_name.ilike.%{search_query}%")
+        
+        # Limit results to 20 to keep it fast
+        profiles = query.limit(20).execute().data
+
+        # 3. Enhance Data: Check Follow Status for each profile
+        # (This is a simple way; for millions of users we would use a SQL Join)
+        results = []
+        
+        # Get list of people I follow
+        my_follows = supabase.table('follows').select('following_id').eq('follower_id', current_user_id).execute()
+        my_following_ids = [row['following_id'] for row in my_follows.data]
+
+        # Get list of people following ME (for mutual check)
+        follows_me = supabase.table('follows').select('follower_id').eq('following_id', current_user_id).execute()
+        follows_me_ids = [row['follower_id'] for row in follows_me.data]
+
+        for p in profiles:
+            is_following = p['id'] in my_following_ids
+            is_followed_by = p['id'] in follows_me_ids
+            is_mutual = is_following and is_followed_by
+
+            results.append({
+                **p,
+                "is_following": is_following,
+                "is_mutual": is_mutual
+            })
+
+        return jsonify(results), 200
+
+    except Exception as e:
+        print(f"Explore Error: {e}")
+        return jsonify({"error": str(e)}), 400
+
+
+@app.route('/api/follow', methods=['POST'])
+def toggle_follow():
+    try:
+        data = request.json
+        follower_id = data.get('follower_id') # ME
+        following_id = data.get('following_id') # THEM
+
+        # Check if already following
+        check = supabase.table('follows').select('*').eq('follower_id', follower_id).eq('following_id', following_id).execute()
+
+        if len(check.data) > 0:
+            # Unfollow
+            supabase.table('follows').delete().eq('follower_id', follower_id).eq('following_id', following_id).execute()
+            return jsonify({"status": "unfollowed"}), 200
+        else:
+            # Follow
+            supabase.table('follows').insert({'follower_id': follower_id, 'following_id': following_id}).execute()
+            return jsonify({"status": "followed"}), 201
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+    
+    # --- DIRECT MESSAGING SYSTEM ---
+
+@app.route('/api/messages', methods=['GET'])
+def get_messages():
+    try:
+        user1 = request.args.get('user1') # Me
+        user2 = request.args.get('user2') # Friend
+
+        # Fetch chat history: (Me -> Friend) OR (Friend -> Me)
+        # We use a special Supabase syntax for "OR + AND" logic
+        response = supabase.table('messages')\
+            .select('*')\
+            .or_(f"and(sender_id.eq.{user1},receiver_id.eq.{user2}),and(sender_id.eq.{user2},receiver_id.eq.{user1})")\
+            .order('created_at', desc=False)\
+            .execute()
+            
+        return jsonify(response.data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+@app.route('/api/messages', methods=['POST'])
+def send_message():
+    try:
+        data = request.json
+        # Insert message
+        response = supabase.table('messages').insert({
+            'sender_id': data.get('sender_id'),
+            'receiver_id': data.get('receiver_id'),
+            'content': data.get('content')
+        }).execute()
+        
+        return jsonify(response.data), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)
