@@ -63,8 +63,8 @@ def create_post():
         if file:
             filename = f"{int(time.time())}_{file.filename}"
             file_data = file.read()
-            supabase.storage.from_('posts').upload(filename, file_data, file_options={"content-type": file.content_type})
-            image_url = supabase.storage.from_('posts').get_public_url(filename)
+            supabase.storage.from_('Posts').upload(filename, file_data, file_options={"content-type": file.content_type})
+            image_url = supabase.storage.from_('Posts').get_public_url(filename)
 
         response = supabase.table('posts').insert({
             'user_id': user_id, 'content': content, 'image_url': image_url
