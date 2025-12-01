@@ -7,28 +7,23 @@ const Sidebar = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
-  // --- FINAL FIX: LOGOUT FUNCTION ---
+// --- LOGOUT FUNCTION ---
 const handleLogout = async () => {
-  // 1. Check if supabase client exists before calling methods
-  if (!supabase || !supabase.auth || typeof window === 'undefined') {
-      console.error("🔴 Fatal Error: Supabase client is not initialized.");
-      // If we can't sign out, we still force the visual logout.
-      window.location.href = "/login";
-      return;
-  }
-  
-  console.log("🔴 Logout Button Clicked!");
+  // Debug log to confirm button is clicked
+  console.log("🔴 Logout Button Clicked!"); 
 
   try {
-    console.log("🔴 Attempting Supabase SignOut...");
-    // 2. Clear the session
-    await supabase.auth.signOut();
-    console.log("🟢 Supabase SignOut Success");
+    // 1. Check if supabase is initialized before using it
+    if (supabase && supabase.auth) {
+      await supabase.auth.signOut();
+      console.log("🟢 Supabase SignOut Success");
+    } else {
+        console.warn("🟡 Supabase client not fully initialized. Forcing redirect.");
+    }
   } catch (err) {
-    console.error("🔴 Supabase Error:", err);
+    console.error("🔴 Supabase SignOut Error:", err);
   } finally {
-    // 3. Force redirect and clear storage, regardless of database error
-    console.log("🔴 Clearing Storage & Redirecting...");
+    // 2. This runs NO MATTER WHAT (clears state and redirects)
     localStorage.clear();
     window.location.href = "/login";
   }
