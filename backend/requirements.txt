@@ -7,5 +7,3 @@ google-generativeai
 requests
 beautifulsoup4
 lxml
-playwright
-dotenv
