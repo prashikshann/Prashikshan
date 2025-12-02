@@ -9,6 +9,14 @@ import json
 import traceback
 import logging
 
+# Import HF Spaces Playwright scraper client
+from .scraper_client import (
+    is_scraper_available, 
+    scrape_url_with_playwright, 
+    get_og_image_with_playwright,
+    scrape_news_source
+)
+
 # Setup logging for better debugging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -424,7 +432,20 @@ def scrape_reddit(subreddit="technology", limit=10):
         return []
 
 def scrape_producthunt():
-    """Scrape Product Hunt RSS feed - Great for new products/startups"""
+    """Scrape Product Hunt - Uses Playwright if available for better results"""
+    # Try HF Spaces Playwright scraper first (JS-heavy site)
+    if is_scraper_available():
+        debug_log("Product Hunt", "Using HF Spaces Playwright scraper")
+        try:
+            articles = scrape_news_source("producthunt")
+            if articles:
+                debug_log("Product Hunt", f"Got {len(articles)} articles from Playwright")
+                return articles
+        except Exception as e:
+            debug_log("Product Hunt", f"Playwright scraper failed, falling back to RSS", e)
+    
+    # Fallback to RSS feed
+    debug_log("Product Hunt", "Using RSS feed fallback")
     try:
         url = "https://www.producthunt.com/feed"
         response = requests.get(url, headers=HEADERS, timeout=10)
@@ -498,7 +519,20 @@ def scrape_github_trending():
         return []
 
 def scrape_medium_tags(tag="technology"):
-    """Scrape Medium RSS feed by tag"""
+    """Scrape Medium - Uses Playwright if available for better results"""
+    # Try HF Spaces Playwright scraper first (JS-heavy site)
+    if is_scraper_available():
+        debug_log("Medium", "Using HF Spaces Playwright scraper")
+        try:
+            articles = scrape_news_source("medium")
+            if articles:
+                debug_log("Medium", f"Got {len(articles)} articles from Playwright")
+                return articles
+        except Exception as e:
+            debug_log("Medium", f"Playwright scraper failed, falling back to RSS", e)
+    
+    # Fallback to RSS feed
+    debug_log("Medium", "Using RSS feed fallback")
     try:
         url = f"https://medium.com/feed/tag/{tag}"
         response = requests.get(url, headers=HEADERS, timeout=10)
