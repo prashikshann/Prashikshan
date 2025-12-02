@@ -18,7 +18,7 @@ ADMIN_KEY = os.getenv("ADMIN_API_KEY", "123456")
 # Admin settings (can be controlled via admin panel)
 _settings = {
     "playwright_enabled": True,  # Default: enabled
-    "articles_per_category": 10  # Default: 10 articles per source/category
+    "articles_limit_per_category": 10  # Default: 10 articles per source/category
 }
 
 def require_admin(f):
@@ -37,7 +37,7 @@ def is_playwright_enabled():
 
 def get_articles_limit():
     """Get the configured articles per category limit"""
-    return _settings.get("articles_per_category", 10)
+    return _settings.get("articles_limit_per_category", 10)
 
 # Store for background job status
 _refresh_status = {
@@ -100,10 +100,10 @@ def set_articles_limit():
         if limit < 1 or limit > 50:
             return jsonify({"error": "limit must be between 1 and 50"}), 400
         
-        _settings["articles_per_category"] = limit
+        _settings["articles_limit_per_category"] = limit
         return jsonify({
             "success": True,
-            "articles_per_category": limit,
+            "articles_limit_per_category": limit,
             "message": f"Articles limit set to {limit} per category"
         })
     except ValueError:
