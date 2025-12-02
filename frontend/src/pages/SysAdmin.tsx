@@ -60,6 +60,8 @@ const SysAdmin = () => {
   const [hfLogs, setHfLogs] = useState<string[]>([]);
   const [playwrightEnabled, setPlaywrightEnabled] = useState(true);
   const [togglingPlaywright, setTogglingPlaywright] = useState(false);
+  const [articlesLimit, setArticlesLimit] = useState(10);
+  const [updatingLimit, setUpdatingLimit] = useState(false);
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const HF_SCRAPER_URL = import.meta.env.VITE_HF_SCRAPER_URL || "https://parthnuwal7-prashikshan.hf.space";
@@ -218,6 +220,7 @@ const SysAdmin = () => {
       if (response.ok) {
         const data = await response.json();
         setPlaywrightEnabled(data.settings?.playwright_enabled ?? true);
+        setArticlesLimit(data.settings?.articles_limit_per_category ?? 10);
       }
     } catch (error) {
       console.error("[SysAdmin] Failed to fetch settings:", error);
@@ -250,6 +253,35 @@ const SysAdmin = () => {
       setMessage({ type: 'error', text: 'Failed to toggle Playwright' });
     } finally {
       setTogglingPlaywright(false);
+    }
+  };
+
+  const updateArticlesLimit = async (newLimit: number) => {
+    setUpdatingLimit(true);
+    try {
+      const response = await fetch(`${API_URL}/api/admin/settings/articles-limit`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Admin-Key': adminKey 
+        },
+        body: JSON.stringify({ limit: newLimit })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setArticlesLimit(data.articles_limit_per_category);
+        setMessage({ 
+          type: 'success', 
+          text: `Articles limit set to ${data.articles_limit_per_category} per category` 
+        });
+      } else {
+        setMessage({ type: 'error', text: 'Failed to update articles limit' });
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Failed to update articles limit' });
+    } finally {
+      setUpdatingLimit(false);
     }
   };
 
@@ -816,6 +848,58 @@ const SysAdmin = () => {
                         }`}
                       />
                     </button>
+                  </div>
+
+                  {/* Articles Limit Per Category */}
+                  <div className="p-3 border rounded-lg bg-muted/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Newspaper className="w-5 h-5 text-blue-500" />
+                      <div>
+                        <p className="font-medium">Articles Limit Per Category</p>
+                        <p className="text-xs text-muted-foreground">
+                          Max articles to return per category (5-50)
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        min={5}
+                        max={50}
+                        value={articlesLimit}
+                        onChange={(e) => setArticlesLimit(Math.max(5, Math.min(50, parseInt(e.target.value) || 10)))}
+                        className="w-20"
+                        disabled={updatingLimit}
+                      />
+                      <Button
+                        size="sm"
+                        onClick={() => updateArticlesLimit(articlesLimit)}
+                        disabled={updatingLimit}
+                      >
+                        {updatingLimit ? (
+                          <RefreshCw className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <>Update</>
+                        )}
+                      </Button>
+                      <div className="flex gap-1 ml-2">
+                        {[10, 15, 20, 25].map((preset) => (
+                          <Button
+                            key={preset}
+                            size="sm"
+                            variant={articlesLimit === preset ? "default" : "outline"}
+                            className="w-10 h-8 p-0"
+                            onClick={() => {
+                              setArticlesLimit(preset);
+                              updateArticlesLimit(preset);
+                            }}
+                            disabled={updatingLimit}
+                          >
+                            {preset}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   {/* HF Spaces Logs */}

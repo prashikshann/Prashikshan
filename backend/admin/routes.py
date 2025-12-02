@@ -15,9 +15,10 @@ admin_bp = Blueprint('admin', __name__, url_prefix='/api/admin')
 # Simple admin key authentication (in production, use proper auth)
 ADMIN_KEY = os.getenv("ADMIN_API_KEY", "123456")
 
-# Playwright scraping toggle (can be controlled via admin panel)
+# Admin settings (can be controlled via admin panel)
 _settings = {
-    "playwright_enabled": True  # Default: enabled
+    "playwright_enabled": True,  # Default: enabled
+    "articles_per_category": 10  # Default: 10 articles per source/category
 }
 
 def require_admin(f):
@@ -33,6 +34,10 @@ def require_admin(f):
 def is_playwright_enabled():
     """Check if Playwright scraping is enabled"""
     return _settings.get("playwright_enabled", True)
+
+def get_articles_limit():
+    """Get the configured articles per category limit"""
+    return _settings.get("articles_per_category", 10)
 
 # Store for background job status
 _refresh_status = {
@@ -79,6 +84,30 @@ def toggle_playwright():
         "playwright_enabled": _settings["playwright_enabled"],
         "message": f"Playwright scraping {'enabled' if _settings['playwright_enabled'] else 'disabled'}"
     })
+
+@admin_bp.route('/settings/articles-limit', methods=['POST'])
+@require_admin
+def set_articles_limit():
+    """Set the number of articles to scrape per category"""
+    data = request.get_json() or {}
+    limit = data.get('limit')
+    
+    if limit is None:
+        return jsonify({"error": "limit is required"}), 400
+    
+    try:
+        limit = int(limit)
+        if limit < 1 or limit > 50:
+            return jsonify({"error": "limit must be between 1 and 50"}), 400
+        
+        _settings["articles_per_category"] = limit
+        return jsonify({
+            "success": True,
+            "articles_per_category": limit,
+            "message": f"Articles limit set to {limit} per category"
+        })
+    except ValueError:
+        return jsonify({"error": "limit must be a number"}), 400
 
 @admin_bp.route('/login', methods=['POST'])
 def admin_login():

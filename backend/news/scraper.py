@@ -21,8 +21,8 @@ from .scraper_client import (
     scrape_news_source
 )
 
-# Import Playwright toggle setting
-from admin import is_playwright_enabled
+# Import admin settings
+from admin import is_playwright_enabled, get_articles_limit
 
 # Setup logging for better debugging
 logging.basicConfig(level=logging.INFO)
@@ -977,7 +977,8 @@ def get_all_tech_news():
             unique_articles.append(article)
     
     debug_log("get_all_tech_news", f"After dedup: {len(unique_articles)} articles")
-    return unique_articles[:25]
+    limit = get_articles_limit()
+    return unique_articles[:limit]
 
 def get_all_education_news():
     """Get education news from multiple refined queries"""
@@ -1022,7 +1023,8 @@ def get_all_education_news():
             unique_articles.append(article)
     
     debug_log("get_all_education_news", f"Returning {len(unique_articles)} unique articles")
-    return unique_articles[:20]
+    limit = get_articles_limit()
+    return unique_articles[:limit]
 
 def get_developer_content():
     """Get developer-focused content from multiple sources"""
@@ -1056,7 +1058,8 @@ def get_developer_content():
                 debug_log("get_developer_content", f"[{name}] FAILED", e)
     
     debug_log("get_developer_content", f"Returning {len(all_articles)} articles")
-    return all_articles[:25]
+    limit = get_articles_limit()
+    return all_articles[:limit]
 
 def get_career_news():
     """Get career and job-related news"""
@@ -1091,9 +1094,9 @@ def get_career_news():
                 debug_log("get_career_news", f"[{name}] FAILED", e)
     
     debug_log("get_career_news", f"Returning {len(all_articles)} articles")
-    return all_articles[:20]
+    limit = get_articles_limit()
+    return all_articles[:limit]
     
-    return all_articles[:20]
 
 def get_ai_ml_news():
     """Get AI and Machine Learning specific news"""
@@ -1129,7 +1132,8 @@ def get_ai_ml_news():
                 debug_log("get_ai_ml_news", f"[{name}] FAILED", e)
     
     debug_log("get_ai_ml_news", f"Returning {len(all_articles)} articles")
-    return all_articles[:20]
+    limit = get_articles_limit()
+    return all_articles[:limit]
 
 def get_startup_news():
     """Get startup and entrepreneurship news"""
@@ -1164,7 +1168,8 @@ def get_startup_news():
                 debug_log("get_startup_news", f"[{name}] FAILED", e)
     
     debug_log("get_startup_news", f"Returning {len(all_articles)} articles")
-    return all_articles[:20]
+    limit = get_articles_limit()
+    return all_articles[:limit]
 
 def get_general_trends():
     """Get general trending topics with refined queries"""
@@ -1207,7 +1212,8 @@ def get_general_trends():
             unique_articles.append(article)
     
     debug_log("get_general_trends", f"Returning {len(unique_articles)} unique articles")
-    return unique_articles[:15]
+    limit = get_articles_limit()
+    return unique_articles[:limit]
 
 # ============================================
 # CACHE INTEGRATION
