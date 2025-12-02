@@ -22,7 +22,7 @@ services:
     # Environment variables (set these in Render dashboard for security)
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11"
+        value: "3.11.4"
       - key: SUPABASE_URL
         sync: false  # Set manually in dashboard
       - key: SUPABASE_KEY

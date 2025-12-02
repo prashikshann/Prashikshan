@@ -30,7 +30,7 @@ services:
     # IMPORTANT: Set sensitive values in Render Dashboard, not here!
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11"
+        value: "3.11.4"
       - key: FLASK_ENV
         value: production
       # These should be set in Render Dashboard for security:
