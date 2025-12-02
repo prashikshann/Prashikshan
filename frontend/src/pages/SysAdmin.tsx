@@ -54,8 +54,13 @@ const SysAdmin = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [syncingCloud, setSyncingCloud] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [pollingEnabled, setPollingEnabled] = useState(false);
+  const [renderStatus, setRenderStatus] = useState<'unknown' | 'waking' | 'online' | 'offline'>('unknown');
+  const [hfStatus, setHfStatus] = useState<'unknown' | 'waking' | 'online' | 'offline'>('unknown');
+  const [hfLogs, setHfLogs] = useState<string[]>([]);
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const HF_SCRAPER_URL = import.meta.env.VITE_HF_SCRAPER_URL || "https://parthnuwal7-prashikshan.hf.space";
 
   // Check if admin key is stored in session
   useEffect(() => {
@@ -70,10 +75,58 @@ const SysAdmin = () => {
   useEffect(() => {
     if (isAuthenticated) {
       fetchDashboardData();
-      const interval = setInterval(fetchDashboardData, 10000); // Refresh every 10s
-      return () => clearInterval(interval);
     }
   }, [isAuthenticated]);
+
+  // Polling effect - keeps services awake when enabled
+  useEffect(() => {
+    if (isAuthenticated && pollingEnabled) {
+      // Initial ping to both services
+      pingRenderHealth();
+      pingHFHealth();
+      
+      // Poll dashboard data every 10s
+      const dashboardInterval = setInterval(fetchDashboardData, 10000);
+      
+      // Poll Render every 5 minutes to keep it awake (free tier sleeps after 15 min)
+      const renderInterval = setInterval(pingRenderHealth, 5 * 60 * 1000);
+      
+      // Poll HF Spaces every 10 minutes to keep it awake
+      const hfInterval = setInterval(pingHFHealth, 10 * 60 * 1000);
+      
+      return () => {
+        clearInterval(dashboardInterval);
+        clearInterval(renderInterval);
+        clearInterval(hfInterval);
+      };
+    }
+  }, [isAuthenticated, pollingEnabled]);
+
+  // Silent health check for Render (doesn't show messages)
+  const pingRenderHealth = async () => {
+    try {
+      const response = await fetch(`${API_URL}/health`, {
+        method: 'GET',
+        signal: AbortSignal.timeout(30000)
+      });
+      setRenderStatus(response.ok ? 'online' : 'offline');
+    } catch {
+      setRenderStatus('offline');
+    }
+  };
+
+  // Silent health check for HF Spaces (doesn't show messages)
+  const pingHFHealth = async () => {
+    try {
+      const response = await fetch(`${HF_SCRAPER_URL}/health`, {
+        method: 'GET',
+        signal: AbortSignal.timeout(60000)
+      });
+      setHfStatus(response.ok ? 'online' : 'offline');
+    } catch {
+      setHfStatus('offline');
+    }
+  };
 
   const handleLogin = async () => {
     setLoading(true);
@@ -222,6 +275,87 @@ const SysAdmin = () => {
     }
   };
 
+  const wakeUpRender = async () => {
+    setRenderStatus('waking');
+    try {
+      const startTime = Date.now();
+      const response = await fetch(`${API_URL}/health`, {
+        method: 'GET',
+        signal: AbortSignal.timeout(60000) // 60 second timeout for cold start
+      });
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+      
+      if (response.ok) {
+        setRenderStatus('online');
+        setMessage({ 
+          type: 'success', 
+          text: `Render backend is awake! Response time: ${elapsed}s` 
+        });
+      } else {
+        setRenderStatus('offline');
+        setMessage({ type: 'error', text: 'Render backend returned an error' });
+      }
+    } catch (error: any) {
+      setRenderStatus('offline');
+      if (error.name === 'TimeoutError') {
+        setMessage({ type: 'error', text: 'Render backend timed out (may still be starting)' });
+      } else {
+        setMessage({ type: 'error', text: `Failed to wake Render: ${error.message}` });
+      }
+    }
+  };
+
+  const wakeUpHFSpaces = async () => {
+    setHfStatus('waking');
+    setHfLogs([]);
+    try {
+      const startTime = Date.now();
+      const response = await fetch(`${HF_SCRAPER_URL}/health`, {
+        method: 'GET',
+        signal: AbortSignal.timeout(120000) // 120 second timeout for HF cold start
+      });
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+      
+      if (response.ok) {
+        const data = await response.json();
+        setHfStatus('online');
+        setMessage({ 
+          type: 'success', 
+          text: `HuggingFace Spaces is awake! Response time: ${elapsed}s` 
+        });
+        
+        // Try to fetch logs if available
+        await fetchHFLogs();
+      } else {
+        setHfStatus('offline');
+        setMessage({ type: 'error', text: 'HuggingFace Spaces returned an error' });
+      }
+    } catch (error: any) {
+      setHfStatus('offline');
+      if (error.name === 'TimeoutError') {
+        setMessage({ type: 'error', text: 'HF Spaces timed out (may still be building/starting)' });
+      } else {
+        setMessage({ type: 'error', text: `Failed to wake HF Spaces: ${error.message}` });
+      }
+    }
+  };
+
+  const fetchHFLogs = async () => {
+    try {
+      const response = await fetch(`${HF_SCRAPER_URL}/logs`, {
+        method: 'GET',
+        headers: { 'X-API-Key': adminKey },
+        signal: AbortSignal.timeout(10000)
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setHfLogs(data.logs || []);
+      }
+    } catch (error) {
+      console.log('Could not fetch HF logs:', error);
+    }
+  };
+
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return 'Never';
     try {
@@ -303,6 +437,25 @@ const SysAdmin = () => {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               Connected
             </Badge>
+            {/* Polling Toggle - Keeps both Render and HF Spaces awake */}
+            <div className="flex items-center gap-2 px-3 py-1 rounded-lg border" title="Keep Render & HF Spaces awake">
+              <span className="text-xs text-muted-foreground">Keep Alive</span>
+              <button
+                onClick={() => setPollingEnabled(!pollingEnabled)}
+                className={`relative w-10 h-5 rounded-full transition-colors ${
+                  pollingEnabled ? 'bg-green-500' : 'bg-gray-300'
+                }`}
+              >
+                <span
+                  className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform ${
+                    pollingEnabled ? 'translate-x-5' : 'translate-x-0.5'
+                  }`}
+                />
+              </button>
+              {pollingEnabled && (
+                <RefreshCw className="w-3 h-3 text-green-500 animate-spin" />
+              )}
+            </div>
             <Button variant="ghost" size="sm" onClick={handleLogout}>
               <Unlock className="w-4 h-4 mr-2" />
               Logout
@@ -496,6 +649,93 @@ const SysAdmin = () => {
                     <X className="w-4 h-4 mr-2" />
                     Clear Cache
                   </Button>
+                </CardContent>
+              </Card>
+
+              {/* Service Wake-Up */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Activity className="w-5 h-5" />
+                    Service Status
+                  </CardTitle>
+                  <CardDescription>
+                    Wake up services that may be sleeping (free tier)
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {/* Render Backend */}
+                  <div className="flex items-center justify-between p-3 border rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${
+                        renderStatus === 'online' ? 'bg-green-500' :
+                        renderStatus === 'waking' ? 'bg-yellow-500 animate-pulse' :
+                        renderStatus === 'offline' ? 'bg-red-500' : 'bg-gray-400'
+                      }`} />
+                      <div>
+                        <p className="font-medium">Render Backend</p>
+                        <p className="text-xs text-muted-foreground">Flask API Server</p>
+                      </div>
+                    </div>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={wakeUpRender}
+                      disabled={renderStatus === 'waking'}
+                    >
+                      {renderStatus === 'waking' ? (
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <>Wake Up</>
+                      )}
+                    </Button>
+                  </div>
+
+                  {/* HuggingFace Spaces */}
+                  <div className="flex items-center justify-between p-3 border rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${
+                        hfStatus === 'online' ? 'bg-green-500' :
+                        hfStatus === 'waking' ? 'bg-yellow-500 animate-pulse' :
+                        hfStatus === 'offline' ? 'bg-red-500' : 'bg-gray-400'
+                      }`} />
+                      <div>
+                        <p className="font-medium">HuggingFace Spaces</p>
+                        <p className="text-xs text-muted-foreground">Playwright Scraper</p>
+                      </div>
+                    </div>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={wakeUpHFSpaces}
+                      disabled={hfStatus === 'waking'}
+                    >
+                      {hfStatus === 'waking' ? (
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <>Wake Up</>
+                      )}
+                    </Button>
+                  </div>
+
+                  {/* HF Spaces Logs */}
+                  {hfLogs.length > 0 && (
+                    <div className="border rounded-lg p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-sm font-medium">HF Spaces Logs</p>
+                        <Button size="sm" variant="ghost" onClick={fetchHFLogs}>
+                          <RefreshCw className="w-3 h-3" />
+                        </Button>
+                      </div>
+                      <ScrollArea className="h-32">
+                        <div className="space-y-1 font-mono text-xs">
+                          {hfLogs.map((log, i) => (
+                            <p key={i} className="text-muted-foreground">{log}</p>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </div>

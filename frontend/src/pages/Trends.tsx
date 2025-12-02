@@ -122,11 +122,9 @@ const Trends = () => {
 
   useEffect(() => {
     fetchTrends();
+    // Only check version once on load, not constantly polling
+    // This saves Render free tier resources
     checkFeedVersion();
-    
-    // Poll for feed version updates every 30 seconds
-    const versionInterval = setInterval(checkFeedVersion, 30000);
-    return () => clearInterval(versionInterval);
   }, []);
 
   const formatDate = (dateStr: string) => {
