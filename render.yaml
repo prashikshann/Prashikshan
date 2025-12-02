@@ -1,0 +1,43 @@
+# Render.com deployment configuration for Prashikshan
+# https://render.com/docs/yaml-spec
+# 
+# This file can be at the root of your repo if deploying from there.
+# Render will auto-detect this file and use it for deployment.
+
+services:
+  # Backend API Service
+  - type: web
+    name: prashikshan-backend
+    runtime: python
+    region: singapore  # Options: oregon, ohio, frankfurt, singapore
+    plan: free  # Options: free, starter, standard, pro
+    
+    # Root directory for the backend
+    rootDir: backend
+    
+    # Build settings
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium --with-deps || true
+    
+    # Start command using gunicorn
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    
+    # Health check endpoint
+    healthCheckPath: /health
+    
+    # Environment variables
+    # IMPORTANT: Set sensitive values in Render Dashboard, not here!
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: FLASK_ENV
+        value: production
+      # These should be set in Render Dashboard for security:
+      # - SUPABASE_URL
+      # - SUPABASE_KEY  
+      # - GEMINI_API_KEY
+      # - ADMIN_API_KEY
+    
+    # Auto-deploy on push to main branch
+    autoDeploy: true

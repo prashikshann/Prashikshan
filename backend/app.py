@@ -51,6 +51,14 @@ def index():
         }
     })
 
+@app.route("/health")
+def health_check():
+    """Health check endpoint for Render deployment"""
+    return jsonify({
+        "status": "healthy",
+        "service": "prashikshan-backend"
+    }), 200
+
 # --- ROUTES ---
 
 @app.route('/api/feed', methods=['GET'])
