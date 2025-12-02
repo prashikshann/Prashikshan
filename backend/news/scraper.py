@@ -17,6 +17,9 @@ from .scraper_client import (
     scrape_news_source
 )
 
+# Import Playwright toggle setting
+from admin import is_playwright_enabled
+
 # Setup logging for better debugging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -432,9 +435,9 @@ def scrape_reddit(subreddit="technology", limit=10):
         return []
 
 def scrape_producthunt():
-    """Scrape Product Hunt - Uses Playwright if available for better results"""
-    # Try HF Spaces Playwright scraper first (JS-heavy site)
-    if is_scraper_available():
+    """Scrape Product Hunt - Uses Playwright if enabled and available"""
+    # Try HF Spaces Playwright scraper first (JS-heavy site) - if enabled
+    if is_playwright_enabled() and is_scraper_available():
         debug_log("Product Hunt", "Using HF Spaces Playwright scraper")
         try:
             articles = scrape_news_source("producthunt")
@@ -443,6 +446,8 @@ def scrape_producthunt():
                 return articles
         except Exception as e:
             debug_log("Product Hunt", f"Playwright scraper failed, falling back to RSS", e)
+    elif not is_playwright_enabled():
+        debug_log("Product Hunt", "Playwright disabled, using RSS")
     
     # Fallback to RSS feed
     debug_log("Product Hunt", "Using RSS feed fallback")
@@ -519,9 +524,9 @@ def scrape_github_trending():
         return []
 
 def scrape_medium_tags(tag="technology"):
-    """Scrape Medium - Uses Playwright if available for better results"""
-    # Try HF Spaces Playwright scraper first (JS-heavy site)
-    if is_scraper_available():
+    """Scrape Medium - Uses Playwright if enabled and available"""
+    # Try HF Spaces Playwright scraper first (JS-heavy site) - if enabled
+    if is_playwright_enabled() and is_scraper_available():
         debug_log("Medium", "Using HF Spaces Playwright scraper")
         try:
             articles = scrape_news_source("medium")
@@ -530,6 +535,8 @@ def scrape_medium_tags(tag="technology"):
                 return articles
         except Exception as e:
             debug_log("Medium", f"Playwright scraper failed, falling back to RSS", e)
+    elif not is_playwright_enabled():
+        debug_log("Medium", "Playwright disabled, using RSS")
     
     # Fallback to RSS feed
     debug_log("Medium", "Using RSS feed fallback")

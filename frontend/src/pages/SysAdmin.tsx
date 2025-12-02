@@ -58,6 +58,8 @@ const SysAdmin = () => {
   const [renderStatus, setRenderStatus] = useState<'unknown' | 'waking' | 'online' | 'offline'>('unknown');
   const [hfStatus, setHfStatus] = useState<'unknown' | 'waking' | 'online' | 'offline'>('unknown');
   const [hfLogs, setHfLogs] = useState<string[]>([]);
+  const [playwrightEnabled, setPlaywrightEnabled] = useState(true);
+  const [togglingPlaywright, setTogglingPlaywright] = useState(false);
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const HF_SCRAPER_URL = import.meta.env.VITE_HF_SCRAPER_URL || "https://parthnuwal7-prashikshan.hf.space";
@@ -71,10 +73,11 @@ const SysAdmin = () => {
     }
   }, []);
 
-  // Fetch dashboard data when authenticated
+  // Fetch dashboard data and settings when authenticated
   useEffect(() => {
     if (isAuthenticated) {
       fetchDashboardData();
+      fetchSettings();
     }
   }, [isAuthenticated]);
 
@@ -204,6 +207,49 @@ const SysAdmin = () => {
       }
     } catch (error) {
       console.error("[SysAdmin] Failed to fetch dashboard data:", error);
+    }
+  };
+
+  const fetchSettings = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/admin/settings`, {
+        headers: { 'X-Admin-Key': adminKey }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setPlaywrightEnabled(data.settings?.playwright_enabled ?? true);
+      }
+    } catch (error) {
+      console.error("[SysAdmin] Failed to fetch settings:", error);
+    }
+  };
+
+  const togglePlaywright = async () => {
+    setTogglingPlaywright(true);
+    try {
+      const response = await fetch(`${API_URL}/api/admin/settings/playwright`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Admin-Key': adminKey 
+        },
+        body: JSON.stringify({ enabled: !playwrightEnabled })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setPlaywrightEnabled(data.playwright_enabled);
+        setMessage({ 
+          type: 'success', 
+          text: `Playwright scraping ${data.playwright_enabled ? 'enabled' : 'disabled'}` 
+        });
+      } else {
+        setMessage({ type: 'error', text: 'Failed to toggle Playwright' });
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Failed to toggle Playwright' });
+    } finally {
+      setTogglingPlaywright(false);
     }
   };
 
@@ -744,6 +790,32 @@ const SysAdmin = () => {
                         <>Wake Up</>
                       )}
                     </Button>
+                  </div>
+
+                  {/* Playwright Toggle */}
+                  <div className="flex items-center justify-between p-3 border rounded-lg bg-muted/30">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${playwrightEnabled ? 'bg-green-500' : 'bg-gray-400'}`} />
+                      <div>
+                        <p className="font-medium">Playwright Scraping</p>
+                        <p className="text-xs text-muted-foreground">
+                          {playwrightEnabled ? 'Using HF Spaces for JS sites' : 'Using RSS fallback only'}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={togglePlaywright}
+                      disabled={togglingPlaywright}
+                      className={`relative w-12 h-6 rounded-full transition-colors ${
+                        playwrightEnabled ? 'bg-green-500' : 'bg-gray-300'
+                      }`}
+                    >
+                      <span
+                        className={`absolute top-0.5 w-5 h-5 bg-white rounded-full transition-transform shadow ${
+                          playwrightEnabled ? 'translate-x-6' : 'translate-x-0.5'
+                        }`}
+                      />
+                    </button>
                   </div>
 
                   {/* HF Spaces Logs */}

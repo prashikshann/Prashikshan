@@ -15,6 +15,11 @@ admin_bp = Blueprint('admin', __name__, url_prefix='/api/admin')
 # Simple admin key authentication (in production, use proper auth)
 ADMIN_KEY = os.getenv("ADMIN_API_KEY", "123456")
 
+# Playwright scraping toggle (can be controlled via admin panel)
+_settings = {
+    "playwright_enabled": True  # Default: enabled
+}
+
 def require_admin(f):
     """Decorator to require admin authentication"""
     @wraps(f)
@@ -24,6 +29,10 @@ def require_admin(f):
             return jsonify({"error": "Unauthorized", "message": "Invalid admin key"}), 401
         return f(*args, **kwargs)
     return decorated
+
+def is_playwright_enabled():
+    """Check if Playwright scraping is enabled"""
+    return _settings.get("playwright_enabled", True)
 
 # Store for background job status
 _refresh_status = {
@@ -41,6 +50,34 @@ def admin_health():
         "status": "ok",
         "timestamp": datetime.now().isoformat(),
         "cache_initialized": news_cache is not None
+    })
+
+@admin_bp.route('/settings', methods=['GET'])
+@require_admin
+def get_settings():
+    """Get current admin settings"""
+    return jsonify({
+        "success": True,
+        "settings": _settings
+    })
+
+@admin_bp.route('/settings/playwright', methods=['POST'])
+@require_admin
+def toggle_playwright():
+    """Toggle Playwright scraping on/off"""
+    data = request.get_json() or {}
+    enabled = data.get('enabled')
+    
+    if enabled is None:
+        # Toggle if no value provided
+        _settings["playwright_enabled"] = not _settings["playwright_enabled"]
+    else:
+        _settings["playwright_enabled"] = bool(enabled)
+    
+    return jsonify({
+        "success": True,
+        "playwright_enabled": _settings["playwright_enabled"],
+        "message": f"Playwright scraping {'enabled' if _settings['playwright_enabled'] else 'disabled'}"
     })
 
 @admin_bp.route('/login', methods=['POST'])
