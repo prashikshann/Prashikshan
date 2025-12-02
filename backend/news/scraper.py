@@ -8,6 +8,10 @@ from concurrent.futures import ThreadPoolExecutor
 import json
 import traceback
 import logging
+import urllib3
+
+# Suppress SSL warnings for sites with bad certificates
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Import HF Spaces Playwright scraper client
 from .scraper_client import (
@@ -86,7 +90,8 @@ def get_placeholder_image(source: str, category: str = 'general') -> str:
 def extract_og_image(url: str, timeout: int = 3) -> str:
     """Try to extract Open Graph image from a URL (quick, with short timeout)"""
     try:
-        response = requests.get(url, headers=HEADERS, timeout=timeout)
+        # Disable SSL verification for image extraction (some sites have bad certs)
+        response = requests.get(url, headers=HEADERS, timeout=timeout, verify=False)
         soup = BeautifulSoup(response.content, 'html.parser')
         
         # Try Open Graph image
