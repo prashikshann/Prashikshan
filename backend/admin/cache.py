@@ -109,26 +109,35 @@ class NewsCache:
         
         try:
             cache_json = json.dumps(self._cache, ensure_ascii=False)
-            # Upload to Supabase Storage
+            file_bytes = cache_json.encode('utf-8')
+            
+            # Try to remove existing file first, then upload fresh
+            try:
+                self._supabase.storage.from_(self._bucket_name).remove(["news_cache.json"])
+            except:
+                pass  # File might not exist
+            
+            # Upload new file
             self._supabase.storage.from_(self._bucket_name).upload(
-                "news_cache.json",
-                cache_json.encode('utf-8'),
-                {"content-type": "application/json", "upsert": "true"}
+                path="news_cache.json",
+                file=file_bytes,
+                file_options={"content-type": "application/json"}
             )
             print("[Cache] Synced to Supabase storage")
             return True
         except Exception as e:
-            # Try update if file exists
+            print(f"[Cache] Error syncing to Supabase: {e}")
+            # Try update as fallback
             try:
                 self._supabase.storage.from_(self._bucket_name).update(
-                    "news_cache.json",
-                    cache_json.encode('utf-8'),
-                    {"content-type": "application/json"}
+                    path="news_cache.json",
+                    file=cache_json.encode('utf-8'),
+                    file_options={"content-type": "application/json"}
                 )
                 print("[Cache] Updated in Supabase storage")
                 return True
             except Exception as e2:
-                print(f"[Cache] Error syncing to Supabase: {e2}")
+                print(f"[Cache] Update also failed: {e2}")
                 return False
     
     def sync_from_supabase(self) -> bool:

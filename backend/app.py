@@ -30,7 +30,12 @@ else:
 # --- SETUP 3: NEWS CACHE ---
 news_cache = NewsCache()
 news_cache.set_supabase(supabase)
-print(f"[Cache] Initialized with {news_cache.get_stats()['total_articles']} articles")
+
+# Try to load from Supabase on startup (important for Render where local files don't persist)
+if news_cache.sync_from_supabase():
+    print(f"[Cache] Loaded {news_cache.get_stats()['total_articles']} articles from Supabase")
+else:
+    print(f"[Cache] Using local cache with {news_cache.get_stats()['total_articles']} articles")
 
 # --- SETUP 4: FLASK ---
 app = Flask(__name__)
@@ -58,6 +63,20 @@ def health_check():
         "status": "healthy",
         "service": "prashikshan-backend"
     }), 200
+
+@app.route("/debug/cache")
+def debug_cache():
+    """Debug endpoint to check cache status"""
+    cache_stats = news_cache.get_stats()
+    return jsonify({
+        "cache_stats": cache_stats,
+        "supabase_connected": news_cache._supabase is not None,
+        "categories": list(news_cache._cache.get('categories', {}).keys()),
+        "sample_articles": {
+            cat: len(articles) 
+            for cat, articles in news_cache._cache.get('categories', {}).items()
+        }
+    })
 
 # --- ROUTES ---
 
