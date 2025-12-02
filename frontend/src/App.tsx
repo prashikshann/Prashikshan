@@ -8,6 +8,8 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Chat from "./pages/Chat";
 import Create from "./pages/Create";
+import Trends from "./pages/Trends";
+import SysAdmin from "./pages/SysAdmin";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
 import Auth from "./pages/Auth";
@@ -46,6 +48,8 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/trends" element={<Trends />} />
+            <Route path="/sysadmin" element={<SysAdmin />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/create" element={<Create />} />
             <Route path="*" element={<NotFound />} />

@@ -1,0 +1,1494 @@
+{
+  "last_updated": "2025-12-02T17:32:06.355057",
+  "last_refresh_duration": 0,
+  "total_articles": 155,
+  "categories": {
+    "tech": [
+      {
+        "title": "What does it mean when Uncle Sam is one of your biggest shareholders? Chip startup xLight is about to find out",
+        "link": "https://techcrunch.com/2025/12/01/what-does-it-mean-when-uncle-sam-is-one-of-your-biggest-shareholders-chip-startup-xlight-is-about-to-find-out/",
+        "published": "Tue, 02 Dec 2025 04:03:25 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "You can imagine how this is all going over in Silicon Valley, where the libertarian ethos runs deep....",
+        "image": "https://techcrunch.com/wp-content/uploads/2019/04/Screen-Shot-2019-04-09-at-12.38.58-PM.png?w=1024"
+      },
+      {
+        "title": "Apple just named a new AI chief with Google and Microsoft expertise, as John Giannandrea steps down",
+        "link": "https://techcrunch.com/2025/12/01/apple-just-named-a-new-ai-chief-with-google-and-microsoft-expertise-as-john-giannandrea-steps-down/",
+        "published": "Tue, 02 Dec 2025 01:34:46 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "His replacement is Amar Subramanya, a highly regarded Microsoft executive who spent 16 years at Google, most recently leading engineering for the Gemini Assistant. It's a savvy hire, given that Subram...",
+        "image": "https://techcrunch.com/wp-content/uploads/2017/09/tcdisrupt_sf17_johngiannadrea-3043.jpg?w=1024"
+      },
+      {
+        "title": "One of Google’s biggest AI advantages is what it already knows about you",
+        "link": "https://techcrunch.com/2025/12/01/one-of-googles-biggest-ai-advantages-is-what-it-already-knows-about-you/",
+        "published": "Tue, 02 Dec 2025 00:17:52 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "The promise is AI that's uniquely helpful because it knows you. But the risk is AI that feels more like surveillance than service....",
+        "image": "https://techcrunch.com/wp-content/uploads/2025/11/pluribus.jpeg?w=1024"
+      },
+      {
+        "title": "Zillow drops climate risk scores after agents complained of lost sales",
+        "link": "https://techcrunch.com/2025/12/01/zillow-drops-climate-risk-scores-after-agents-complained-of-lost-sales/",
+        "published": "Mon, 01 Dec 2025 22:44:28 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "The move is a loss for homebuyers, who through Zillow had ready access to a property's climate risk scores from First Street....",
+        "image": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192375010.jpg?w=1024"
+      },
+      {
+        "title": "Shopify resolves outage disrupting merchants on Cyber Monday",
+        "link": "https://techcrunch.com/2025/12/01/shopify-resolves-outage-disrupting-merchants-on-cyber-monday/",
+        "published": "Mon, 01 Dec 2025 21:31:02 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "Shopify was down for many merchants this morning, preventing them from processing transactions. It appears to be fixed now....",
+        "image": "https://techcrunch.com/wp-content/uploads/2020/09/GettyImages-1169040174.jpg?w=1024"
+      },
+      {
+        "title": "Nvidia announces new open AI models and tools for autonomous driving research",
+        "link": "https://techcrunch.com/2025/12/01/nvidia-announces-new-open-ai-models-and-tools-for-autonomous-driving-research/",
+        "published": "Mon, 01 Dec 2025 21:00:22 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "Nvidia continues its push into physical AI with the release of a new reasoning world model and other tools for physical AI. ...",
+        "image": "https://techcrunch.com/wp-content/uploads/2025/05/GettyImages-2216028442.jpg?w=1024"
+      },
+      {
+        "title": "AWS re:Invent 2025: How to watch and follow along live",
+        "link": "https://techcrunch.com/2025/12/01/aws-reinvent-2025-how-to-watch-and-follow-along-live/",
+        "published": "Mon, 01 Dec 2025 20:50:00 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "Amazon Web Services’ big annual event, re:Invent 2025, is getting into full swing in Las Vegas this week, and you can follow the keynotes live right here....",
+        "image": "https://techcrunch.com/wp-content/uploads/2024/12/IMG_3817.jpg?w=1024"
+      },
+      {
+        "title": "MKBHD’s wallpaper app Panels is shutting down",
+        "link": "https://techcrunch.com/2025/12/01/mkbhds-wallpaper-app-panels-is-shutting-down/",
+        "published": "Mon, 01 Dec 2025 20:13:15 +0000",
+        "source": "TechCrunch",
+        "category": "tech",
+        "description": "From the time Brownlee launched Panels in September 2024, the app struggled to find an audience of its own. \"We knew it was niche … and ultimately, we weren't able to turn it into the vision I had,\" M...",
+        "image": "https://techcrunch.com/wp-content/uploads/2024/09/mkbhd-panels.jpg?w=1024"
+      },
+      {
+        "title": "Join the Xano AI-Powered Backend Challenge: $3,000 in Prizes!",
+        "link": "https://dev.to/devteam/join-the-xano-ai-powered-backend-challenge-3000-in-prizes-3c11",
+        "published": "2025-11-26T17:53:31Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "We're excited to announce our newest challenge with Xano!   Running through December 14, the Xano...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fsk9cxbzghtilncify90z.png",
+        "tags": [
+          "xanochallenge",
+          "backend",
+          "ai",
+          "api"
+        ],
+        "reactions": 85
+      },
+      {
+        "title": "Nobody Writes Clean Code. We All Just Pretend",
+        "link": "https://dev.to/sylwia-lask/nobody-writes-clean-code-we-all-just-pretend-11d1",
+        "published": "2025-12-01T12:59:30Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "I’ve been writing software for more than a decade now, and one of the most important lessons I ever...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0tyl8xbwr2nr96zw76gm.png",
+        "tags": [
+          "webdev",
+          "programming",
+          "productivity",
+          "discuss"
+        ],
+        "reactions": 62
+      },
+      {
+        "title": "Developers vs AI: Are We Becoming AI Managers Instead of Coders?",
+        "link": "https://dev.to/marxon/developers-vs-ai-are-we-becoming-ai-managers-instead-of-coders-5ef3",
+        "published": "2025-11-30T21:09:43Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "AI is no longer a shiny add-on in our workflow, it’s the silent co-worker sitting next to us every...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2dy5xhz0gtcjejln7033.png",
+        "tags": [
+          "webdev",
+          "ai",
+          "programming",
+          "discuss"
+        ],
+        "reactions": 28
+      },
+      {
+        "title": "How I Taught GitHub Copilot Code Review to Think Like a Maintainer",
+        "link": "https://dev.to/techgirl1908/how-i-taught-github-copilot-code-review-to-think-like-a-maintainer-3l2c",
+        "published": "2025-11-25T16:24:02Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Open source maintainers are getting more contributions than ever, thanks to AI-assisted coding. That's great for community growth but it also means a flood of PRs to review. Here's how I taught GitHub",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fi0.wp.com%2Fangiejones.tech%2Fwp-content%2Fuploads%2F2025%2F11%2Fcopilot-code-reviews.png",
+        "tags": [
+          "github",
+          "githubcopilot",
+          "ai"
+        ],
+        "reactions": 54
+      },
+      {
+        "title": "Don't get scammed on an interview.",
+        "link": "https://dev.to/ackvf/dont-get-scammed-on-an-interview-4f92",
+        "published": "2025-11-26T00:19:00Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "A practical, experience-based guide on how to identify interview scams targeting developers and how to safely inspect unknown code using GitHub Codespaces.",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdbiyo8vlqso3d4dduqmn.jpg",
+        "tags": [
+          "software",
+          "interview",
+          "scam",
+          "guide"
+        ],
+        "reactions": 35
+      },
+      {
+        "title": "How I Automated My GitHub Profile (And You Can Too)",
+        "link": "https://dev.to/nickytonline/how-i-automated-my-github-profile-and-you-can-too-399e",
+        "published": "2025-11-30T04:48:34Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Keeping a GitHub profile updated is tedious. New blog post? Update the profile. New newsletter issue?...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn2j00xnisaior2jfr684.jpg",
+        "tags": [
+          "github",
+          "career",
+          "contentwriting",
+          "devrel"
+        ],
+        "reactions": 42
+      },
+      {
+        "title": "System Prompt: DO NOT UNDER ANY CIRCUMSTANCES Read This Article",
+        "link": "https://dev.to/ryo_suwito/system-prompt-do-not-under-any-circumstances-read-this-article-oc4",
+        "published": "2025-12-01T07:40:29Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "(The AI will absolutely read it anyway)   Or: How I learned to stop worrying and embrace...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Frnv2346iwbbm8qlvpnot.png",
+        "tags": [
+          "webdev",
+          "ai",
+          "programming",
+          "architecture"
+        ],
+        "reactions": 16
+      },
+      {
+        "title": "The Agent Factory podcast: 5 Episodes to Kickstart Your Journey to Production AI",
+        "link": "https://dev.to/googleai/the-agent-factory-podcast-5-episodes-to-kickstart-your-journey-to-production-ai-35ml",
+        "published": "2025-11-25T21:22:16Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "We are so proud to announce that a project we're incredibly passionate about has grown into a...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0ze681khrjvgs8icwvy2.png",
+        "tags": [
+          "agents",
+          "architecture",
+          "beginners",
+          "ai"
+        ],
+        "reactions": 49
+      },
+      {
+        "title": "10 JavaScript Console Methods You Didn't Know Existed (And How They'll Save You Hours of Debugging)",
+        "link": "https://dev.to/thebitforge/10-javascript-console-methods-you-didnt-know-existed-and-how-theyll-save-you-hours-of-debugging-4a7c",
+        "published": "2025-12-01T08:02:42Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Look, I'll be honest with you. For the first three years of my career as a JavaScript developer, I...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftnzghnzx75ey8forxt73.png",
+        "tags": [
+          "javascript",
+          "programming",
+          "webdev",
+          "discuss"
+        ],
+        "reactions": 62
+      },
+      {
+        "title": "Congrats to the Winners of the Agentic Postgres Challenge with Tiger Data!",
+        "link": "https://dev.to/devteam/congrats-to-the-winners-of-the-agentic-postgres-challenge-with-tiger-data-51m6",
+        "published": "2025-12-01T23:34:52Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "The wait is over, thank you all for your patience! We are excited to (finally) announce the winners...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpn1qztii5mjpin6jzmyx.png",
+        "tags": [
+          "agenticpostgreschallenge",
+          "postgres",
+          "agents",
+          "devchallenge"
+        ],
+        "reactions": 30
+      },
+      {
+        "title": "OpenAI declares ‘code red’ as Google catches up in AI race",
+        "link": "https://www.theverge.com/news/836212/openai-code-red-chatgpt",
+        "published": "2025-12-02T06:40:07-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STK201_SAM_ALTMAN_CVIRGINIA_C.jpg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "Microsoft&#8217;s latest Windows 11 update improves and breaks dark mode",
+        "link": "https://www.theverge.com/news/836199/microsoft-windows-11-file-explorer-white-screen-flash-bug",
+        "published": "2025-12-02T06:34:44-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/STK109_WINDOWS_A.jpg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "These last-minute Cyber Monday deals will likely be gone tomorrow",
+        "link": "https://www.theverge.com/gadgets/834422/cyber-monday-2025-best-deals-tech-gadgets-gift-ideas",
+        "published": "2025-12-02T01:18:11-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/11/258010_Black_friday_cyber_monday_CVirginia_BF7.jpg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "The best Apple deals you can still shop in Cyber Monday’s final hours",
+        "link": "https://www.theverge.com/gadgets/827826/best-black-friday-apple-deals-sale-2025",
+        "published": "2025-12-01T23:20:52-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/258013_Apple_M5_MacBook_Pro_14_laptop_ADiBenedetto_0006.jpg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "These Verge-approved gifts are still available for up to 60 percent off for Cyber Monday",
+        "link": "https://www.theverge.com/gadgets/833050/cyber-monday-2025-gift-ideas-deal-sale",
+        "published": "2025-12-01T23:04:59-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/04/Aura_Aspen6_JTuohy.jpeg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "Here are 50+ Cyber Monday deals you can still get for $100 or less",
+        "link": "https://www.theverge.com/gadgets/833655/cyber-monday-best-cheap-tech-deals-under-100-2025",
+        "published": "2025-12-01T22:35:11-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/07/2024-Kindle-Lifestyle-Image-2.jpg?quality=90&strip=all&crop=0,0,100,100"
+      },
+      {
+        "title": "We found 45 of the best last-minute Cyber Monday deals under $30",
+        "link": "https://www.theverge.com/gadgets/835702/cyber-monday-best-cheap-tech-deals-under-30-2025",
+        "published": "2025-12-01T22:30:00-05:00",
+        "source": "The Verge",
+        "category": "tech",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/Nomad-Tracking-Card.png?quality=90&strip=all&crop=0,0,100,100"
+      }
+    ],
+    "education": [
+      {
+        "title": "Udemy vs Coursera: Which One Should You Choose For Upskilling?",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1PUnFwc0dBZUJmd3FlLVdFRTZVM1NJVWxETFRoVDQtUUt4TlJLVE5RVE1sdEo5U29iR3o5ZFl0bjVCb1JXWXoxYjI2NllKVWdWWFpsZ1BwVHQzUUpOaHhpWHE0eGgzajI0Uld6emxBd1VxUzFw?oc=5",
+        "published": "Tue, 25 Mar 2025 07:00:00 GMT",
+        "source": "Shiksha.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "6 Best Online Social Media Marketing Courses in 2025",
+        "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5MX3oxVktMcUFpOFZvVldoanpueFBOTzlWeXAwUGVpZ0pXSl96d1dJbWphejFEV2hHR0RRNGx5b3M5c3QyQzFBN2NRVGJDa2VfcnhHVXdTQ0FiVDlhMHBMMDFmbEtlajc0Q05Xb0hRaEpiUjN4R0pIOUo5MA?oc=5",
+        "published": "Mon, 09 Jun 2025 07:00:00 GMT",
+        "source": "Website Planet",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "5 Best Free Online Accounting Courses in 2025",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeHZpcVYxTnR4VnM3NE5YaDFQQ1NOUTJHM0dmcU9DV25HVEVHWl9zUXFCWWI0UEFyYThTdnlmMHhLRFJNeTNzeWNub2ZLRlpPVzNwUUJqN3R1ZE1PWWhKLVhSbS1hd09VNWhMbDBoN2liZ3lIblRleG01elltclVoVVpQWkpUZHJqMVphWWxub1gxTEdHUHc?oc=5",
+        "published": "Tue, 13 May 2025 07:00:00 GMT",
+        "source": "TechRepublic",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Top 12 online cybersecurity courses for 2025",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTHZibVJYWWhXR0h0X1J1TllEdzZyalhWa0tkNHp2N3RHTGs3MFBhbnVUOUgyVXZrR3B3eGFORjQtSy1oN2R5YmQ3bE5yeVo3bzVBcWhsaDVLdW9aWkY3UGdoRG51QUJhZi16aUZ4TmhMLTAtNUlpQkJ0bjdLUVM5ckJHaTB5eEFi?oc=5",
+        "published": "Tue, 14 Jan 2025 08:00:00 GMT",
+        "source": "TechTarget",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Top Online Learning Platforms in 2025",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNHFIQVUteHM2Q0VIaTZGZ3l5X1RGa29DN2RYLVVsZnZQejJYUWhwVEdoRzc3bk5NMWVaMy1CNlJuNmhMc3VUaHBIMVplVm1NZWdYUTlJcGNTZVJlQTU1Y1VjTnVzZGc0MjhqTzU4eGxIRHgzdXVrdmhyMFEzSy1oRm9oS3FCS3pZTFZsLVBNU0RZMWwxendaMzhGWW9OYnlRWnEwMUJSQnBQZw?oc=5",
+        "published": "Fri, 11 Apr 2025 07:00:00 GMT",
+        "source": "Shiksha.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "5 Best Transcription Courses: Free and Certified",
+        "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSE5KbUQtN2VsYVkydTZxNHBud2k4WVRyTktVUTlKT0sxeFU3UWt3NnNqWTZnOUpxQVhPQnBneWFtc0FqQUZqSlRxbDlLS2VlU3hiSzhTc1o4LWdBV19UQU9LNDBSWnpjVWwyMldwUFRhRUp4c3Fla2owVmF3X2lPLVZnMA?oc=5",
+        "published": "Wed, 12 Feb 2025 06:48:36 GMT",
+        "source": "vocal.media",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "NSDC and Redington Foundation Launch Skill India Centre in Baghpat to Boost Rural Tech Skilling",
+        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNYzBPOHVwY3JWOWtMVG9rUmNHVXFiN3VwNldWYTZWVFZZUFZmdGtvTk9uNW5GcW9KQ3paMFlLdUphZ1hPdzlFMnlWWTNtZzFBMWh0cnZCSWwtQXNyc3NwMlZHcVZIRkJyYWthZExMQWp1eXd6OWRHVzYwRjJKb3I1RDRBZ3ViaFVyNWs1RmJOQkNUQkpETDJIb3NkXzlORDZhb3laeHp3OURWRXp6c1R6OG1mWTZQV2NRVldCc2lkX3VWM25Kbmc?oc=5",
+        "published": "Wed, 26 Nov 2025 11:38:41 GMT",
+        "source": "TheCSRUniverse",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Union Minister Shri Jayant Chaudhary launches NSDC-PDEU Centre offering 40 skill courses at Gandhinagar in Gujarat",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53djN3dHlHUkgtUFd3Q0g2SmZHRmlFUjYwLWtnUkI5bzV4UzlGUlA2TE1pa184SEdXckJ5bVh3XzRWZ04ySy1POElfaG5aOVFWWF9CSnNHRE9NRy0yUlJYVFNxazQ5V1Z3?oc=5",
+        "published": "Mon, 21 Apr 2025 07:00:00 GMT",
+        "source": "pib.gov.in",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Corruption cloud: Skill Ministry blacklists 178 training partners",
+        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT042azlDaExwOXFCZHQwSlItOTRuUzJQR3d2SGhiUVRHUTZucGhLN04zeGNFb0hKUDFrbV9uQkJweF9xWXpIczh3bDVJQmY0M3lTakNkZEFKd1hFOWxoN0FreGtmQzZhekNYSmZhZGkyUnBtdEE4YW5vR2p2Mi1aWktlZHVuRjhZdERHX21DTmlaWmJIdVZlSHdVWTJDNnduM0xxWEJnLUI0ejJxWVZ3dXhDa1h4MUtuSmhwTGVWeXFKU3lE0gHLAUFVX3lxTE81X1dUZzFHV0FXdG8yR3g3Z0QtVGphbUp2b2lsMlIyTjdKYkYwMUJDQXBMWHNnYkZRMHpBdnYxaEc0TEFMNUVtc1ZRb3pNYmdzTzBUYmlhYVM0djB1SzI5ZHh0MGpMWkZmaU5WMGwxdDNOc1pwZmxiLXJhWVJtbDZ3N1hjR0tzbkZnMkRZRXdEVzZoX2owYndMcU5ZU0d5Q1FXQ3UtNlNRcW5SN0Q0NFpQdkNWOWtrSmZUeW1JQmFjMUtVNVNWTmFIbVZV?oc=5",
+        "published": "Thu, 06 Nov 2025 08:00:00 GMT",
+        "source": "The Indian Express",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "National Skill Certification and Monetary Reward Scheme (STAR)",
+        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUndtclVHc1RTTHV0Z1BIM1IyMlRIRGlYWU95bnd0WEhpdndldkxQdUlNamd6a0dpZi1RYUxldm9BXzFlOENnVTFJb2gwakdpa1gwLVRIY2ZfYzYzMzgwTlVEQW9Cang2TGNKMUhCNkY2WXdnVTI1TFRaODFOYlU1a1BwMjAtZkJlWWFnZw?oc=5",
+        "published": "Tue, 07 Oct 2025 07:00:00 GMT",
+        "source": "GKToday",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Why the Skill India Initiative Has Lost Its Way",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRUZEUzdBMzc2RllWNWh2M3J2R2xHQXUtMDRXX3RKR3pWY19FeFVZX3BnRkZsTnlTeDZaa1l1QVlRTEUtNDJBNHJ0TGFJSERFU0lvSm5mT2dTNHhvRGptVWdoY3JwRHVqZ3ZBSnFuQjZhb1VVeVVWaXpLcEJwbmoyY3EweElsSFJGVkVobkhlZGjSAZYBQVVfeXFMUFUyT2JxblpDakt3QjBFeS1vZ3BfZlBPS1VjNjhtalAzSGtjS0FRVWNrQ3NWQVpoeS1zcks3dEh4NHhKdkhWMVNJcXVMRU1lS0g5U0hpRUVPZTQ0MnBuU2JJRzVvVFJHOERHRmZ3QTdsV083ZWhnQ1Y0eVhiZXZCbEx1TFFJb2l3MXg2OE5DSXFmbmg5WExB?oc=5",
+        "published": "Thu, 19 Jun 2025 07:00:00 GMT",
+        "source": "TheWire.in",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Placement offers wave dips in final countdown at IITs",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSXJza2tkTHplZFdmbEJEYzlUNXJnNDVjYS1RWUFiQjlVYTRyWE1RajlNdVpfRjZ4UjR4SEJ6Y1J3NmJDalBXelFkcUxnUFFUbVZSY25ScFFxYW1ZZzNjdV9mZEJQbU1WZ09FaUdCbnFaaW9OUTVSaU4za0U0eGdKZVNDQ0RLZGhnM1ZKaFRqWjhIM1c2V1k1djg3Rk50OGh4em9vSklaU29aZHg2TkVFLTRtUmZxakxhazRFUNIBwgFBVV95cUxOWVBpMzFBUWJzY2V0bWZYUGtLSTB0RVVSNHdTajZxWWl0Y09NWlIydnlTODlVb0drRzlfNC1RcXlJdm5EcHFQTmxhNjRJTEJoR0E4TGNiOUNQbTFpYUlhcExPcGdOM09nam5jMm5ZSWJpWk16X1c3bzAtNDZTTUx2ZlRGRE80d0FxYzM5R21fNHdsVWI4NWZrSVdZV190aFFPSlNfRDlQUUZ3REQ2RElwSmk2bDJxVzQzV3YweWJoRHlKQQ?oc=5",
+        "published": "Sun, 13 Apr 2025 07:00:00 GMT",
+        "source": "The Economic Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Off-campus placements see uptick as companies opt for quality over quantity",
+        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNERLZFFTY1BkeGFCMnVCSzdKMVJkYy1GdkZKTUVIWjdvTzdWaEd5dDZ0NXB2bXVDaVhNYktfbFpJMzdRY1ZhVVZrczQ3RVFCNTl1dVQyUk9La3Q3ZGJHTlJkdjhDZmdsRXNQWXdHQWVyYUZyaExSYlRyQUdUMVhadVlyTHczYU5kRTJGMDc2OGk5ZTg2YmdlR2JwMDFlU0pwMzBkV3JHVGFFTXJTUWlBaHcwMWxodXRwczA1SkFFQTFzVkFSWTlTNEtuVUdfbHRJLTlxczltRm1kZTk3WFZ4aEJLQnppcknSAewBQVVfeXFMUGN3MDBYb3puSlg3MllUNUhZZ2V4TWU4Z0RaUnBZRkhrWVZudE1NQXA5TzBsdWJibTFxNHNDYnBFV0Fqa1Vvd1ZSaXRwM3pFdVJ2WUViZWtUTjdmdXB4ekxVVzNQcXd5WXFZYTNQYjdMMEVKUF9hWGgxUnFkbFpKOEFnaGZHUFBNOGRGdTllZmo3cThZSkxMc2RsdmtSN240TTh5ZnJYTE44X3NUbFVFUnJLcDByeFhicW5ZM091NU92REZidE9EWk9sX21pZEM3ZnJvNEtlcXpCWXlDNGZmMDlqUmdtVXJxRm9LaVk?oc=5",
+        "published": "Fri, 14 Jun 2024 07:00:00 GMT",
+        "source": "Times of India",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Indian IT sector turns to campus placements after a year-long pause",
+        "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNDZJN2R3TktGX3U5SXV2b0ZHdW9GamVzM2tGZmFZc2FhVlJtNzdrQ0pCaXNGVGVrZTNiLUxZXzhaTGllVjUwWDZLU0JrTldFR3VzcnJIZmxILUdPV0dfc05KZ3hMSFI1LWNEdVg2cXN4MzlzNWJRZDB5N2hjUDVDQ0pvZDVyUXFKTzdHVkRodE1WRnlOVlFLeTVwbWxManY5ZzVEZlJybUJTVTRLTG14cXJTemhzWXU5aDJOTVdrbVJSdWd5SGtINFo2VVhFTkto0gHWAUFVX3lxTE5wcmt1SW1yNU4zd1RDMGFQZnBNWkpydFU1eVFvY01ZbjBnVUlGY0IwME02MHZBYXlTNUFPc2ZkMVlwTDRIeDFyVkJxc0lrb0FpTXVaLXB6bjMwRE02YUgwQjFzQVY5SnNJd0hEVnFPV3k4cXBwQTdLbm53U2RqZ0ZmbDVBUzdDMlhCWGxodGl2STctSDZHQUp0TkE1cVZycjJOMlRiUGc4SzdWLWlLajZKaEQwSHd3bWh4Mk9xU3U1UnUza0xabmJtU09kNTQ5TWFqNlNFVUE?oc=5",
+        "published": "Sat, 21 Sep 2024 07:00:00 GMT",
+        "source": "Business Standard",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Tata Power Careers - Job Vacancies for Freshers & Laterals",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YY3ZmSzFhSHhRcm9qOXlub2I1b09BbWJ3WWQ5OEQxM0NhSXF4N1gzc2RJdzZ3OU1say12ZzktTUlFMzBzNV8zc0dvNmd0al9NUUE?oc=5",
+        "published": "Fri, 30 Aug 2024 06:59:17 GMT",
+        "source": "Tata Power",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Students and graduates",
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbHBXclhNLXVpcHRqOTE2aFlXVTFIQ3JxTE1RT0NXNm9tSTBFamdoTWV5ZFNWSUlXSlNmeExzQ0tjdlkybHUxQzM4OHRPX1piV05NYmpWNWV1bDdHdFNGelpmLVI2QktCNVJzQV9IcTVNMC1lNTFXMzlnUndLdl9hUFppeTFsYjc4MUE?oc=5",
+        "published": "Tue, 18 Jun 2024 00:27:43 GMT",
+        "source": "JPMorganChase",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "GKS Scholarship for Indian Students to Study in South Korea",
+        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNa0JSWnM1WVQ1bjRPamd1aDJXbWwyWHBGN3otN1NKTUZ5Mi1XYUJId2JPSEotcEQ5aFdRRl9wWnNyLTVqVUdIclRhcGRmZm5SSlE0c3JFbDlpdHotcVdTcG9LM0xEMkF5bkNzcmRWVWZ3VlZDZVgtXzlxYnJTVUNEQ3Mzek1WWVE2UG1CLXJRWWpqVE9aaUw4eFB1Z1h3Z0NtSFFERDg0RG1yRFdwUVBpNA?oc=5",
+        "published": "Fri, 28 Nov 2025 14:26:15 GMT",
+        "source": "Shiksha.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Centre caps fees, updates eligibility for SC scholarships",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQ3hWc0lNQVBhQ0lrMGNVbXhERGdmMThKU3lTYnI3ZVZNX0FRUXlWVVZVeTFXSExRRDdkOUYwNVhocTFFVkt5V3g3Wl9ESWcwTE1td0NJTHh0amtNODJNN3p4eHBvX1ZITVNGaGJ2T2w0V1Zlb3llQk5Ub1QyLVo1WklPY280ZjBxODFzUzFzamhHbC1BX283Sm5QWHlDOWt6Vllxckl5LW9mZE9IMXI5NHplSm94OVdCQXBOX1o2TEZkLUHSAcgBQVVfeXFMT1VmTzU1bzE2Q2FVOE5LYVdESXcyV2JIWjJLbUo5NEcwV3p4ak5QQ0ROLWpJVnNrWVJqY2lSWjhWT3hzbmJYaFk4eGNhZXlKRzFfa283ZFRyajA1OXY3VkY1MG4zOW5BZjdkc3J4ak41RGZrYlJ3Y1BSMVlNczNRTUFkR3M5UE9CVmI4THAtblBEWEtFeENsU1lPOW5NZzB6WHlDV2oyY3dpaFhTWDRZbTNKQnJSVTBqRFVNQTBzOEU2al9Td1ptLUU?oc=5",
+        "published": "Wed, 26 Nov 2025 12:25:07 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Rajasthan Scholarship 2025-26 - Registration, Eligibility, Fees, Dates",
+        "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44VWt0S1B4Q3ZFUWloRXdNZEhacVNGajRmZUZBaTlaRTVjU1A0SmJIS3hoZi1penJzVTZXQ3doaVNkQnFrVjJfR3ZObjlpbFVnZmc5bjFuVENNWkJqcTMwb1ZNMGxVN0pxRzhNZA?oc=5",
+        "published": "Mon, 24 Nov 2025 08:00:00 GMT",
+        "source": "Careers360",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "PM YASASVI Scholarship 2025, Eligibility, Apply Online, Amount",
+        "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBqc2lkMTV2bk9DbmFxWFY1enpld3dLYmRfUkJEOWhMSlltdzJ5QXR3ekpvQ1djOWUtaHdIdmJQMjhfQkxjRTc2M1F6dGd5NUpuZE5xN2pFYkF5THRQWFF2WW5RNm9EZDNJS1pzOXpDVGhtaTBzX2x0TmtqSQ?oc=5",
+        "published": "Fri, 08 Aug 2025 07:00:00 GMT",
+        "source": "Jagran Josh",
+        "category": "general",
+        "image": null
+      }
+    ],
+    "career": [
+      {
+        "title": "Which City Is Better for Tech Jobs in 2025: Hyderabad or Bangalore?",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSXJ0dWg3ei1VcHFTNXgzSmVVSWhHTGFVT3g0YVk1a0JmVFBQZ3Z3SUhDZ2JMbzM4c1hDQzBKU0E5X3A4NWR5azU0aVdBaUptcU1sblBkUjFWQWt5YXBIbk9ndEZaQnJ5ZGN5NlFicVc3b3A3aEpzMG9za0tZN3IzYm85b21oaTZJSjBXUlpuTVpDZmJFSEV6NzJXSU00cWJpRzk0Wm9BTjlmQQ?oc=5",
+        "published": "Wed, 26 Nov 2025 11:19:33 GMT",
+        "source": "Jagran Josh",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "The tech job shift: How Hyderabad is catching up to Bengaluru",
+        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOOVNHSnZnWC02a1pacENRNS1ZZWxoVGE4RjEwaVRGcm5HT0VENHZhM1JGZ1dZTmN4ZVFDbzE0YXUyN19aY3BWSDVZMnJaZ3lxc0lVdEs2UG1PZmhZSnBFRW9CRV9Rd0JTSzNSeVJmMlRYeHBaaFNrbTJ5ZElsckhBU1MyLVFEYWxwak9KVDhwbWJBaG90dDM1WjJfNUNIQlN0RGVZUHhwVmNEYUhHY0hDUlFyRnFCV2xsejdj?oc=5",
+        "published": "Mon, 15 Sep 2025 07:00:00 GMT",
+        "source": "livemint.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Hyderabad emerges as competitor to Bengaluru in tech job market",
+        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQUZMNFAzYWtBMlBpWG5EQnNMdUtvY3ZIdDAtMFJWZV9VQVFXMTNaZkxGSGZfS1Y0Q3VoZHBYR1hHT2t1c1I3ckVWMUU5di1nTm9LeDNDUlpRbmRPSHpyZHVwbmFrMWZxQVdBS29vRHp4djdmbHdkMFUwR3R2Qnh2YVM5SldYZzBnQVBkMXZDY2FGNk53NDczU1pfdnpobnEzZWJpcw?oc=5",
+        "published": "Mon, 15 Sep 2025 07:00:00 GMT",
+        "source": "Communications Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "GCC hiring outlook: 40,000 jobs, 120 new mid-sized centres by 2026; Bengaluru, Hyderabad among top hubs",
+        "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPZzIxUlRaTExmOWw0MXRZWnBhd2JseHpYUjJUX0VvT0NYN3MzNUNqQ05YWGlEY2JFVnl6Q0ViZXROMkxnRTh6ajZSYjlhZTM4VFdOU0E2cGl3dXMxOGZGYmI0c0VaMkdqbWVmdlZYSXFFUEpMeUhGcVhod3htSGt5ZkdGMW5PWnFHRHNwWjMwd19CXzBFaG1CbC1ZSmF2TnViZTNrZk9lRE5WMGRkR2JSbHlwYndLSVQyc3oxTkNMWUpjZ1o4NlgwNHRPNlpNbTJkQWRIOFJCSk93THNoUnFzTGw3anM2VW5hTElCdzhPTUVGd0FlVGYtNC1pVFVnWDU1Z0NmN0JYMDlLemM0XzhTclFn0gGXAkFVX3lxTE04WGM3cmFKanhBTVJ0b24tU0dYYXFZWklHR3FTWElTczNSRXViZzZNbjg0Y0cwZWtERnFBdmhUcklUeFJYRU1TTVdjZFpRM2RtcGZ5aTBWRkFiMXV1YzJnTmNINWJDanBoVUwyV3Jud2p0OHhxS3g1U3dyR0xhQU9PZGwyeXgxcnVueFJLR05GNWhkXzlEblQyalhzQ0ZtdFBJU0JXY1dkSUd2VGJhTGxQN2lHeWRXTG15OGVxbDJXWngzbjczSFZhaGd6U3NIa0M3bzFyaDI5YzMzSTY2WWpjSHIyNGQ4ZS1vMktzSjR6eVlxN2FCQlBKYmdXdW5nbDE1VXpZVERoakhocDBKRW1hMW01QlRDbw?oc=5",
+        "published": "Mon, 30 Jun 2025 07:00:00 GMT",
+        "source": "Times of India",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Opinion: Opinion | The Great Indian IT Crash: Why You, An Engineer, Still Can't Find A Job",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZnh4ZzZTUkp0akdROER4SmM2RFA2OVd4eDkwLW9BeXAwRnhPY1ZfUF9ud2lYalY4QkhLWXB1RTd0T0xDdmlScmZxRkR0VkdsVnlYaXJ0eE9Lb0lFVU91Uk1zWDFiRkpQbTdrdF83dFBLczVkZ3dwdl9yM3JnamZkQkY0bE5DQUppd2dGWjhwOTh1TGdIN211Q2dVWlZVeFZlU2pzTkZXeVA0ekhB?oc=5",
+        "published": "Mon, 14 Jul 2025 07:00:00 GMT",
+        "source": "NDTV",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "H-1B visa crackdown triggers US banks hiring boom in India",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMHlfZHNLSWZvRDZ5WnQ1NF90SWhQN2d2TEluNlIxdndSRUxzNmw0N0NzZF9Sb3Jwd3ZmX2lqdDV4UlBoZXl5MjJzenVlR0o4bmZnZGotWWtlVWlnV213Y213dm9sQm5lYWEySWRZOWhGZ3d5eFA5OXJhN01qcnIyZy14MW05N29CY2JwOXY0MHFuMlByemVta0VYZ09IZnJCVkVyUGtKVDBLTE9GVGlyRjVfWlZDN2s1S0xOaWw3ZG1qY2hWZDVRZGY0WFYyZlZDRTVTODBJNHJ6QdIB4AFBVV95cUxNWEgtc2xMeDc2alRYM01OampQSDhUNEg4MkVVLURmRTAyY0ZMUy1iVmt4dVN4aldBOWNDWjhCUzNDUjdpVmN4Yl9mdDJZY0phMGFNZGh6MFpaYUdwOWUzbHptSGExUW5MWS1KN1g2SV9Eb1FXQzNUaTd3ckN0ZVdZSU1ucEhfbWM4MDFzZFNzaGVreC14Rmhfbm5kYW5MbHVWZVZYZ1VRdkdDWnlDZVBURU8xeXJzLWtPNndwaUhuWkVHXzhXNkZrWHlOZmk3WUoyUDIyNU9hYUtoenNOanJUYw?oc=5",
+        "published": "Wed, 12 Nov 2025 08:00:00 GMT",
+        "source": "financialexpress.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Best Remote Finance Jobs: Top 4 You Can Do from Home",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9oemZJd0w5MTVpTXpLSlFkbXlYbW9aTmZja0dkUXQ2ZExaVmo3VjV0azVSOEZSWUFzYlo5ZWtLSVZwdExQamZQUndHMG9NOGNVc0tzV2F4UmpCSFJCcnVnaEl5M1FBSldwUkZ4cGQ4Z3JuQW42WGZuMW42TWxPYU0?oc=5",
+        "published": "Sat, 29 Nov 2025 02:47:17 GMT",
+        "source": "Investopedia",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "How To Work From Home: Tips & Remote Jobs for 2026",
+        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5FRC1kbE9zSjhXTkpRRXhBUXc1emJOMXp1Y3E1dm14N3F2ai1nSk5xTEN6ZEp5blM3bDhsMzFMNlNYTHVIWlhBWUFXNmFxcG4xN1R5Y1hfM1NJcGxJSUVnRDI5Yw?oc=5",
+        "published": "Sat, 23 Aug 2025 07:00:00 GMT",
+        "source": "Shopify",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Remote work with salaries up to R$7: companies offer opportunities to work from home (home office) with flexible hours.",
+        "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZWRvYzVDRmswQ05pUm9LNEJuYjhzajg2dXE0dktBNGFiRkNXTW5HcG8tZmpMSGxvQk1Fa3YwN1ptVVJxV2tDX0c1VF9lWkl0enAyQkNDcVdYVE0zU0ViZ01yN0FQNTV0a0FQVjlnNG1OWk5rUkd6X2JPQ2Z2ZTBNWktleEdMTWRzNDNQdGtIMWJ3d0FtckJvLVVvLUg1ckFQZmxRVlpPSVZoZVJsU1pNMXYwdWhDcUoza3JJTUpKaFpINHhRTVM3V0wzWHdNUQ?oc=5",
+        "published": "Sun, 30 Nov 2025 21:01:00 GMT",
+        "source": "CPG Click Petróleo e Gás",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Young Workers Learn to Embrace the Office",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9rRUdpVGUwMGZSRXh3cFlVaF9ORzQ0blpicGJuMm9PSWotZzEyYV9idUVUNWduTVVnZ1FkLS12cWhrYjRrQVBwSnN2YTk0VXpWMlVrRnAxd2p2TWx3RDFkeHpHaXpndGdkZHdOR3oxTDUxeDMzbTJfRg?oc=5",
+        "published": "Mon, 01 Dec 2025 10:00:34 GMT",
+        "source": "The New York Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "15 advantages and disadvantages of remote work",
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQaktXRjdMcW5lWWdKSDNPNGptR2F3Q0hFQVdIQUVKcVA4RGVKWWNVN3hSNkFKT2xWaGpEMjkzSDd5Zml3dU5vS2pzSXpIMFZTSGpzU0s1ekF1aVlrUjc5MTVYOVlJU3N0a1NuX29oQ3JBZGlhQ3BDMmcteG5zcGhHUDhSS1FkNjlIaG9uTFNZbm5FZw?oc=5",
+        "published": "Fri, 01 Aug 2025 07:00:00 GMT",
+        "source": "TechTarget",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Over 85% of employees plan to change jobs after salary hikes in 2025: Survey",
+        "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOYjlrNFI5d0F0RWtaalYxb2hSUVNMT3FWVnpsa2w3bjVXdWVNUjZMWVhjVS1nN3l0cTBXMWIxYzFCeXE0X1lTVlhNcnFlT1gydzRVSG9GY1l6VVNrT1dMNFhOZjVNWHpmYXRrZ0ZnOEhSMi1mbm90YTZEVVlTVl9QLVQ3anowa08tUFVmTF9abjNqNERpcFNvWVBFeDlkcVdudEFRcEgyY2hfNG9jZmphSG5YZWRoRHpZNjMwOE5KOGZsbFlTVThBc1piU19oaTZfMWt0R3NTOWJsSVHSAeABQVVfeXFMTlVqZ3VJVkY3YXBBUGJVcnFrQ0Z3QTA1d3dqNTBWS0pNNUpOTnBBRmJxZzBDcHpoSHhmTzllQk8tbld1WVd2OEdvc1VhOVZVeTYwek9WYmlwUFR5TEdHaTNDRkRONDRXTURjMnlQZ19wNHFCZEdXMmRTcDZWNks4SkhRN2pKYUFadDBTU2hoZmg1bXE0R1pZZEdSZ2I3WkxlNlRKOWZFOEN2ckJ4STJpaUJyVjdGelRkMVdrZU9PLTdvcWJnUEp2Z19zOHNNRGJ3Nm5xVlZldDVTb3ZkVjRCalQ?oc=5",
+        "published": "Mon, 21 Jul 2025 07:00:00 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "India appraisal trends 2025: Who got hikes and who got left out?",
+        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSkpyV3ZhNGdzczh3aDA5SFJnNks5eWdLTkRmNkVxM0JncG1UaUdWazV3dTRMTTMzYjZFTzFoQWkyaUZrUEJSY3FrWDFXdU5ualY4b0tHaXdjSWs1ZjF1UGVNV0Q4cmUyQ1lIQmtFd2N0b2tKdDNSanZEelZ6eUZnOFdOY1gxdUpSZGFPWlpCdWU1Sjl2RGdvWHZ2UlFmZw?oc=5",
+        "published": "Mon, 15 Sep 2025 07:00:00 GMT",
+        "source": "thefederal.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "40% of Advertising & Media professionals report no salary hike; Retail and Energy lead with higher increments",
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ3otN0wtY0lLcm1MMEJlenhDOUV6aHp1blBzbDBVSWRxTE1mRkRqZnByNThXSHBMMFZEQXJHdEo4YmtGcE5PNEh1dUEyazRYVzZYU1d3MjExNDd5UGFzUmdjckltUmc5S09zZWtNWGRqOENmOFRjd2JHTzBFVlpIV3Z0R0xCVWl5b0VNamNlVUFNTVkxZGVKOHREdWdnWHRiT3ljUFR2WktPRXo3Rnd4ZDF1MjVzUdIBuwFBVV95cUxOZzNxdUs1bDBUTmNXX09nMUVIM2duYnY2eUNVQzJvZHhNdXNzQ2YtTTNPRWhnZmNYUVVPc1p4TjNreXlaSjh5MGVmOTlhMG9jazdTWjU3OVFXWlNERVZHb0ZkcXhYRXFnVUwtaXlVck12Y21icVpvWUpnVGFjNkZjeVJ0TFFjaE43Sy1VRE9rM0ZIUFBEQ1J1aXlrakNSenEwZ0gzQW82Z0xiUmNhLWFkT1NWMV9wUlNxUGdZ?oc=5",
+        "published": "Mon, 21 Jul 2025 07:00:00 GMT",
+        "source": "Storyboard18",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Over 85% professionals plan to quit even after salary hikes",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTHBBN19IM3RGak5jbkhUYVdDMldmcnhnMHN6dlAzRmVZNUZocEVYblRRTXN0RU43allDM1FEWWRwaXlxbnZ1NWtqSkNxd1o5SmRja2JnTXpUeVE5d3pzYkFyVm51bF9lb3VkVmlXVU5MdE9qYnU1SFpRRi1iQmFUOVJnQklzZ3hRd09YZWUyb3JqZVBOa001RnE0V0xuaUZnOFcwX3lnSEFEd2IyOWsxem9R0gG4AUFVX3lxTE0teW1jVGF6TFI4WHllSUNxdi0xa1JmR1ZKcWEwVGtvcnpGTGN3WE5ULWk3amlYSGlXN0FjMjM4dTJVc1JXRXoxM09pRFN2TWxGTVZGNXpKUHNmdGFaekdnQmtJSWpWWmRhZ3B5N2dtd2VwNmhvaHRUMkpYRDYwamVyN1dRNVNUSV9yeUFMZWxNVWNieFR3RFNtNm1NUmQzSk5MRFA0M1FZT2I5R3VKd2ZUOEZtLVBGNF8?oc=5",
+        "published": "Mon, 21 Jul 2025 07:00:00 GMT",
+        "source": "financialexpress.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "How I Prepared for a Data Science Interview at a Large Tech Company",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNV3ZWdXJsbHE4dXVKTFZYUHdoM2dRRzBmWkJxUGFhXzFDTlRDRFBlS2p6cFIyemc5bVhsNklDM1JnTHd5SjJxTDdPa3BSWkVGaEtvZXI0LUNuc2l3YW92M1FWbnd3T3FUb3JISEg4ZlVyUGlSa3dQbDUzd1F5eE5NTkVZQ043ZDBYaER4MXdtZ3kxVFd6TkNOdQ?oc=5",
+        "published": "Wed, 05 Nov 2025 08:00:00 GMT",
+        "source": "KDnuggets",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Exit Interview: What to ask and How to Prepare in 2025",
+        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE51cnhKS2pFQnVoellNaVpwc010QVNhUEhDUUdzeVpjSW1ONnh4T09VRTFLMXFxa1dKY19YWmI3eDNEcVV5TEZQaE9hTUt2bFl4THVIT3hZN25vbjdfaWgwaWN6SQ?oc=5",
+        "published": "Tue, 28 Oct 2025 07:00:00 GMT",
+        "source": "Vantage Circle",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "50 SAP SD Interview Questions and Answers",
+        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBFQzEteHdUeWpsNDd0bndxcngwM3VTb0tzSlFqS0JlZUlLdkdFUFJHVEhSOGNvRzJGYTJVclBTUTZHdUlKZlh2MWJVNFZNRXF4bWV1VTVKQ3l2dl9BRllKMTVGeVhCaklfTUo0LVc4Y3dIRVViNU43MlVR?oc=5",
+        "published": "Thu, 18 Sep 2025 07:00:00 GMT",
+        "source": "Simplilearn.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Jobs platform Apna's interview prep tool records 760K AI interviews",
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPNG1WTDZ0c0gtV29oRU1BREdudFlFSmlDZEFnc0Z1M0w1QU1nd05ETF8tS3U2SGI1N0NNSmNWc1ZSYlR0WF9jT1lvSlVmYkduYmx2Q3AySVJFb3VPVVdjNlRCdHR3OFVuakVrMmp4Uk5URzFYSzBuX0xRSUFJckkyN0Y0Z0EyWlVUbEt1WmhwSW1MZ3dNOVUwN1puVm44VllES09tc0d3cERBelhWY2ZqLTRjOW1NbUxCT01EVVBqUGZXbm9fSjZkMHpQWUFrR095c1JTdTdR0gHbAUFVX3lxTFBJa1g4S0NPcVlfS1BLcTZYcmYtMDlmUldMZU1QcVROM0JWNThXaVBqd2F1NFBBY1dPVzRqdlNSVUs5Mjk5Sm5JZW9DcFl4aTc0Z3gtYi0wNVZVTmI4ejY5UjJhMDRoaVRFUE9BeFlpMWtGZ1BTeDdQWHVIazJzTHYwR2pTajU2eFJwWno4NEJXWXpsSm5GazhZaDVJMERYem1NWGNOYm5SZEhYMWZYZEhWXzBFT1VIYXdYdDFIaTh3RVVBYWI3WVg1bzRuRXFZeEtTZzFlaGNndThXcw?oc=5",
+        "published": "Wed, 11 Jun 2025 07:00:00 GMT",
+        "source": "Business Standard",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "IBM CEO Arvind Krishna: People are talking about either layoffs or hiring freeze, but I actually …",
+        "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOa1FZT25VQk1VUTJaaXQyb0xTSnFHN3B2X0pLbjlCUnJWbHA1S3RXMTY1MkV5RkVzZUNDVXJRRkFhQzAtN0VMZ1ZwdVctOUc3ZXFvU2pjRzlCckN6Tlh6aDNEQUY4UXBDQnA1X0xzZlVzeGxaaVdNYkJxOG5zREpRWEVBQWNRMjhNT2dBNUx2TVJ1MTVncE54NTJNWElBZ3RUWmt1LXhiZS1ka1FzNy12SVp2czc5dS1FR1dubmRvY052QlFEM1Y5ODZOT0pBUEx0WGhXQWc3UVpFb1llWlZlcWpmaDhEanJvZk5WdGtQWTd0Y1N1N2ZCNTc5RGpSbG9wRndPVGNOLWRzUdIBjwJBVV95cUxNdDZPVXBBQ1hQWHFSRUx5Qlc0QXZuUmdFbmRCQ0NtSlh1UmphVF9wQnQtRkJ1T2JIR0ZpRm16S0RlUWJnSkc3alAzU2VMMDFaRUFtSWtjaTBNQkJEdy1pS0QwMWtCak5mNzJhRERSRzNKY0lpcGdDR3lmLWJKbE1MREthWVp6dTNXdEl2QXU2UFI4Nld4UmVGWER2VjVmQ19taVRmSW5Kd3VEOHJ6aTJpU3NESmRJN3E5RFNucUU1S3YyaHBkSXkyNFVaX0lWdFJfY3NMY2ZJb2p5c0Qtb3FQbk5tQll3WVNDNDl1LXo2V3liTy1acmtZMDNMeGpGQTJPOTZWcFhpbXBiY2xCZ25V?oc=5",
+        "published": "Thu, 06 Nov 2025 08:00:00 GMT",
+        "source": "Times of India",
+        "category": "general",
+        "image": null
+      }
+    ],
+    "ai_ml": [
+      {
+        "title": "OpenAI rolls out ChatGPT update with GPT- 5.1 models: what's new for the users",
+        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNa21pajlLa0FaVHdFSm1QTlY5NUJnNTR5ZTJiWEZzZ21CYW8wRjVuVlFEaXhVc2lvb3JZeFFuSzlpOWJFUmREZnMxUFRaQS15U2VUU25STnBqNVRZUzVhV3h3NktrM0pJeU1jejhVNXJsV2piYmpKdDFBU1Q2bGs2cWdVaE1RbF9hY0xoN3NtdC10eG14bmVFTlhmd1c0ZGtzdjJkd2dvbnUxNXdZUHoxd25LWHlMNUoyb2lXaE8xVm9TMGtCZGJLYVhtUdIB0AFBVV95cUxOblo0ejU2TWN0bXNCUktaUndXZFNaYkpKc0lYY25FZm5JTlNoOXRlYTdTMGxTazRmT2ZpeWtEczM3NDdneGxWc05LWHJ6NXp4VTltNDlDOGxvMHB5MUdsQzhQQnA5RWxvWXc2U0FkTGloVFF0SVZRem9sNjFMVGhsV1RRQUM0eDN3aGE0Wkw1YjZHVXBmS2oydHlIRGM5S1NQY3dCUk5lOU91NU1sV1Fqb2Z5ZVdILXAxS29nMkpKMVdyUWlTRzFieWFzS25tTGs1?oc=5",
+        "published": "Fri, 14 Nov 2025 08:00:00 GMT",
+        "source": "livemint.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "GPT-5: What’s New in OpenAI’s Latest ChatGPT Model?",
+        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0zcTBuNjNoeWVkRlVJaXRTVWduYTFDbnN5aFU1QmFieWFfZ0V3SzRRMUhPak5WaldUeE16cFVXTlZwblJZdWM4eVdVX2E4eFRGVzAzNXRLVXZUOHBZbk1oaUFqbkltM1g2TXVZMFBLckc1QQ?oc=5",
+        "published": "Wed, 19 Nov 2025 08:00:00 GMT",
+        "source": "Built In",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "OpenAI's ChatGPT Go free for one year in India: How to access and features",
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNal9BZzJMeU5RWlFkdTlVYmE4YnFHT3YySlYwdm56S3pSaS1zb1REc2kzX3M1S1VKbjVYQXZjRndubnB3emxoLUV3eDZLeEwtYUpFbzFiNGJMOHlFSlc4dFVnQjZfVjZaTHlMM05OXzBkVFd0VFNRaW1vdll1cG1BbTR6VHp6NDBla0lyRlhLSFZzaW5VMGg2NENkNWM2WHpCOGFsa0tNOGZuejlZOXBjbzFRVWVpQlFURDB1dkNRMVdUVFFMRWVlRnhlUW5HTy1nSEJjS3Nn0gHbAUFVX3lxTE56c0xRX0gzbDJSRlh6c2F6Z1FQSEMtTFNaSFVMaHQ0YnNrVDE5czY4YTRBaXUwV2lsSVhadl9SSzJqU2FIcHRycVNzSG5kVU1jQ2E1Qkh2anNkZUVkYlhuS1NMMmNHU2pQX0xlamlXTmRZZHhlaFo3TFZma25TWVp0NENvUkNqeGhuSXlzcExfeWppYjhEUUxwNlo4V2ZTdFd5ZWRDWVg1WnNIX2stY1htOV94eEFFSGUwVklRclQ0aEpweTFnU09wRXY2Z2RGUjZ0RUt2dzJIcVFEUQ?oc=5",
+        "published": "Tue, 04 Nov 2025 08:00:00 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Introducing GPT-5",
+        "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9Vb2U0M2t2ZUJzTFVDSER3RWFERUZvd1FLMnplNFFoMmpMcnB2UElXWmZzbFpHMC0yeVdPaHRsaXJ6T3ByakJscTVpMDhjMFBuT0RJVmZR?oc=5",
+        "published": "Thu, 07 Aug 2025 07:00:00 GMT",
+        "source": "OpenAI",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "ChatGPT Go subscription now free for 12 months in India: Complete guide on features and how to get the de",
+        "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPOENxcEtzZFJPd0prbHN1TzhVaWIwZ284Rnk4OXlhTWU1di1OcF9TYmg0V095cWdSaDNnamJPcy1PNWFpU1JqYXBHY0stSEJwN1F4N0RoX0UtRllPMDJXUWVvQUlPQ3pUSEZfbHBEQ2JKUWdwRkpmTXRpdkZZNG9oeW1GcW9aeVNrbG04eUFYNS14TUc3LUV6ZXZxZVlaM081anJpZmJMMV9SWldKRkVZZGtGWGZGYUN1RUlJaTZCMlVDTFhtOEwzNGhFVmVuNjFvRlpYOTQxbFd2Zk81bE5TOThwRzljNk9NdWNmOFQwbUhENTFWY3F0N0xfSjFweC1ZUjhOWk1TakV1anllZUFYRUc5VUx1ZjlJ0gGeAkFVX3lxTFA1TWU3UlUwbl8ybWRscUNvamgtOHJkT1hyVTE5UHo5dGpMUnc0ZnFEMkM4NGQ0N2dtVkU4V3VsTE5LZTBERVc0TEVyUmVINUoxQ05sdXRCR1RUSWZ6ZXJLbEpjX0phN0RLSUl0NFlSdmoxemRQZUhSaHRmWHRjcWFMb1c2TUNtVWNEaDBPYXUweS1BT3NKVGhrOU5tTUdJY1hKald0ZDJ3X0I3WDRLWTJJVDhveWFWaWRQV1BTYXh4a2RsVElncDc3Vm15YUEybkVyZUV1aTB4QUpQWmZLM2FrRG9WYUd4dXY5SGxZMUxjN2dTeERQWVIzVk5fOWo5bzNCMXp4LW1YWnVQc3dEYzYyZWNzTFNVQ0dBblhhRGc?oc=5",
+        "published": "Fri, 07 Nov 2025 08:00:00 GMT",
+        "source": "Times of India",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "ChatGPT: Everything you need to know about the AI-powered chatbot",
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSkRPM3pVUVE4Ri1hYkxJZVE0OUJOSHRiVks1Z0RzMW1vN3M2S1I2dzR4eDNNYkJqbTNBMzlaNWZQZlpGaGRfa3NxV3FzVTdCTnB2S3UzaWJqMTdzSEIyUEYtWHhGdDlKZVY3RjFEYzZZakg1U29veE1pdjQzdms2WkJZSGxrTGtsaHc?oc=5",
+        "published": "Wed, 26 Nov 2025 19:33:39 GMT",
+        "source": "TechCrunch",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Google Faces Lawsuit in California for Alleged Secret Gemini AI Activation in Gmail, Chat & Meet Without User Consent",
+        "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNeGdmYS1mRWNYQUFySmgxX0hjc0Z5cjNMNzI4Sk41X3VfYmE0alhTV3lXQWVjRG5rTGpZSmxhbUdiQlNJc0ZodGxteXU1X08zSmswTEwycnVkeFNSR0hvUFpWbFNIYXlhUGsyQ3l2SnVqeWZBT09oajhReGtwQmxDUXFNblI3YUNYQUFUdUV3MS01Y1ozNXdKWlMtY2laNW5sRlRJM0Uwc2hlNGhLZkhXLWFIYjc4WVZhV0tZZEhqUnBMeWotSl9CSXN3UHJJXy1ZVDR2MC1KMWdWQ1k3?oc=5",
+        "published": "Wed, 12 Nov 2025 08:00:00 GMT",
+        "source": "The Logical Indian",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Explore Google Gemini: Your go-to guide for all Extensions",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTXVrczdMWExRUVZfcklmWUFkT012Tzc1T3h5Yl9iMThUSkkyeXdCWkZ2WDI0N2lIbzFpaWFCS2Z0Qm5iYjBNc1dWMUlESVVEbGJyQTMxWnFGRmR6a3dJMDdjNjBwV1RFdTd4dXNobVp1dmg2NlFQSEViMFM5Q29KVnBGTExldmQtWGpBNjRDMXFaaERULXo3aTQtbGlkV0dzcFlHY1VmZUljUHBDQ2QzWl9oemvSAbsBQVVfeXFMUFlWVDlUOHVFMG5aWlFVZmRCMGw5dmozbVRSdWpQZ2RiWnFoVXB4OXVZOEV2RGU1M3JwUnJQVnQ0N0QxTkczWTNzY3I5Y1RZMHZaS0N0X2NNQ3NwbXVnZ2pRb1RGNjJnNlJacWkwZXpLZHZZdXVjNWFfX3NIazRtd1p5dlIzMkx0QkVoTWlwZHBkeE01dU5xWWFQa3VzbU80NjkzcTNrUEJhNXRid0RadmR5ZXRuTjAtLS14Zw?oc=5",
+        "published": "Sun, 08 Dec 2024 08:00:00 GMT",
+        "source": "The Indian Express",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Google Bard is now Gemini: Know about AI assistant and its Android, iOS app",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxORXlkc1RSbnV6LXhQQ3A2azF5T2dmdVJteXVGVWlrZ2pKd0JuTUJ4UzREek5kS0l6SDE4Tmg0U3I2U0N0VjJUXzBjQUhyZUhLajhVX0d6NUxSTVF2TGFBaUFmbm1MM01PeEJQcFVBTkdyYl9lMW81dkNwbzRLa2c2WWEwOFZDb1FIak9pZDFYTjJXdmlUUHlkMUpKV2hWNS1XMGVORlRySVNFbEFkVDhqaElwQXR5S0dMUml0UWgyX2FxeWNBX2FGWXd0LWdibDNvS2tWemdtSTVxMHBwSkNn0gHkAUFVX3lxTE50LWJyZldnVXRONFVyOUZScWpYczdaUGVfSkVVZjJLTlViX0Q5M2RQUGhvMDU0Y0pRbWdCV1NLZ1FEVm56TXFDU2tYNXo3R3ZQNUpnM1ZaNk9tYkk2SFB1TElQMEM5YWhOZ0R3TUQ1YWhTOUhra0l1UXZiV3ExbFJBY05RNVVJdnRNakRfeEwxc0RtWlJKczRGcC1QOFg5MGZ6OFNJQmlpc2ZSZnFUN2VqUnNrOWVPZkNyc01SVTJONlFxQWZQbjBkZ0RwLVZLM1Q5RE9wN1Vkc2JKMGhmdGpZbUlXVA?oc=5",
+        "published": "Fri, 09 Feb 2024 08:00:00 GMT",
+        "source": "Business Standard",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Bard's New Identity: Why Google Chose Gemini",
+        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdnFyX3NGWGQwRGhIZzBEdWZxd3ZSeGlkXzFCNl9vZV9BSjZyUDZPQ3lsV01CNjk0cHE5WFUyN1hfdVBJX05Wd19Ec3daaE9qbFNwTVRMMXNRYmhjUFlOOHNNTHNZaWcwZTBDMTZwLWFkcGk0UGNsTERSbjN1VXBNSXNERk8?oc=5",
+        "published": "Thu, 08 Feb 2024 08:00:00 GMT",
+        "source": "CMSWire",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Google working on Gemini-powered AI assistant called Pixie, likely to launch with Pixel 9",
+        "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPNlB6VVJTeTF6SEp1N0hQSVJsM3AtTDBDT0YtQ3g3XzhIcVZKWWlsb052Qld2SUpXOUZ1bERpdE9rM0tPY3gzX2h0VFViTDlscWpWeGV4VlhiLUFqcTdrczRfUTZPVzJlNFVpMy1GWE5EUU1kMk1GeEZ3azBJNmREcE1BLXFPMkx4VUFmWGk5ZDdHb2t5VWZoTTdWYmRKQ1hYdjVra3ZpcVlYVUlLYmRpMGd3cTFkeUN1RllFRHk1eVk3LXBYYjc5akVKcjVXOHRnSm1GTVpPUmpoVVk2MWRCMGZtcDJuLVRPSnNN0gHwAUFVX3lxTFBvdmotRkxobXZkZUZPd0VzU2ZqRXRvVUYtZlhuU1MzWU16TTBGSzhENzNoOVFoWVRxREVEaUliSF92RnVMa25lTXlqWXB5V19mRUx5R3lzb3ZRU3hHTTRXb0paU1RtbjN0QnpQMEdUSFFtZUpPeVlMM29rRE1QNXJiRVNBSnRodWttR2FHdUE2Y2M0NVA5ZVMxY0hhOFdpWXNkQlpmX0FMQzBxekt5c0U5LXRscFVJZ2V2Q2R2N3dMZU9FbEFnQkNtV0d0NFdQajdVZjM1enA2LXJSUHlCS09iMEMtaGZUZ0FKRDY1VU5YQw?oc=5",
+        "published": "Fri, 15 Dec 2023 08:00:00 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "10 Best Artificial Intelligence Business Applications for 2025",
+        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5aWk5aMVRRNkV4YWg5bHpwc25JRXBybzFNa2VRRUpNeHBqRTUyTU9jNW1qbGFVdVM2a25KZ0tNYllXMkJDWWtjSElvanFDWGhnMEo2UFNXWDFmbEtIeVVxODVzMA?oc=5",
+        "published": "Fri, 29 Aug 2025 07:00:00 GMT",
+        "source": "Netguru",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Understanding the Role of Computer Vision in Business",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBBdEc1dkN3bEExaUVaRjJnQ2ZlT29qbng4TjBvWFJOR1ZZOVJ3ZDIwQXdpV3VsNXVIT3JPang3V19LTm4xMlJ4SV9EU0ViZ3Y4NE0zUHRxejE5YVA1Z18xLXByU1lnamJ1?oc=5",
+        "published": "Fri, 28 Nov 2025 08:00:00 GMT",
+        "source": "appinventiv.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Real-world gen AI use cases from the world's leading organizations",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNFZzcHc0ckFXSnFSMkVKZ3JyZmdlWmZpOGpOOFJWZUszN1dsaFl5MndRVWloX0Y3ZjRRanhhYTlqTGlLVjQwazVvQ2dyMlAwQU1SR3ZHSmxXYUlCSTZjblV0THNEaVlTM21XMGdwc0xYcnRyWUdZcFBmZHdIWXdfLWxRWUpnVm95WW9WLVZWcVFKMzU0RHdXR3ZKRQ?oc=5",
+        "published": "Thu, 09 Oct 2025 07:00:00 GMT",
+        "source": "Google Cloud",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Beyond Chatbots: How GenAI Is Fueling Productivity Growth",
+        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE80aTFWNlNFLVNkc25RWW8yWVIxbzZHSGR2bGozRUpnbXFfMk40cTR3azllREJMd1JXa21kdjZqbzctYVoxR21iUjBWZi1OWUtLQWZFemlLV0xjZVRPRzlLUWU1WFdhNTduSnVKeWhMbVVFUQ?oc=5",
+        "published": "Mon, 08 Sep 2025 07:00:00 GMT",
+        "source": "Oracle",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "SAP: AI is commoditising business applications",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcG5TZnpMVHJpTWFJenZvTlBGNkd3M0hfajhTU0l1UkVGdzdFSFJaemFRWnlBMm1IVDYybHhIZkN5cEFvOC1mamM4TkY1WTBma3ZRX0NaVndGQ3NzUXNoVmRoUm15TzlwdlNNVnJLM01JcWU2LWEtOGdfWEgyY2dVVnFWOWo3T2g3RGVhMXFlbldSRnUyTnc?oc=5",
+        "published": "Mon, 06 Oct 2025 07:00:00 GMT",
+        "source": "Computer Weekly",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "AI Papers to Read in 2025",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5WOWlDbWtmd3ZieUdOQW05cjEtZnlENkllYTAzOGJUTmFHLUFuWHZSazd1SVpiazRUTnRyR1RXekpIZ0RlSnltcl96NUZzYVRnNGRjekJ3Vy1rNW9KZGlzbXoxUWVLc2RO?oc=5",
+        "published": "Wed, 05 Nov 2025 08:00:00 GMT",
+        "source": "Towards Data Science",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Top 10 Deep Learning Algorithms You Should Know in 2025",
+        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNR0RqOEc3N1NudGVOdzNTZ2dFeFVvOVRYZDhma3hhUzVNb0ZXazctTWdEeGhaQktpdGpPZ0NMTi1PSXlKc0gyN3QwS1JDV2t6RU1CWS1iQ1pSS0poYjhyWHhfcjg4TTQwanRlSnZOMWprcFIxb21EMXJoVm1JVEJtcmsxYm5LaFBKUS15Wg?oc=5",
+        "published": "Tue, 26 Aug 2025 07:00:00 GMT",
+        "source": "Simplilearn.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Machine learning in biological research: key algorithms, applications, and future directions",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4tUWdRVXJfbHQ3RTVPX0N1QVlfZ05kZ0NMNEdrd1U1TGFBOW8tVWpJT3pCaXdMZThHYkxDZTQ2Unl0Nk1WWF85ZHFVQVlyUUtIRm5aUDZfeGZFRzFCaTUwWXhQV3htaGsyeklXXzlOMjdJMEVWY0drcA?oc=5",
+        "published": "Wed, 29 Oct 2025 07:00:00 GMT",
+        "source": "Springer",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Strategic innovations and future directions in deep learning for engineering applications: a systematic literature review",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNM3JVU0gydDc1THo5RTdCTGJKelpsQUh4ellDZEJac2NiVjJGTlNfTF84RDZUVUp2MDRadS0yYUhCZ2FlMmswU1ZOV1BraHVGdXJPRldWSUNXQVc4WDlfYmFkbkFWTDZNLXRPS0RNYmJmRHNsd3NmamNsRGZEQjhMcEg4ZnBrZXp3eWtlVnRRZlo?oc=5",
+        "published": "Mon, 11 Aug 2025 07:00:00 GMT",
+        "source": "Frontiers",
+        "category": "general",
+        "image": null
+      }
+    ],
+    "startups": [
+      {
+        "title": "Robotics startup Figure valued at $39 billion in latest funding round",
+        "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOdnh3Q3hoQmdmSDNKMXhoekNWTmo0eU1XaUNHM21sRzB0ZER3SGduVUpOV1JkaGNNZmpuS092MXNjU1RoMUVEVk9ieExhWDg0b0tWZmVaTV90YkN5VGlMcG9oVlVwX3dWVUw3UU5Lc1ptSWJuVW5Td2xyXzZ4Z1F2QlU5Q0UxNXB2N1BqWkRsd2xiWnItQ0NFa0FOcnVyemE5VnRqQTIxdlNtNXJnYnZyMy1WSlNRZGt1QTZPczZqMGVfRWtUNW1la1c3MU5EQdIB1AFBVV95cUxQVWFLRFdTMDZ3c3pWTTZ3MEVNaVF5c1RkdFF3RU5NQklTMm50ZlpDZzFUaHdtTVdxZG53T3oyQWQ2TmhXVk4zd2lrNjVnYmVxTktWWmdZckdYY2w3WHZBaHZsQVBVZDkzanRIRUpSTGFES1V6dXBJeUVIMktpbk1RMVNuQTdMTlRJdnNrZDBZMUlJWXNLTGRGQzlHcm42ZnNuT21Zcllia01XTzJPbGFzWE9ON0tibm1DNWV4WERueXhHWjJMeDFYZWlJQktVOEZlOEJ4eg?oc=5",
+        "published": "Wed, 17 Sep 2025 07:00:00 GMT",
+        "source": "The Hindu",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Value of corporate-backed startup funding doubles in first half of 2025 -",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSm11MzduSkJxVmdFX3BZMUx2UzByWGFnYXFIMWs5MnB3R1B3dThNVXBJZTBmcnlBSnVlb242djUyMjBBcWxadW11Umg4T01ZTm91RnJRZUdWZTdCS1pDdlhYRDRjQW0zMTZfdkM3VGctRzJIaEJMcXJEOW9LUFFtVWhpMmNyQQ?oc=5",
+        "published": "Tue, 08 Jul 2025 07:00:00 GMT",
+        "source": "Global Venturing",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Funding and acquisitions in Indian startup this week [Mar 24 - Mar 29]",
+        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMUFGMDM2V0luN3k5Ul82UXBJVm9OY19Xb2owOG96UlZJczBJSkEta1laWU15VWc3Ymg3bWpsN29seTY2WFppNnZZdXlyVGwxWEhHRWhlb3Y5aUxuTmkwajNDeUMwZi1ERXBRMVZuVUNVSUhHbllUT3ZjQXF2RFJWQTFJTWlLSjJOcmktQ2ZVS081SFA2OXgxM0NzZ2xObEVadjZaQmgyREFYcEEwZl92QjhhNENCdXlYYU5RYWlSMHpVUdIBwgFBVV95cUxPMUFGMDM2V0luN3k5Ul82UXBJVm9OY19Xb2owOG96UlZJczBJSkEta1laWU15VWc3Ymg3bWpsN29seTY2WFppNnZZdXlyVGwxWEhHRWhlb3Y5aUxuTmkwajNDeUMwZi1ERXBRMVZuVUNVSUhHbllUT3ZjQXF2RFJWQTFJTWlLSjJOcmktQ2ZVS081SFA2OXgxM0NzZ2xObEVadjZaQmgyREFYcEEwZl92QjhhNENCdXlYYU5RYWlSMHpVUQ?oc=5",
+        "published": "Sat, 29 Mar 2025 07:00:00 GMT",
+        "source": "Entrackr",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "₹1 lakh cr domestic fund can spark the next startup wave and show India is serious about innovation",
+        "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPaFJESXhhdzJHZUU5UnJCOEROZ3pwaGZRR25XcXpEVFBqTU14UlF3RDZyZHV3TDlsSXo2eC13bmE3VXhrdmVycGZkYy1aYU9kN0JqQ0FsU0t1QUNoeEdmczJ6aDZ4N1E4M1JGaEdMUVpFdHpnWVVUaktyZFVvZEVMX1MtVjNTVmI0S2huVHVhc1RnS09oLUhHRWIwUllsWWNCQThROVhBTG9yZU5MeGZPaTZoM1ZDZEs1MThHVDZfMHVqamVyMWpXd2hTbk1ocC1ndnBCaXp6bFF6dkp2UXRQRFV2dUpOR0VBZk9mNkxqSk5TUi1OaktJZVJHcXFXWjRBalZZVNIBigJBVV95cUxNMXdwNkljVjRINXRkVW9EYnAxcGo5UG1kQnlHSkU1RFdOV2RMYjBYUGRnUkN5RHc4VnNzNXN4TXZ5czBUUzVfY09SUXNQM1hiajQxcExrWTF5Y3dGT2JBT3NjTXVOdTBYeEMtMWd2S0Yyd3U5eWNQdE4xTXpQbGk4dlVpdUZEMG1BbFM0QktwYk5XMHFKdU9fOHFnSjdTNG4yRjREZFFDWXFBeUdIUWV1d3FWZXZXXy00QlVlSUo1NHhRR3BQc0NBbG5pYXplOVVBcUQxdmMxNnJqQUV1UnFPdkFEUzhhMnhMT3V2cE9adzd2QWFCV01xNjh5Zk8yeVJlRDBhYWZWSjNNUQ?oc=5",
+        "published": "Thu, 09 Oct 2025 07:00:00 GMT",
+        "source": "The Economic Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "TICE Funding Index: India’s Startup Funding Scene Stays Resilient",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPSGxhZm1pUm4tcVJMMHExamZSNkZEdWFkMW9VS01fUW5jRkhQcFI2aUdCWFZXdkx2U2Q2dUVYV1A2Y09TRjR2TzBDYmhhSFBXbHpYZlowNGoxR0pMbVdmc3ZTR2gydGkwV3F5MWpVektPR0ZOVHFMOExWTi11OGVsWDV0QVh2X3A1UHhjYlcxN0ludzltWjJwVDFZTGZGd0RyZXAxSzRWMjJxeFBN0gGsAUFVX3lxTE9IbGFmbWlSbi1xUkwwcTFqZlI2RkR1YWQxb1VLTV9RbmNGSFBwUjZpR0JYVld2THZTZDZ1RVhXUDZjT1NGNHZPMENiaGFIUFdselhmWjA0ajFHSkxtV2ZzdlNHaDJ0aTBXcXkxalV6S09HRk5UcUw4TFZOLXU4ZWxYNXRBWHZfcDVQeGNiVzE3SW53OW1aMnBUMVlMZkZ3RHJlcDFLNFYyMnF4UE0?oc=5",
+        "published": "Sat, 08 Nov 2025 08:00:00 GMT",
+        "source": "TICE News",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Accel-backed edtech unicorn Vedantu raises $11 mn in internal round, larger secondary round to follow",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNRGRTUmQyeWF6bURyNWtCd0E3QUlRQlRIRUR0YW5lNm94STVmNUNMdG1VbnEtNm91S2lyRkNBVkp5eWdqdXBnT2lKZlAxWEJQWHhSbmliTFFScmNfSHhUY0pCZEtsTnNNR1NYcFJ2bERDcDBxYkJuaFJVTGlJQmdqYThRS192UUxTdVFyazFCajVDSjIwWldSN2RJM2JWd2RqNTJaLWdCODNhU2JlUGVBMTNWa3JNWWdDbEHSAb8BQVVfeXFMTW1CV3FMRDVINmJmM0xyRHVaclFaQ0l0dkVMTmlCel9mOThyYWI4OFExWHhJc2pzN2lhN20yd1ZMNnBDU2tXYUNvZUNoTkkzNzVGcUpxZGxLdnhTWThvSnU1S2FoUUtPcXZHUzNtMjU5d3lod0hHY0JXZVZZajVPVXNXdjVJVnBjUjlmcUhNajE5R1AtUUxQcTNDYS1fZXcyUkRkRVREM3FDSC1RQ2FueHdkUFRtWkRqc1hOOGo5NWM?oc=5",
+        "published": "Fri, 26 Sep 2025 07:00:00 GMT",
+        "source": "livemint.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "India’s Unicorn Club: Here's The Comprehensive List Of 100+ Unicorns In India",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNldXZFZPa1JXZnUwZ1QyUk90b1FldURrODFablpjMTVHVDZrX0xYcU1oUXdRX0JqRm8xM2FBSjBqM0Z3Z0I0MXdNMGRHZHo3WGxxZ1F2RFBoMS1DcXJZbzVIQWhxS1Q0U0dweExyMm5hVjNBSV9GOFg0S1VLNEE1STJ0akN6djBHUW9KQms0emxFUXEtYUE?oc=5",
+        "published": "Fri, 06 Jun 2025 07:00:00 GMT",
+        "source": "Inc42",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Hurun 2025 Report: 11 New Startups Join India's Unicorn Club. See Full List",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdkFISlNOUW9wajVkdnJnRUo1VThrQlNkcERUOUFqTlR6ekMzaXhJQkdKU2hPR0Q3OVpLZ241QVNVeS1HVVp5OHlaaHQ2R2VJZ01wb3ptT3RSdmhxT1RuQ2N6dUtMUkp0MjhOMGFHOTFkUWJhNldONm5rTzBiSUpEMl8tcmRIM0VkTUpjdTVyajRqeDNWZTN6bG1RTEE2aGZFWENrV2dtcTZSclgzczFyWmFn0gG6AUFVX3lxTE5IZTJXb3lHM1otcHQ1cVhKZWY1NFRKTGpESUkxUnA1TTZuWmh3TExfVl9wd18wUFVXbE9fNlpSOGQ3S0dMeUZEa2VRSGRsTm1wbS1ndm5uYmNYemNFT1VtRmd4M3FfMjlURlBXYnE0bXB2Z2h1cW5oejBaa0hkczBSenl4WEFVQXlfMk5uUUpOVUptdHJEVWhYOG90VVktVENSZVotQ0ZlWGhmR1B2bXFldEt0cDhYbFVXQQ?oc=5",
+        "published": "Fri, 12 Sep 2025 07:00:00 GMT",
+        "source": "NDTV",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Hurun India Unicorn Report 2025: Top 10 Indian startups with the biggest valuations",
+        "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMDRJVFRTeTR3MV9xSl9RYnltZVEyZHBFZ24wUWREZUxTX2o3dkFRS19RRmFBY0l1LXpUNGpEbmI4Yk45d3k5d0RxV3V1QWNnUGN1aGJicGR1RWJRZXFScnM4cUNRdVo3bDNXeWw1RXppWGdLVDRVbHpiRjgwdlRyNVUwTjZqTThvc1lJcE40cW5KZkNwNFhQaC16akFKbGdDOGhSU0swU2NER0F2UXNuMV92dndOYnVvZjYzVTd3MjBwZ24yOU14NERITFdrQU01VHMzendMdTFERExJ0gHiAUFVX3lxTE01VnVqMXI0ZFA5WTJ2TVI1VGd0WlhPc21vTkhVT19TWlR1YjNwZlE3dWhmUk1MZkpGVWoweTJqcmN2Tk9SRHNBb2pZbm5vemJHRkVhc0dEbFVzaFJCZXZjNnpHRmVWY0NtSnhRWkJpSWxWS1hZTFVXRG85N0w3d05NSDVZdDFubTlISlRnM2EzMzdpdVU1YXZQaTl5ci03VkNreVd5SlMyRV92em1qbmhfNC0yanpfYVRHaFJ1MFk2UkFIckhINUhOXzRidXhkeVBvRk9XSVRKMjlQYWVES1JnMlE?oc=5",
+        "published": "Thu, 11 Sep 2025 07:00:00 GMT",
+        "source": "CNBC TV18",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "11 more startups join India's unicorn club in 2025, total number now at 73: Report",
+        "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQMjRxRUQyaHN2UmdGN0lQTjhPR2ZjdmJaV1FzY1pyMmZ1QjVnVGRLd2dDU1UzSV9PV3B1THFFWkFmYzI0LTVkNm14eG15dF9JLU1tUk9BT0syTFotNExZSDdnbE1XbEZ0dU10emNVVGhBTFduOFhkc0l1bUEzR0tYVERibjZBZXEyRXI0TjM0THJEaVUxX0xtYkhKZmVZRkxpWTVNSE5TVHU4U2lsZ2Z5SE5ZZmUwaTlpaDlvQnh3dTREcnhfZFFxcjg1M3p3QdIB2wFBVV95cUxPcXZNNFkwZ2wyWFl6QVY4OGUxSTRnWEVVWkFfNTMyVGNkT29laUJUTlNaZXFuUGVCNGE0ck5VTllGRlZvRjVFbVA2c0lRWEREWWVaU2tmMDR1Qlh1X25RTjNES2d0U1RiYkRpMFRzcVl5UVAzSGpBQ3B3QzVMZzNsUXZna3lpOTdmQ0JCRXN4NHUzYWhmMGdOV1dPRXNzZ2lJczc0enZuQ1NCNmZjd2tZM3ctcGFKdHVmUUhVT1NiRlcwa1h4SW5GdnlUM1VYOU96dzVXZzF0YkZkS0k?oc=5",
+        "published": "Thu, 11 Sep 2025 07:00:00 GMT",
+        "source": "The New Indian Express",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Top 8 most valuable unicorns of 2025: This AI company leads with $500 billion valuation, Mukesh Ambani’s startup is at this rank",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQU8wa01vT2EyTW4wem1aeXhQUll6Y3lVTnFkOEEzUy1LXy1iZ2ZSQ0tOakRBRldYNGlfZUhzdDc0YW1jVHhWR3Bac1lmdDJ1S1lsaE9GMl9vRlAxUEVxdmx3UV9SVllVWW82bVJULXJ5Y29fclpZd2JmelNQS004MW1ZMlE4Zi1WYXFoa0NSZ1M4N18zamZINlh5RVJIN2NjT204Y0xmbTdjM1A4b3Zva3BHMkZ2VDZ4dlHSAcABQVVfeXFMTnJENG5rWUxxVUN6NFNJNXBNY19nLUZ5a2lHSUJENFkyQ2lpUUFLOU9kSl9JU1g4aFNKRWhPY2lrUzRrQmdxbXZLZW9pMlo2bXE4SFZOM3Y0LVQ5OV93WXRDU0ZzYUNPYmNNNGFtcDZRRDFhenZadTI2dkY0bzdwbzlmS0Fac3oxS25WT0JCZ080ZGVqWVdJV1RmUi1TSDZUMXZHUXR5SXBwcEdqSWw5aVhiNHg3VzRFMmpHd2FrcGpk?oc=5",
+        "published": "Fri, 10 Oct 2025 07:00:00 GMT",
+        "source": "The Indian Express",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Peyush Bansal Success Story: Journey of the Lenskart Founder",
+        "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5XVWtvb3Znb2Y1VndNcjBEaEoxZW9SM0RNZ201LUVKZ0p4RW00SVZXOC11d01hWmFPMDdwYWFVbVJEMFduakducUo3Q09pM1pSc0pnZG9ZNmcxeEVjeEd1ZWp4MnhsQQ?oc=5",
+        "published": "Mon, 01 Dec 2025 08:14:56 GMT",
+        "source": "foundermagazine.in",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Best Indian Startups Transforming the World | Top Indian Startups",
+        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVGFnVzdpSzQ0bWVkWDRVRWN2aWRsYmpmMFBNaENxS20wQTJpRG1pRFRCZGwtQzdZRlhtX2ZTMVM2QXdpUm1LMkhiMUE5LThma2NrZ2JjQXVqVWhCTEp4U1M0ODhvamVCQ1V1SjFhSkhOUFZCdnpwV0pIUjhCeGRPdXRmVXRYZE5KeGIw?oc=5",
+        "published": "Sat, 22 Nov 2025 08:00:00 GMT",
+        "source": "Simplilearn.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Srikanth Bolla Success Story: From Blindness to Billionaire",
+        "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5aUFdSVDk5cmZQSXdjSFNtTmdZVUhyNDBiSXNYSml5TTJkX0xhTndxcjd1WURtZ2ExYmpORWRBNnpGbGVGRWd4LXE4a25iMDM0X1p1R3g1d1NaNjhTWVNBSjRtNDRZRHppX2RXQ1VB?oc=5",
+        "published": "Fri, 11 Jul 2025 07:00:00 GMT",
+        "source": "Business Outreach Magazine",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Inspiring Success Stories That Will Motivate Your Next Business Move",
+        "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IVWFSbnVvWm5XQ3lCckRRSDd4ZlNXMkFmbVpqeVpLci1NV3N0ZUpCSHl5ZklIbk96WkdkNzlGTERVa2ZlRmhPM1VKMkRxRU1PdXJjOHZQYlYzbDZCSnpBeA?oc=5",
+        "published": "Sat, 06 Sep 2025 06:38:23 GMT",
+        "source": "Prime Insights Magazine",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "The accelerator that hit the brakes: Why are Y Combinator's India startup picks shrinking | Company Business News",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT1JGSnN2VVFVbXZQdkhUTlhfRTFPdk9xTUJfSUZnN0RoQlRFVkxCTmhzVkwzTWZTWGlLdFlmQlAwRkJjTEN0aGpaRktZT0M2NmstUHZaSEdfLUs0WWs2bmVqNGp4RFMzY1BxMGk2cTFkZ1RaMFpSbDZRQThLQTBfaW1HX3lvQnNGdFBkbTBIa19icVFXdDVPcWo0OXVRbmtVdHQ3RUV4VFVaUdIBrwFBVV95cUxNakhQSVZqT3NmQ2MtX1c3WXpKUUFfV2xTaFE1R2ZmdnQ5VWJRandRZU9GVFBIYWV4VDhwSDdEQV9xQjl6cHREU1U0V01La21UWnJteDVaMTY5ejFxU3ExLXBpNFBhSUpVTGVIdWhPWFpHMUNMWXM2Z0hEZVZMRTVoaU5MMFFScjFIZmxtRGVJMVhCd2dnbHYzNGlWZkFHd3doUmNfZEJIMXE5S0RXcXNz?oc=5",
+        "published": "Fri, 26 Sep 2025 07:00:00 GMT",
+        "source": "livemint.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "SubImage Raises $4.2 Million in Seed Round",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4wbHVYRUVPYlJOMXRubE5maUJaYTI1cnhYMDZlcENQdGJ6TVVMMmtPazB2M3lvQlU0WVQzTmF2UHZzdjN5eU5tcFBhU2VzbnNsVzhZMGROVjAyR25zYTJvOHNFaFNHTVM5dkFfTjMxUndhTnZtWGYzVHdnWEVMY1k?oc=5",
+        "published": "Tue, 18 Nov 2025 08:00:00 GMT",
+        "source": "The SaaS News",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Y Combinator Amps Up Investing In Fintech Startups In 2025, Data Shows",
+        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcE1BU0E5MFVRM1hid01ObE5iTnZ2UFctMkU3bzdXZ2NqdUlKVTFheWxDX1BQRG1PV1NyU1RZV01ScXNpdU54Ny1VWk9Hb2xkZ19ZYnZfYmxLRy1kY2tzM1VHcWEtc25ZOVFxNGdZLXhPZVZhVktxbU8wWWQza3dlRmtsN2dTdXF6enBwQg?oc=5",
+        "published": "Thu, 25 Sep 2025 07:00:00 GMT",
+        "source": "Crunchbase News",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Y Combinator’s spring 2025 batch features 70 startups focused on agentic AI",
+        "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOOTNQY096Uk9BOGhCNXd6bnJrbzIwQS1BOHM1UWduRUxXQnUtWUNrQ0pkY24zekRYT1plTDR3Ukp2UmRQQmducnhTVnIxNnNXbTlPOVBNVXl5UkNZZmFtcjJ5RWU0ZWNWNk9zZENBSHlabzhRT1R3aUlSUGdOVHNhQmhfaGs0VHQxa1dTV0tmUzhjME44dXk5cHhybWtiOTVpeWdPYWRFRU4xaVlrdUs2SHU0eXVfR2NnWDNKZWl1cGJGNXV4eS15bEdjT3J0eEdwVHZYNmZpdWo2V0g0cGktTXBwRjVVSmxkS0g3eGtR0gHzAUFVX3lxTE10YUtCaHZ2aVBMb2RuV1BlMDFJRFNGbmFJUFZxT2FUc1FMYWVSWVVDV0ctQWxoT0N4SHByaU95ckYwSzAxd1VuNm4tN3VVSFhTWUI0QTlWV1dMMlFtTUgzYU0wQWN5dHBpd0Y2LTE2V0xITy1HTnE3UHF4MXBsMWE0anNWdnZHdzFERmxVaEVlcjZtd0RpWkV2Um8tX2xnSHB2VDNYckhvajZPbTVSX04tUHk3aFZ1ZUFxQ1ZUakx1c2JzYm1rX0lHbmZhVmJkdzVGdEhlRk1xMlVwNTV6Qjg3dENmcXZHbWlLSUpQTjRSM1cyNA?oc=5",
+        "published": "Sun, 15 Jun 2025 07:00:00 GMT",
+        "source": "The Economic Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "FuturePlay: First Korean VC to Partner with Saudi Ministry of Investment, Strengthening Korea’s Role in Middle East Startup Growth",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQOWxYTl8zdGlaM3B5UkJVeWdIUktESDZEUzRMQkYxZ3d5ZkQwbjFoVmN2Q2NtYi1rWnlXTDZ1SnNhTXBGLWdFOUlpODBQazRVbW5KUjhHWlEtekU1TVlLM1VnR1ZMVF9wLUR1a2ZPdG0teERjY0xmQjExRFJMZWVsWDl2WjdLV0h4czg1bUNVSTJWMVhT?oc=5",
+        "published": "Tue, 02 Dec 2025 01:41:15 GMT",
+        "source": "KoreaTechDesk",
+        "category": "general",
+        "image": null
+      }
+    ],
+    "developer": [
+      {
+        "title": "Join the Xano AI-Powered Backend Challenge: $3,000 in Prizes!",
+        "link": "https://dev.to/devteam/join-the-xano-ai-powered-backend-challenge-3000-in-prizes-3c11",
+        "published": "2025-11-26T17:53:31Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "We're excited to announce our newest challenge with Xano!   Running through December 14, the Xano...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fsk9cxbzghtilncify90z.png",
+        "tags": [
+          "xanochallenge",
+          "backend",
+          "ai",
+          "api"
+        ],
+        "reactions": 85
+      },
+      {
+        "title": "Nobody Writes Clean Code. We All Just Pretend",
+        "link": "https://dev.to/sylwia-lask/nobody-writes-clean-code-we-all-just-pretend-11d1",
+        "published": "2025-12-01T12:59:30Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "I’ve been writing software for more than a decade now, and one of the most important lessons I ever...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0tyl8xbwr2nr96zw76gm.png",
+        "tags": [
+          "webdev",
+          "programming",
+          "productivity",
+          "discuss"
+        ],
+        "reactions": 62
+      },
+      {
+        "title": "Developers vs AI: Are We Becoming AI Managers Instead of Coders?",
+        "link": "https://dev.to/marxon/developers-vs-ai-are-we-becoming-ai-managers-instead-of-coders-5ef3",
+        "published": "2025-11-30T21:09:43Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "AI is no longer a shiny add-on in our workflow, it’s the silent co-worker sitting next to us every...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2dy5xhz0gtcjejln7033.png",
+        "tags": [
+          "webdev",
+          "ai",
+          "programming",
+          "discuss"
+        ],
+        "reactions": 28
+      },
+      {
+        "title": "How I Taught GitHub Copilot Code Review to Think Like a Maintainer",
+        "link": "https://dev.to/techgirl1908/how-i-taught-github-copilot-code-review-to-think-like-a-maintainer-3l2c",
+        "published": "2025-11-25T16:24:02Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Open source maintainers are getting more contributions than ever, thanks to AI-assisted coding. That's great for community growth but it also means a flood of PRs to review. Here's how I taught GitHub",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fi0.wp.com%2Fangiejones.tech%2Fwp-content%2Fuploads%2F2025%2F11%2Fcopilot-code-reviews.png",
+        "tags": [
+          "github",
+          "githubcopilot",
+          "ai"
+        ],
+        "reactions": 54
+      },
+      {
+        "title": "Don't get scammed on an interview.",
+        "link": "https://dev.to/ackvf/dont-get-scammed-on-an-interview-4f92",
+        "published": "2025-11-26T00:19:00Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "A practical, experience-based guide on how to identify interview scams targeting developers and how to safely inspect unknown code using GitHub Codespaces.",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdbiyo8vlqso3d4dduqmn.jpg",
+        "tags": [
+          "software",
+          "interview",
+          "scam",
+          "guide"
+        ],
+        "reactions": 35
+      },
+      {
+        "title": "How I Automated My GitHub Profile (And You Can Too)",
+        "link": "https://dev.to/nickytonline/how-i-automated-my-github-profile-and-you-can-too-399e",
+        "published": "2025-11-30T04:48:34Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Keeping a GitHub profile updated is tedious. New blog post? Update the profile. New newsletter issue?...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn2j00xnisaior2jfr684.jpg",
+        "tags": [
+          "github",
+          "career",
+          "contentwriting",
+          "devrel"
+        ],
+        "reactions": 42
+      },
+      {
+        "title": "System Prompt: DO NOT UNDER ANY CIRCUMSTANCES Read This Article",
+        "link": "https://dev.to/ryo_suwito/system-prompt-do-not-under-any-circumstances-read-this-article-oc4",
+        "published": "2025-12-01T07:40:29Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "(The AI will absolutely read it anyway)   Or: How I learned to stop worrying and embrace...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Frnv2346iwbbm8qlvpnot.png",
+        "tags": [
+          "webdev",
+          "ai",
+          "programming",
+          "architecture"
+        ],
+        "reactions": 16
+      },
+      {
+        "title": "The Agent Factory podcast: 5 Episodes to Kickstart Your Journey to Production AI",
+        "link": "https://dev.to/googleai/the-agent-factory-podcast-5-episodes-to-kickstart-your-journey-to-production-ai-35ml",
+        "published": "2025-11-25T21:22:16Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "We are so proud to announce that a project we're incredibly passionate about has grown into a...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0ze681khrjvgs8icwvy2.png",
+        "tags": [
+          "agents",
+          "architecture",
+          "beginners",
+          "ai"
+        ],
+        "reactions": 49
+      },
+      {
+        "title": "10 JavaScript Console Methods You Didn't Know Existed (And How They'll Save You Hours of Debugging)",
+        "link": "https://dev.to/thebitforge/10-javascript-console-methods-you-didnt-know-existed-and-how-theyll-save-you-hours-of-debugging-4a7c",
+        "published": "2025-12-01T08:02:42Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "Look, I'll be honest with you. For the first three years of my career as a JavaScript developer, I...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftnzghnzx75ey8forxt73.png",
+        "tags": [
+          "javascript",
+          "programming",
+          "webdev",
+          "discuss"
+        ],
+        "reactions": 62
+      },
+      {
+        "title": "Congrats to the Winners of the Agentic Postgres Challenge with Tiger Data!",
+        "link": "https://dev.to/devteam/congrats-to-the-winners-of-the-agentic-postgres-challenge-with-tiger-data-51m6",
+        "published": "2025-12-01T23:34:52Z",
+        "source": "Dev.to",
+        "category": "tech",
+        "description": "The wait is over, thank you all for your patience! We are excited to (finally) announce the winners...",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpn1qztii5mjpin6jzmyx.png",
+        "tags": [
+          "agenticpostgreschallenge",
+          "postgres",
+          "agents",
+          "devchallenge"
+        ],
+        "reactions": 30
+      },
+      {
+        "title": "sansan0/TrendRadar",
+        "link": "https://github.com/sansan0/TrendRadar",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点",
+        "language": "Python",
+        "stars": "35,329",
+        "image": "https://avatars.githubusercontent.com/u/65916846?s=40&v=4"
+      },
+      {
+        "title": "google/adk-go",
+        "link": "https://github.com/google/adk-go",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "An open-source, code-first Go toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+        "language": "Go",
+        "stars": "5,772",
+        "image": "https://avatars.githubusercontent.com/u/20398573?s=40&v=4"
+      },
+      {
+        "title": "TapXWorld/ChinaTextbook",
+        "link": "https://github.com/TapXWorld/ChinaTextbook",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "所有小初高、大学PDF教材。",
+        "language": "Roff",
+        "stars": "60,478",
+        "image": "https://avatars.githubusercontent.com/u/3353541?s=40&v=4"
+      },
+      {
+        "title": "yeongpin/cursor-free-vip",
+        "link": "https://github.com/yeongpin/cursor-free-vip",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "[Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.",
+        "language": "Python",
+        "stars": "44,646",
+        "image": "https://avatars.githubusercontent.com/u/29575074?s=40&v=4"
+      },
+      {
+        "title": "nvm-sh/nvm",
+        "link": "https://github.com/nvm-sh/nvm",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
+        "language": "Shell",
+        "stars": "90,138",
+        "image": "https://avatars.githubusercontent.com/u/45469?s=40&v=4"
+      },
+      {
+        "title": "traefik/traefik",
+        "link": "https://github.com/traefik/traefik",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "The Cloud Native Application Proxy",
+        "language": "Go",
+        "stars": "59,959",
+        "image": "https://avatars.githubusercontent.com/u/5674651?s=40&v=4"
+      },
+      {
+        "title": "HKUDS/LightRAG",
+        "link": "https://github.com/HKUDS/LightRAG",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+        "language": "Python",
+        "stars": "25,076",
+        "image": "https://avatars.githubusercontent.com/u/36760595?s=40&v=4"
+      },
+      {
+        "title": "bobeff/open-source-games",
+        "link": "https://github.com/bobeff/open-source-games",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "A list of open source games.",
+        "language": "Unknown",
+        "stars": "9,678",
+        "image": "https://avatars.githubusercontent.com/u/675506?s=40&v=4"
+      },
+      {
+        "title": "volcengine/verl",
+        "link": "https://github.com/volcengine/verl",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "verl: Volcano Engine Reinforcement Learning for LLMs",
+        "language": "Python",
+        "stars": "17,065",
+        "image": "https://avatars.githubusercontent.com/u/5545640?s=40&v=4"
+      },
+      {
+        "title": "GibsonAI/Memori",
+        "link": "https://github.com/GibsonAI/Memori",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems",
+        "language": "Python",
+        "stars": "8,765",
+        "image": "https://avatars.githubusercontent.com/u/86048671?s=40&v=4"
+      },
+      {
+        "title": "React vs Angular vs Vue. Frontend Framework and a Project Fit",
+        "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBGWHh1aDRkTGpubTdYb1JZUjZTTmVXemFlOG5ZMzRWYVI4STA3dkRKaTdyYzB6dXl6ZWRtWWFfSFJCU0JoczYzWG1QZTJoN2tjWUFyQ0NwMFJyaEppa3NJX2xuQ00zak9r?oc=5",
+        "published": "Wed, 10 Sep 2025 07:00:00 GMT",
+        "source": "Netguru",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "5 Best Custom JavaScript Development Companies in 2025",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMld2UXFIMkVKcnhwZUtETXBDS3FneERkUmVBTXhmSDN5d1dPUEp6b25SSVJkVVZmeWJvbFhLY2o2bHdKeXBZM3BkMHRvWFBDcjFxakVwSE8xb0JOLUpaSUY2cWQxYko5b2t4OE9aVm1oREEwMDEtd1NGeThWY0dDbWhwODFaNkJobm1qQktPYXp0RGJEMWVXZQ?oc=5",
+        "published": "Fri, 28 Nov 2025 10:05:56 GMT",
+        "source": "Technology Org",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Advancements in JavaScript Frameworks: What's New in React, NextJS, Angular, Vue.js and Svelte in 2025",
+        "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNSE1YdFF3dXRUYXZ5WWtxSlkyMWZiTjkwWFc3Sjk5WnFLS2ZGMW1QcVFSUk1EejlURGJ5RmJsS0pZMEFSTFZDLWtrMmlQeUNGNk5tWm5CeU9RT1ZWWkxpRFo5eU9LQVE2NU53TVV2OXB3N2M4MHNTa3ZpWmNaMXlrdlczY19mNlFnMlRQRmpOMmFZeVpuR0JJNnpjNmIxWGV3bDhWekkzYzBhR3BIUEt2eWpSNEhIaG9pYWlzTjV3R3NUbGVUOWp0WTJaLXhYY2kzR2lZb1l4NWJwbHV2Ti1FTXEwaGxRaTRENjJPTlQ3MUNhVElUangwcWt1dTRwM2pvWEdSTjMwWWxmT0E1dF84?oc=5",
+        "published": "Sat, 15 Feb 2025 08:00:00 GMT",
+        "source": "nucamp.co",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Comparing Angular, React, Vue, and Svelte: What you need to know",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNZkhUMjFvY2Q2MXdOOUxGYVUtMHppYjZhU2Y3NGNQUF9lRmtMX0VsWUtrVXBsT0IxX2toT3FmZzFsLU5hdElRWDZWZ2VLamlrR29hZG9CdWFqYTBJU0c0N003cUR4Yk94NndZTGU1WEZXZE5Lbkx5ZjFxY2pSZlozaWpMTURpUFpxRXV0RllsbHB0WVRmaEMwUjRHUXlhMzNfV0Q5Vk1qaktNMDJORmFSOUpSNWx3Z184cG5lVlI2aFRRaUFxelNnRGYxMWdCQW92VWtJRklCSGtKZw?oc=5",
+        "published": "Wed, 23 Apr 2025 07:00:00 GMT",
+        "source": "InfoWorld",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "24 Top Frontend Technologies to Use in 2025",
+        "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE00MTF5SWtJSGZrbjBPUHBFSDdxR3JOUjhZS3hYRkpucm4tN3Z3elRyd3BFbWJiQlBJSHh4LVFrQzRFOUVLSWNoMU1VUDVpSm1mUG5qeHVzU3RzS0lTMlUtLQ?oc=5",
+        "published": "Wed, 13 Aug 2025 07:00:00 GMT",
+        "source": "Netguru",
+        "category": "general",
+        "image": null
+      }
+    ],
+    "github": [
+      {
+        "title": "sansan0/TrendRadar",
+        "link": "https://github.com/sansan0/TrendRadar",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点",
+        "language": "Python",
+        "stars": "35,327",
+        "image": "https://avatars.githubusercontent.com/u/65916846?s=40&v=4"
+      },
+      {
+        "title": "google/adk-go",
+        "link": "https://github.com/google/adk-go",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "An open-source, code-first Go toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+        "language": "Go",
+        "stars": "5,772",
+        "image": "https://avatars.githubusercontent.com/u/20398573?s=40&v=4"
+      },
+      {
+        "title": "TapXWorld/ChinaTextbook",
+        "link": "https://github.com/TapXWorld/ChinaTextbook",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "所有小初高、大学PDF教材。",
+        "language": "Roff",
+        "stars": "60,478",
+        "image": "https://avatars.githubusercontent.com/u/3353541?s=40&v=4"
+      },
+      {
+        "title": "yeongpin/cursor-free-vip",
+        "link": "https://github.com/yeongpin/cursor-free-vip",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "[Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.",
+        "language": "Python",
+        "stars": "44,646",
+        "image": "https://avatars.githubusercontent.com/u/29575074?s=40&v=4"
+      },
+      {
+        "title": "nvm-sh/nvm",
+        "link": "https://github.com/nvm-sh/nvm",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions",
+        "language": "Shell",
+        "stars": "90,138",
+        "image": "https://avatars.githubusercontent.com/u/45469?s=40&v=4"
+      },
+      {
+        "title": "traefik/traefik",
+        "link": "https://github.com/traefik/traefik",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "The Cloud Native Application Proxy",
+        "language": "Go",
+        "stars": "59,959",
+        "image": "https://avatars.githubusercontent.com/u/5674651?s=40&v=4"
+      },
+      {
+        "title": "HKUDS/LightRAG",
+        "link": "https://github.com/HKUDS/LightRAG",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+        "language": "Python",
+        "stars": "25,076",
+        "image": "https://avatars.githubusercontent.com/u/36760595?s=40&v=4"
+      },
+      {
+        "title": "bobeff/open-source-games",
+        "link": "https://github.com/bobeff/open-source-games",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "A list of open source games.",
+        "language": "Unknown",
+        "stars": "9,678",
+        "image": "https://avatars.githubusercontent.com/u/675506?s=40&v=4"
+      },
+      {
+        "title": "volcengine/verl",
+        "link": "https://github.com/volcengine/verl",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "verl: Volcano Engine Reinforcement Learning for LLMs",
+        "language": "Python",
+        "stars": "17,064",
+        "image": "https://avatars.githubusercontent.com/u/5545640?s=40&v=4"
+      },
+      {
+        "title": "GibsonAI/Memori",
+        "link": "https://github.com/GibsonAI/Memori",
+        "published": "Trending Today",
+        "source": "GitHub Trending",
+        "category": "github",
+        "description": "Open-Source Memory Engine for LLMs, AI Agents & Multi-Agent Systems",
+        "language": "Python",
+        "stars": "8,765",
+        "image": "https://avatars.githubusercontent.com/u/86048671?s=40&v=4"
+      }
+    ],
+    "general": [
+      {
+        "title": "Vietnamese man speaks Gujarati with Indian couple in viral travel video",
+        "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNTzdfN0FPcmxYY3RjOWEwcGFMQU5ab1kwS1NOX0xYb0I0YVpnT0I3ZmhoRm85TWE5UVEyRG9OWE1jUDRSMG5odTJzMzR1YjRnVVdPYnE4SnFqa1hqUUdjTzNSbDNfZ2FWQS1qanpRTGpDdlJsQWdRRTI1REd4Yzh2WTJjTDY2N1FiOUx3Wk00dGUyZnpVajdEUnBmNkhUaHZ0SzVCbFB6Qng1MENRR3FfbXN6d1dpQmxyTzBNSHRXU2dTNXR4cmRnTmNtckQweTE3d09rb2xxNzR6NzhrUlF2NUlrMVZkWUhxZXc?oc=5",
+        "published": "Tue, 02 Dec 2025 07:55:06 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "US vlogger calls India ‘dirty, dishonest, noisy’; viral video sparks outrage",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRW1QN1JRNVBuLTQ2WlRMd3EzUHFvZFlSTE1YaGllZFJ5Qlp3VjdUSVhrRVhnZDdBZTBFS3J5bFdWUWlFMkVCNnJkVnNWeG1SSVhWb1hIVk8wdlo5dTRBUF9qUjhhcEFiUERVX3dYY2pSVWxlWU1TaDd3TTIxazZuVUlZLWRNZ3g3c0NSUnU3NUNFT3AwMmJjdXZKSjhOWkNlY2JBVy1wNjA0dXJrSExwMkRDcVQ0cVBmLVFNa0JjMGNEVWdYcHJibmFQUU0zZUx6TkhZYjBzRXRId9IB4AFBVV95cUxOWjQyanRyekRqblpGSjQ0RVNXeWFJWXh3LWI1WUZCQ2dJOHY0dS1HVk9jZ21nbkVxUHVzT2FHNUVOYUpqckdNSk8ydW5PR3ZMNUVsaWhWb1g0U2NzYUdvbXhmS09tcEg3SzR2NmxVajJ4N3JQRUN1eXFUemUwNEs3Nkc0NzR3S3VrOHBoS3BVUFpqQTZEQkpoclJNc2NRLUxwTGlMaTBSVXhOOGZnVGs5LVFQV1dVYi1qVnNTUFlTY0Y2Qm1NRXlYakY1NTlRaUVVTUhVdFExaDlsaGxPajZLLQ?oc=5",
+        "published": "Mon, 01 Dec 2025 11:26:00 GMT",
+        "source": "The Indian Express",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "19-minute viral video mystery floods social media. Here's what’s the brouhaha about?",
+        "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOeVFtc0dSZVlRelN1VW1Gc0pSVHhnTlFBaUhyRm02QktJTWI3UC1QMlBObmlfNDJ2Q19zQlJrT1dZaUw4TjIwaVg0X1RkNkVIY2JTeFo4RXZLTHhqcks0Q0VuS2VyV0N0OWtMLVBjZlN2S2diaGQ4a2tjeE5DT0lqcG1lYkdMVjRISFhSTmNNaXd6djVHWk1lXzI4NjhDVy04M01NU3ZCeDV1VGs4ZGpoNnRrQWRVWEZ0MXN5d0xRTnFsZ2RIRTVmeC1FcDZsdzZjcUtEa3h2NE42ekJxUVJxMk5fSEJlNkg5WUl4VEk3S1RxLUxvMlM4dEtveTRUY2dpSW930gGIAkFVX3lxTE5ESzNkd3IybERmVUtmcXZweGNnTFZxWjV3djFTZm50Y1dsN3V3MldYUnpDbElCbF9pNWhqOEtSczRPZXNyTVBMYW5XOFJaU2RRd01pLTRqTVBNT1dZbFptZGZDbmk0UmQyMzJDcVZaU28ydU1rWGhwcnZXbnJkeUttTm9DTWRQcTUzaEQ0NmJYVWhKVU5PbkNlODI5c3VTUU5fWDBHcDBKWE03alpFWUNtZVp1ZnBhOV9qb3NvSG1oeVdTNjhWOG1SMFp3akx1RlVxZDFvTDFEV05TR3FsbG5FcmRzQWJBZXllY2tTMWczZFppZ2owazBpcW5zZzZhVG90SGxhZjNUZQ?oc=5",
+        "published": "Sun, 30 Nov 2025 05:38:12 GMT",
+        "source": "The Economic Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Instagram viral couple leaked video controversy: Who are Sofik SK and Dustu Sonali? | Trending",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQRlotQWY1MnN5a1FVNmxfV3ptdUF6VkdSdWNqU1Q4QllReE9YMVp1dHBTeVYybWdZdlBrZ18yb29EVkk4R1h1eHd0bVNoZ010dXV1bHhZUWhFb0dKQWhsMmxHOU1VTWdtRzlhaFBHV3A0eXFRNy00dVpxVktTMFdmai1UYlJzenNRb0xMU2hKUlhrM1pBVURrTHlxVC1fUlVldG9Kemt4cVNtcHdfLUgyZGVTNU42ZlpoV0VHSllFWkxOUkR5NUVKZ2w1MWY1bmY1d056TXNDUEhHZ9IB3wFBVV95cUxQWkxVSEtCbDNxLVNKN1ZETmtLZkQtMl9LRm5fV2RsdXVrb1F1MU00QkxHN3ZqMjFXTV9TRHFxczJpWm9vNXFzM1ZyUEstUzFRRWVqVmU4X29uUjdPdmhoX29nT21wak9XaGFjeWtmdk4wUFhmaHJFaWhkWE9IcEwwWmM4OFFJUDlRU2NBQm54VmtZLXJvWDFma1N6enNKbUc4ZTdQaHVkZHhBQllqSXNRVVhDT05xTUNBbl9JRmE2WnRKb2EtNGYyeUprenk3MEwwb0EtT1VLQXFaQnZNck5z?oc=5",
+        "published": "Fri, 28 Nov 2025 05:17:46 GMT",
+        "source": "Hindustan Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Afghan vendor refuses payment for juice from Indian man, wholesome interaction viral",
+        "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOWDc2bXNFSWpweDU3eUF2OWhObXpMU0ozRk0tNDg3bVFya0JoaUVGcVlhQjVhbXJ4S1ZJWFFSVW4zLVZPUWRqbDBNLWRGTjh6ZkRfZ2lwZkptQjZwYWxvSUZ2N3BVMjUyZWNFX3FiY1BDc1JWR3VpNVJuZjJQVkV6T3YtN2dYRkV1Nkoxb0Z2VnhVclllTmVYVVJrYlNLUnpscnlyeU1jeDhpVTV3dk9iOG9qSUR0YnVTb2UxVGtwcjBlcFROOW5wU3FwazZUNWxOcG5uWEUyd1ZjYjNvaUp6azJtcENLVGtsTTBzbmpQU2REd3Bf0gH6AUFVX3lxTE1iS1REaW1oZGEtZ0lKdUcyR2gwTE1hSXVuQzByZHJndlJoeUpFcG8tVUlTZExOdVlyNDlQQlFiZGI0WnQtY0E1QVdIV180VlJVOFpOaWN1WkI2QmZzRlJtQ3V4NEZ4NlJvM1F5cU9GeVRVcHJHTjRhYjd6ZVlma3p6NktpbFhlVXBVaU13bXM3djV1RFB0OGVPMTBLRzNGTlk3VDVxLWNxMlBHOEZYUUZHOTB4cGtaeGQxcXRaTkV3MTdWamQwSi1BcjI2eEppRFd6YVpyWG5zVkJxZmpRS2tKV1Y1d01oUl9jYUdDUlRIaDczOE00anJWQmc?oc=5",
+        "published": "Tue, 02 Dec 2025 05:07:52 GMT",
+        "source": "India Today",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "‘19-minute viral video’ may have a shocking reality and it's more scary than you can imagine",
+        "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNX1I3U1ZSNUdFb2FWY1dHbVdnblEwTzFoU0pRZWZvMnJkdUxhblljaDRfYk96ZmpPX2FJOFAyY3FfT0JpdmRSYlpUUmV3WEVvb0RNNkQyUWd3eFpKT1JOV2xyWjlobVUyVW9aQjJJdkJLY1BtV1BGRUhBRmlnalRLSmk4TEk2a3FOU2xpdThScDJaSldpdzlqdkNhalBEMTgxZ040cW9QeGo0c3pGcWgzdnBaZGRvYWhDaU5jOThkSjJUQlpJT1JFRUdKRWpNZnVDSXhkdms5VzltNFpQSGRFcVpza2dGUzlEZnpjajQ1WXA2Y2ZYd1lCbkZOWGZjRzBEVG13WVBrWVrSAY4CQVVfeXFMUG1velc4bzc3eGZJM3hGU0pGR0ZGSTZoTTRnMDBvTjVIbC16MkFzeV9tTWR0NDVQRUl4NHU1UEhjbHQxeHNJVF9vOTJiLTFQYjZtODlzVU16QTVIVlJvWUl6SjVnMWZHa0c3OGFPS2h5ZWtsR2ctVzJGRjVLTEV5OVpFT1RtRDh6SHZDLWV6QWxnLU5kUFpZYXZYb1JuUkJwNEtPZUlqeEh1RzNmazVrQ0RYeFI4aEJCTndmeU5GZTc0WVNrNHpLSTZzM1NsTDNXSm1JUTJDZEFvWThLblNWRUk3bE0tQThXM3FqOWRJdHpfZWJfd2x1MTBubHhWRGZNWVJmNXhKTENzZnc3TGdn?oc=5",
+        "published": "Mon, 01 Dec 2025 07:50:54 GMT",
+        "source": "The Economic Times",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "McKinsey Technology Trends Outlook 2025",
+        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOS0wzb1RmNmZPeVB4QjdSZTVmcmxMVUwyT2pSYVliQVQwZ25mUFpoWlFXdGFpWnNJLVdmMncwc0twU2pxSmplU2k0WGFuRWlIT1BFQ1FzWVlCbWc2MWpzamF0LU51NVBSNURBeWhUN0VxYlA1VjMzUk16eHlBQlJ2R3F2TXAzaW9SczJId2hn?oc=5",
+        "published": "Tue, 22 Jul 2025 07:00:00 GMT",
+        "source": "McKinsey & Company",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "TMT Predictions 2026: The AI gap narrows but persists",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOeUJlUEp1UGNPdFhqZTA2bS10Xy1kam52RkM4Ri1pLTZnUzFaVXE1S2x1TC1HaFJKR1p1eGZXRE0yelBsVGNBb2Y5UjJkY0tUMXp0TEVYM3BFRWp1M2t6eFkwNmdub3piLVBXXzZJSGliclZ4a2ZkclA3dkI0WnZkNk9XQlUtQVoxYW1obW5YRkRKazZpQi1xNzd4bkFTUzJGVlFyUkJKZ1Y?oc=5",
+        "published": "Tue, 18 Nov 2025 08:00:00 GMT",
+        "source": "Deloitte",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "20 New Technology Trends for 2026 | Emerging Technologies 2026",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE96Qlh1S3htejlyck9TZjZacklqZ0dpMUpwRWJxMWtkQkVpSUl6c0I0S0M5MWdfV0JQOU0yZkpfVVFUN3kwZGFyMHFlWWdaYnIwWmpDOGxIOG96NFNYS2JfWi1VcjJxTGVzSEppUVpScGlqTksy?oc=5",
+        "published": "Thu, 30 Oct 2025 07:00:00 GMT",
+        "source": "Simplilearn.com",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "10 AI and machine learning trends to watch in 2026",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPYm1jYVNtbl83OU9uVy1fY0F2bGxRTXBvaGR3bnJGZW85WjhCSU41bGNmVzAzY2Z4QTJFU3pfMDgzTGlSNEZseEQyR1ViSlozdTByX1VZdUF4MkdscFFRQ3NvNWJpNEt4RGlaZ0M0UWRJTV9FU0FoUUg4enptdzZfaFVrTmg1S3Vmb2Q1cHhBcw?oc=5",
+        "published": "Tue, 25 Nov 2025 16:30:00 GMT",
+        "source": "TechTarget",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "44 NEW Artificial Intelligence Statistics (Oct 2025)",
+        "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRR1RxSDRTNlhSREl4Ty12bGN5UmZEVEZtZHB5OXprS1p2S0VtSFlyVmx2ZGY4OS11ZDhjODVGMTcwdkpGeW1yd0loelpGNUtoWEVyXzBTZWZidw?oc=5",
+        "published": "Mon, 03 Nov 2025 08:00:00 GMT",
+        "source": "Exploding Topics",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Digital Transformation for Business Growth: Why SMBs Need It Now",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTDE2dDhOQXJxWHdiYTdfZHhheWJjUmlJeU55WmQ2NHU2c29sZFNudXdGcVhVWk9SSFpGS2hqWHRUdlJ4Y1U3a2NpMG5FUHgtVTF2eWtzQ1lKRGx1c0JEc0dKXzlCNE9EeXVuWXBGWUVIVmcxN1JnZmZuS244N3dLdWktbFNyRXh3cWVKY2F3SFRDQzJlX3Uzd2x3MGRFai1pcUFTOUN0elhfWi1WeVBCVm5Jck5nUWs?oc=5",
+        "published": "Tue, 25 Nov 2025 13:44:48 GMT",
+        "source": "Fujifilm [Global]",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "The Future of Work is here — smarter, digital, and powered by data. In IndiQube presents Future of Work, an initiative by Network18, industry leaders in conversation with Network18 Editor Chandra R. Srikanth, decode how data intelligence, digital workflows, a",
+        "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaEZMQW9GTG1FWUw2LXY3MnpsbzZNR0tVc0Q5V3dVbnJvTzVaYWNETUFja3drLV9VQ3ZWWFd5X09NS0lSWkI3dVU2OUdtWkc5UFZMREJXdHN0WktFVG1FUGhrSnVkWG03alkzZVpaRmc4bjZvQ2ZVRm81bjl1YTNsV1JRS2JwSkpVbUs1UDRaU0hGTmpsXzVUbHZiTUdyT3o2MjZpYVlSeHlDZnc?oc=5",
+        "published": "Sat, 29 Nov 2025 11:45:02 GMT",
+        "source": "LinkedIn",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Top Digital Transformation Tools You’ll Need",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVkg4X2Z5bmhOQUV5MjZhZ0xIOENJTWdaNTh1bHpxaHZwb1IwZFBjOUp5bUx2dkZqczNQUFpyTFRIYjFpQTR3Z25PY1RGSUJSTFY3MHpoMHVXQzNoZWZXMkxTWmdodGMwX25ybWZpZzlwamRyT3dWd0xVaWdxNmh5S25QUFl0V2NFMzRoMEhBb3NrblNLd1V2eG11SV9uWVpZT1V5RWw2R2tqdw?oc=5",
+        "published": "Tue, 25 Nov 2025 13:43:30 GMT",
+        "source": "Fujifilm [Global]",
+        "category": "general",
+        "image": null
+      },
+      {
+        "title": "Know the Digital Transformation in Business in 2025",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9VWThTdVJVdFNTRWs4NTdVWHgwZ09ENlRiU3VCancwNzRNUmJ5U2FxUzhUMkRxOTlGRllHR2JhNDBmb0NLbmpxQWNEaThlRjJKc0lQSFltUlMwMlJrMnpBWkduNVVaUUFNa0dBdkdBVldwZE9X?oc=5",
+        "published": "Tue, 17 Jun 2025 06:21:12 GMT",
+        "source": "Jaro Education",
+        "category": "general",
+        "image": null
+      }
+    ]
+  },
+  "metadata": {
+    "refresh_count": 9,
+    "created_at": "2025-12-02T17:13:23.134103",
+    "version": "1.0"
+  }
+}

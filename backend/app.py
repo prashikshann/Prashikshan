@@ -5,6 +5,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from supabase import create_client, Client
 import google.generativeai as genai  # <--- Essential Import
+from news import news_bp  # Import the news blueprint
+from admin import admin_bp, NewsCache  # Import admin blueprint and cache
 
 # Load environment variables
 load_dotenv()
@@ -25,13 +27,29 @@ else:
     print("WARNING: GEMINI_API_KEY is missing in .env")
     model = None # Prevent crash if key is missing
 
-# --- SETUP 3: FLASK ---
+# --- SETUP 3: NEWS CACHE ---
+news_cache = NewsCache()
+news_cache.set_supabase(supabase)
+print(f"[Cache] Initialized with {news_cache.get_stats()['total_articles']} articles")
+
+# --- SETUP 4: FLASK ---
 app = Flask(__name__)
 CORS(app)
 
+# Register blueprints
+app.register_blueprint(news_bp)
+app.register_blueprint(admin_bp)
+
 @app.route("/")
 def index():
-    return jsonify({"status": "System Operational"})
+    cache_stats = news_cache.get_stats()
+    return jsonify({
+        "status": "System Operational",
+        "cache": {
+            "total_articles": cache_stats['total_articles'],
+            "last_updated": cache_stats['last_updated']
+        }
+    })
 
 # --- ROUTES ---
 

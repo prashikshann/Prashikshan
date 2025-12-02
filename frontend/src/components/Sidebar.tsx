@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Compass, MessageSquare, PlusSquare, User, LogOut } from "lucide-react";
+import { Home, Compass, MessageSquare, PlusSquare, User, LogOut, TrendingUp } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client"; 
 
@@ -32,6 +32,7 @@ const handleLogout = async () => {
   const navItems = [
     { icon: Home, label: "Home", path: "/" },
     { icon: Compass, label: "Explore", path: "/explore" },
+    { icon: TrendingUp, label: "Trends", path: "/trends" },
     { icon: PlusSquare, label: "Create", path: "/create" },
     { icon: MessageSquare, label: "Chat", path: "/chat" },
     { icon: User, label: "Profile", path: "/profile" },

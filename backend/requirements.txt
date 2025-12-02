@@ -4,3 +4,8 @@ python-dotenv
 flask-cors
 gunicorn
 google-generativeai
+requests
+beautifulsoup4
+lxml
+playwright
+dotenv
