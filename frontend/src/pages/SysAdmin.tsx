@@ -80,50 +80,74 @@ const SysAdmin = () => {
 
   // Polling effect - keeps services awake when enabled
   useEffect(() => {
+    let dashboardInterval: NodeJS.Timeout | null = null;
+    let renderInterval: NodeJS.Timeout | null = null;
+    let hfInterval: NodeJS.Timeout | null = null;
+
     if (isAuthenticated && pollingEnabled) {
+      console.log('[SysAdmin] Polling ENABLED - starting intervals');
+      
       // Initial ping to both services
       pingRenderHealth();
       pingHFHealth();
       
       // Poll dashboard data every 10s
-      const dashboardInterval = setInterval(fetchDashboardData, 10000);
+      dashboardInterval = setInterval(() => {
+        console.log('[SysAdmin] Polling: fetchDashboardData (every 10s)');
+        fetchDashboardData();
+      }, 10000);
       
       // Poll Render every 5 minutes to keep it awake (free tier sleeps after 15 min)
-      const renderInterval = setInterval(pingRenderHealth, 5 * 60 * 1000);
+      renderInterval = setInterval(() => {
+        console.log('[SysAdmin] Polling: pingRenderHealth (every 5min)');
+        pingRenderHealth();
+      }, 5 * 60 * 1000);
       
       // Poll HF Spaces every 10 minutes to keep it awake
-      const hfInterval = setInterval(pingHFHealth, 10 * 60 * 1000);
-      
-      return () => {
-        clearInterval(dashboardInterval);
-        clearInterval(renderInterval);
-        clearInterval(hfInterval);
-      };
+      hfInterval = setInterval(() => {
+        console.log('[SysAdmin] Polling: pingHFHealth (every 10min)');
+        pingHFHealth();
+      }, 10 * 60 * 1000);
+    } else {
+      console.log('[SysAdmin] Polling DISABLED');
     }
+
+    return () => {
+      console.log('[SysAdmin] Cleanup - clearing all intervals');
+      if (dashboardInterval) clearInterval(dashboardInterval);
+      if (renderInterval) clearInterval(renderInterval);
+      if (hfInterval) clearInterval(hfInterval);
+    };
   }, [isAuthenticated, pollingEnabled]);
 
   // Silent health check for Render (doesn't show messages)
   const pingRenderHealth = async () => {
+    console.log(`[SysAdmin] API Call: GET ${API_URL}/health (Render health check)`);
     try {
       const response = await fetch(`${API_URL}/health`, {
         method: 'GET',
         signal: AbortSignal.timeout(30000)
       });
+      console.log(`[SysAdmin] Render health: ${response.ok ? 'online' : 'offline'}`);
       setRenderStatus(response.ok ? 'online' : 'offline');
-    } catch {
+    } catch (err) {
+      console.log('[SysAdmin] Render health: offline (error)', err);
       setRenderStatus('offline');
     }
   };
 
   // Silent health check for HF Spaces (doesn't show messages)
   const pingHFHealth = async () => {
+    console.log(`[SysAdmin] API Call: GET ${HF_SCRAPER_URL}/health (HF Spaces health check)`);
     try {
       const response = await fetch(`${HF_SCRAPER_URL}/health`, {
         method: 'GET',
         signal: AbortSignal.timeout(60000)
       });
+      console.log(`[SysAdmin] HF Spaces health: ${response.ok ? 'online' : 'offline'}`);
       setHfStatus(response.ok ? 'online' : 'offline');
-    } catch {
+    } catch (err) {
+      console.log('[SysAdmin] HF Spaces health: offline (error)', err);
       setHfStatus('offline');
     }
   };
@@ -165,6 +189,7 @@ const SysAdmin = () => {
   };
 
   const fetchDashboardData = async () => {
+    console.log(`[SysAdmin] API Call: GET ${API_URL}/api/admin/dashboard`);
     try {
       const response = await fetch(`${API_URL}/api/admin/dashboard`, {
         headers: { 'X-Admin-Key': adminKey }
@@ -172,10 +197,13 @@ const SysAdmin = () => {
       
       if (response.ok) {
         const data = await response.json();
+        console.log('[SysAdmin] Dashboard data fetched successfully');
         setDashboardData(data);
+      } else {
+        console.log('[SysAdmin] Dashboard fetch failed:', response.status);
       }
     } catch (error) {
-      console.error("Failed to fetch dashboard data:", error);
+      console.error("[SysAdmin] Failed to fetch dashboard data:", error);
     }
   };
 

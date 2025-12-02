@@ -1,5 +1,6 @@
 import os
-import time 
+import time
+import logging
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -10,6 +11,18 @@ from admin import admin_bp, NewsCache  # Import admin blueprint and cache
 
 # Load environment variables
 load_dotenv()
+
+# --- Filter out Render's internal health check logs ---
+class HealthCheckFilter(logging.Filter):
+    def filter(self, record):
+        # Filter out GET /health requests from Render/1.0
+        message = record.getMessage()
+        if 'GET /health' in message and 'Render/1.0' in message:
+            return False
+        return True
+
+# Apply filter to werkzeug logger (Flask's default logger)
+logging.getLogger('werkzeug').addFilter(HealthCheckFilter())
 
 # --- SETUP 1: SUPABASE ---
 supabase_url = os.getenv("SUPABASE_URL")
