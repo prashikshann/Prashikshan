@@ -7,6 +7,7 @@ from supabase import create_client, Client
 import google.generativeai as genai  # <--- Essential Import
 from news import news_bp  # Import the news blueprint
 from admin import admin_bp, NewsCache  # Import admin blueprint and cache
+from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -321,6 +322,41 @@ def send_message():
         
         return jsonify(response.data), 201
     except Exception as e:
+        return jsonify({"error": str(e)}), 400
+    
+    # --- CLASSROOM ROUTES ---
+
+@app.route('/api/classrooms/join', methods=['POST'])
+def join_classroom():
+    try:
+        data = request.json
+        user_id = data.get('user_id')
+        code = data.get('code')
+
+        if not code or not user_id:
+            return jsonify({"error": "Code and User ID required"}), 400
+
+        # 1. Find the classroom ID from the code
+        class_res = supabase.table('classrooms').select('id, name').eq('code', code).execute()
+        
+        if not class_res.data:
+            return jsonify({"error": "Invalid Class Code"}), 404
+        
+        classroom = class_res.data[0]
+
+        # 2. Add user to classroom_members
+        member_res = supabase.table('classroom_members').insert({
+            "classroom_id": classroom['id'],
+            "student_id": user_id,
+            "role": "student"
+        }).execute()
+
+        return jsonify({"message": f"Joined {classroom['name']} successfully!", "classroom": classroom}), 200
+
+    except Exception as e:
+        # Check for duplicate entry error
+        if "unique constraint" in str(e).lower():
+             return jsonify({"error": "You are already in this class"}), 400
         return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":

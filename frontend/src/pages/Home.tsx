@@ -2,28 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bell } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
-import StoryCircle from "@/components/StoryCircle";
 import PostCard from "@/components/PostCard";
 import BottomNav from "@/components/BottomNav";
+import PostSkeleton from "@/components/PostSkeleton"; 
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
-
-//const API_URL = 'http://127.0.0.1:5000/api';
-const API_URL = 'https://prashikshan-f.onrender.com/api'; 
+const API_URL = 'http://127.0.0.1:5000/api'; 
+// const API_URL = 'https://prashikshan-f.onrender.com/api'; 
 
 const Home = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
-
-  const stories = [
-    { name: "Your Story", hasStory: false },
-    { name: "Priya S.", hasStory: true },
-    { name: "Rahul K.", hasStory: true },
-    { name: "Tech Corp", hasStory: true },
-  ];
 
   // 1. Get User & Feed
   useEffect(() => {
@@ -41,6 +33,9 @@ const Home = () => {
 
   const fetchFeed = async (userId: string) => {
     try {
+      // Simulate a tiny delay so you can enjoy the skeleton animation
+      // await new Promise(resolve => setTimeout(resolve, 800)); 
+      
       const response = await axios.get(`${API_URL}/feed?user_id=${userId}`);
       setPosts(response.data);
     } catch (error) {
@@ -87,23 +82,21 @@ const Home = () => {
         </div>
       </header>
 
-      <div className="max-w-2xl mx-auto">
-        <div className="px-4 py-4 border-b border-border bg-card">
-          <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-            {stories.map((story, index) => (
-              <StoryCircle key={index} name={story.name} hasStory={story.hasStory} />
-            ))}
-          </div>
-        </div>
-
+      <div className="max-w-2xl mx-auto pt-4">
         {/* Feed Section */}
-        <div className="px-4 py-4 space-y-4">
+        <div className="px-4 space-y-4">
+          
           {loading ? (
-             <p className="text-center text-muted-foreground py-10">Loading updates...</p>
+             
+             <>
+               <PostSkeleton />
+               <PostSkeleton />
+               <PostSkeleton />
+             </>
           ) : posts.length === 0 ? (
-             <div className="text-center py-10">
-                <p className="text-muted-foreground">No posts yet.</p>
-                <p className="text-xs text-muted-foreground">Go to the Create tab to post something!</p>
+             <div className="text-center py-20">
+                <p className="text-lg font-semibold text-muted-foreground">No posts yet.</p>
+                <p className="text-sm text-muted-foreground">Go to the Create tab to start the conversation!</p>
              </div>
           ) : (
             posts.map((post, index) => (
