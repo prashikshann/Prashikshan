@@ -15,6 +15,11 @@ import Sidebar from "./components/Sidebar";
 import Auth from "./pages/Auth";
 import Onboarding from "./pages/Onboarding";
 import DM from "./pages/DM";
+// Internship MVP imports
+import Internships from "./pages/Internships";
+import InternshipDetails from "./pages/InternshipDetails";
+import CompanyDashboard from "./pages/CompanyDashboard";
+import FacultyDashboard from "./pages/FacultyDashboard";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +57,11 @@ const App = () => (
             <Route path="/sysadmin" element={<SysAdmin />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/create" element={<Create />} />
+            {/* Internship MVP Routes */}
+            <Route path="/internships" element={<Internships />} />
+            <Route path="/internships/:id" element={<InternshipDetails />} />
+            <Route path="/company" element={<CompanyDashboard />} />
+            <Route path="/faculty" element={<FacultyDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

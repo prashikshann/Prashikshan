@@ -215,7 +215,112 @@ ADMIN_API_KEY=123456
 
 ---
 
-## 🐛 Known Considerations
+## � Internship MVP (Phase 1)
+
+### Overview
+A comprehensive internship discovery, posting, and application system with faculty approval workflow.
+
+### User Roles
+| Role | Capabilities |
+|------|-------------|
+| **Student** | Browse internships, apply, track applications |
+| **Company** | Post internships, review applications, hire |
+| **Faculty** | Approve/reject student applications |
+| **Admin** | Manage all users and content |
+
+### Database Schema
+
+**Tables:**
+- `companies` - Company profiles (name, industry, size, etc.)
+- `faculty` - Faculty profiles (department, designation, college)
+- `internships` - Internship listings
+- `internship_applications` - Student applications
+- `faculty_approvals` - Faculty review records
+
+### Frontend Routes
+| Route | Page | Description |
+|-------|------|-------------|
+| `/internships` | Internships | Browse and search internships |
+| `/internships/:id` | Details | View single internship |
+| `/company` | Company Dashboard | Manage internships & applications |
+| `/faculty` | Faculty Dashboard | Review student applications |
+
+### Key Features
+
+**Students:**
+- Browse internships with filters (domain, location, stipend, duration)
+- Search functionality
+- Apply with resume upload (Supabase Storage)
+- Cover letter and portfolio support
+- Track application status
+
+**Companies:**
+- Create company profile
+- Post internships with rich details
+- Define skills, requirements, responsibilities
+- Review applications
+- Shortlist, reject, or hire candidates
+
+**Faculty:**
+- Faculty profile setup
+- Review pending applications
+- Approve or reject with remarks
+- View approval history
+
+### API Endpoints
+
+**Public:**
+```
+GET  /api/internships           - List internships with filters
+GET  /api/internships/:id       - Get internship details
+GET  /api/internships/domains   - Get available domains
+GET  /api/internships/stats     - Get platform statistics
+```
+
+**Student:**
+```
+POST /api/internships/:id/apply - Apply to internship
+GET  /api/internships/my-applications - Get student's applications
+POST /api/internships/:id/save  - Save/unsave internship
+GET  /api/internships/saved     - Get saved internships
+```
+
+**Company:**
+```
+GET  /api/internships/company/profile    - Get company profile
+POST /api/internships/company/profile    - Create/update profile
+GET  /api/internships/company/internships - Get company's internships
+POST /api/internships/company/internships - Create internship
+PUT  /api/internships/company/internships/:id - Update internship
+GET  /api/internships/company/internships/:id/applications - Get applications
+PUT  /api/internships/company/applications/:id/status - Update status
+```
+
+**Faculty:**
+```
+GET  /api/internships/faculty/profile    - Get faculty profile
+POST /api/internships/faculty/profile    - Create/update profile
+GET  /api/internships/faculty/pending-approvals - Get pending applications
+POST /api/internships/faculty/approve/:id - Approve/reject application
+GET  /api/internships/faculty/approval-history - Get review history
+```
+
+### Application Flow
+1. Student applies → Status: `pending`
+2. Faculty reviews → Status: `faculty_approved` or `faculty_rejected`
+3. Company reviews → Status: `company_shortlisted` or `company_rejected`
+4. Final decision → Status: `hired`
+
+### Frontend Components
+- `InternshipCard` - Card component for listings
+- `InternshipFilters` - Filter sidebar with domain, duration, location, stipend
+- `ApplyModal` - Application modal with resume upload
+- `CompanyDashboard` - Full company management interface
+- `FacultyDashboard` - Faculty review interface
+
+---
+
+## �🐛 Known Considerations
 
 - Render free tier sleeps after 15 min of inactivity (use Keep-Alive)
 - HuggingFace Spaces may cold-start (use Wake-Up button)

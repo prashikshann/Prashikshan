@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Compass, MessageSquare, PlusSquare, User, LogOut, TrendingUp } from "lucide-react";
+import { Home, Compass, MessageSquare, PlusSquare, User, LogOut, TrendingUp, Briefcase, Building2, GraduationCap } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client"; 
 
@@ -33,9 +33,16 @@ const handleLogout = async () => {
     { icon: Home, label: "Home", path: "/" },
     { icon: Compass, label: "Explore", path: "/explore" },
     { icon: TrendingUp, label: "Trends", path: "/trends" },
+    { icon: Briefcase, label: "Internships", path: "/internships" },
     { icon: PlusSquare, label: "Create", path: "/create" },
     { icon: MessageSquare, label: "Chat", path: "/chat" },
     { icon: User, label: "Profile", path: "/profile" },
+  ];
+
+  // Role-based navigation items (shown based on user role)
+  const roleNavItems = [
+    { icon: Building2, label: "Company", path: "/company" },
+    { icon: GraduationCap, label: "Faculty", path: "/faculty" },
   ];
 
   return (
@@ -48,6 +55,26 @@ const handleLogout = async () => {
 
       <nav className="flex-1 space-y-2">
         {navItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-colors ${
+              isActive(item.path)
+                ? "bg-primary text-primary-foreground font-medium"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <item.icon className="w-5 h-5" />
+            <span>{item.label}</span>
+          </Link>
+        ))}
+        
+        {/* Divider for role-based items */}
+        <div className="border-t border-border my-2 pt-2">
+          <span className="px-4 text-xs text-muted-foreground uppercase tracking-wider">Dashboards</span>
+        </div>
+        
+        {roleNavItems.map((item) => (
           <Link
             key={item.path}
             to={item.path}
