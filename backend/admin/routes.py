@@ -18,7 +18,24 @@ ADMIN_KEY = os.getenv("ADMIN_API_KEY", "123456")
 # Admin settings (can be controlled via admin panel)
 _settings = {
     "playwright_enabled": True,  # Default: enabled
-    "articles_limit_per_category": 10  # Default: 10 articles per source/category
+    "articles_limit_per_category": 10,  # Default: 10 articles per source/category
+    "sort_order": "priority",  # Options: "priority", "time", "random"
+    "source_priority": [  # Higher in list = shown first
+        "TechCrunch",
+        "Hacker News", 
+        "Dev.to",
+        "GitHub",
+        "Product Hunt",
+        "Medium",
+        "The Verge",
+        "Wired",
+        "Ars Technica",
+        "Reddit",
+        "Google News",
+        "IndiaToday",
+        "NDTV",
+        "Times of India"
+    ]
 }
 
 def require_admin(f):
@@ -38,6 +55,14 @@ def is_playwright_enabled():
 def get_articles_limit():
     """Get the configured articles per category limit"""
     return _settings.get("articles_limit_per_category", 10)
+
+def get_sort_order():
+    """Get the configured sort order"""
+    return _settings.get("sort_order", "priority")
+
+def get_source_priority():
+    """Get the source priority list"""
+    return _settings.get("source_priority", [])
 
 # Store for background job status
 _refresh_status = {
@@ -108,6 +133,41 @@ def set_articles_limit():
         })
     except ValueError:
         return jsonify({"error": "limit must be a number"}), 400
+
+@admin_bp.route('/settings/sort-order', methods=['POST'])
+@require_admin
+def set_sort_order():
+    """Set the article sort order"""
+    data = request.get_json() or {}
+    sort_order = data.get('sort_order')
+    
+    valid_orders = ["priority", "time", "random"]
+    if sort_order not in valid_orders:
+        return jsonify({"error": f"sort_order must be one of: {valid_orders}"}), 400
+    
+    _settings["sort_order"] = sort_order
+    return jsonify({
+        "success": True,
+        "sort_order": sort_order,
+        "message": f"Sort order set to '{sort_order}'"
+    })
+
+@admin_bp.route('/settings/source-priority', methods=['POST'])
+@require_admin
+def set_source_priority():
+    """Set the source priority order"""
+    data = request.get_json() or {}
+    priority = data.get('source_priority')
+    
+    if not isinstance(priority, list):
+        return jsonify({"error": "source_priority must be a list"}), 400
+    
+    _settings["source_priority"] = priority
+    return jsonify({
+        "success": True,
+        "source_priority": priority,
+        "message": f"Source priority updated with {len(priority)} sources"
+    })
 
 @admin_bp.route('/login', methods=['POST'])
 def admin_login():

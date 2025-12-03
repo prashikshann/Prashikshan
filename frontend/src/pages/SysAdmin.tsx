@@ -62,6 +62,9 @@ const SysAdmin = () => {
   const [togglingPlaywright, setTogglingPlaywright] = useState(false);
   const [articlesLimit, setArticlesLimit] = useState(10);
   const [updatingLimit, setUpdatingLimit] = useState(false);
+  const [sortOrder, setSortOrder] = useState<'priority' | 'time' | 'random'>('priority');
+  const [updatingSortOrder, setUpdatingSortOrder] = useState(false);
+  const [sourcePriority, setSourcePriority] = useState<string[]>([]);
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const HF_SCRAPER_URL = import.meta.env.VITE_HF_SCRAPER_URL || "https://parthnuwal7-prashikshan.hf.space";
@@ -221,9 +224,40 @@ const SysAdmin = () => {
         const data = await response.json();
         setPlaywrightEnabled(data.settings?.playwright_enabled ?? true);
         setArticlesLimit(data.settings?.articles_limit_per_category ?? 10);
+        setSortOrder(data.settings?.sort_order ?? 'priority');
+        setSourcePriority(data.settings?.source_priority ?? []);
       }
     } catch (error) {
       console.error("[SysAdmin] Failed to fetch settings:", error);
+    }
+  };
+
+  const updateSortOrder = async (newOrder: 'priority' | 'time' | 'random') => {
+    setUpdatingSortOrder(true);
+    try {
+      const response = await fetch(`${API_URL}/api/admin/settings/sort-order`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Admin-Key': adminKey 
+        },
+        body: JSON.stringify({ sort_order: newOrder })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setSortOrder(data.sort_order);
+        setMessage({ 
+          type: 'success', 
+          text: `Sort order set to "${data.sort_order}"` 
+        });
+      } else {
+        setMessage({ type: 'error', text: 'Failed to update sort order' });
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Failed to update sort order' });
+    } finally {
+      setUpdatingSortOrder(false);
     }
   };
 
@@ -900,6 +934,43 @@ const SysAdmin = () => {
                         ))}
                       </div>
                     </div>
+                  </div>
+
+                  {/* Sort Order */}
+                  <div className="p-3 border rounded-lg bg-muted/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <BarChart3 className="w-5 h-5 text-purple-500" />
+                      <div>
+                        <p className="font-medium">Article Sort Order</p>
+                        <p className="text-xs text-muted-foreground">
+                          How articles are ordered in each category
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      {[
+                        { value: 'priority', label: 'By Source Priority', desc: 'TechCrunch first, then HN, etc.' },
+                        { value: 'time', label: 'Newest First', desc: 'Most recent articles first' },
+                        { value: 'random', label: 'Random', desc: 'Shuffled order' }
+                      ].map((option) => (
+                        <Button
+                          key={option.value}
+                          size="sm"
+                          variant={sortOrder === option.value ? "default" : "outline"}
+                          className="flex-1"
+                          onClick={() => updateSortOrder(option.value as 'priority' | 'time' | 'random')}
+                          disabled={updatingSortOrder}
+                        >
+                          {updatingSortOrder && sortOrder !== option.value ? null : option.label}
+                        </Button>
+                      ))}
+                    </div>
+                    {sortOrder === 'priority' && sourcePriority.length > 0 && (
+                      <div className="mt-2 text-xs text-muted-foreground">
+                        <p className="font-medium mb-1">Current priority:</p>
+                        <p className="truncate">{sourcePriority.slice(0, 5).join(' → ')}...</p>
+                      </div>
+                    )}
                   </div>
 
                   {/* HF Spaces Logs */}

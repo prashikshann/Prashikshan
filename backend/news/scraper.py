@@ -9,6 +9,7 @@ import json
 import traceback
 import logging
 import urllib3
+import random
 
 # Suppress SSL warnings for sites with bad certificates
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -22,7 +23,7 @@ from .scraper_client import (
 )
 
 # Import admin settings
-from admin import is_playwright_enabled, get_articles_limit
+from admin import is_playwright_enabled, get_articles_limit, get_sort_order, get_source_priority
 
 # Setup logging for better debugging
 logging.basicConfig(level=logging.INFO)
@@ -78,6 +79,39 @@ CATEGORY_PLACEHOLDER_IMAGES = {
     'reddit': 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop',
     'general': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop',
 }
+
+def sort_articles(articles: list) -> list:
+    """Sort articles based on admin settings"""
+    sort_order = get_sort_order()
+    
+    if sort_order == "random":
+        random.shuffle(articles)
+        return articles
+    
+    elif sort_order == "time":
+        # Sort by timestamp if available, newest first
+        def get_time_key(article):
+            ts = article.get('timestamp', '')
+            if ts:
+                try:
+                    return datetime.fromisoformat(ts.replace('Z', '+00:00'))
+                except:
+                    pass
+            return datetime.min
+        return sorted(articles, key=get_time_key, reverse=True)
+    
+    else:  # "priority" - default
+        priority_list = get_source_priority()
+        
+        def get_priority(article):
+            source = article.get('source', '')
+            # Check for partial match (case-insensitive)
+            for i, p_source in enumerate(priority_list):
+                if p_source.lower() in source.lower() or source.lower() in p_source.lower():
+                    return i
+            return len(priority_list)  # Unknown sources go to end
+        
+        return sorted(articles, key=get_priority)
 
 def get_placeholder_image(source: str, category: str = 'general') -> str:
     """Get a placeholder image based on source or category"""
@@ -978,7 +1012,8 @@ def get_all_tech_news():
     
     debug_log("get_all_tech_news", f"After dedup: {len(unique_articles)} articles")
     limit = get_articles_limit()
-    return unique_articles[:limit]
+    sorted_articles = sort_articles(unique_articles)
+    return sorted_articles[:limit]
 
 def get_all_education_news():
     """Get education news from multiple refined queries"""
@@ -1024,7 +1059,8 @@ def get_all_education_news():
     
     debug_log("get_all_education_news", f"Returning {len(unique_articles)} unique articles")
     limit = get_articles_limit()
-    return unique_articles[:limit]
+    sorted_articles = sort_articles(unique_articles)
+    return sorted_articles[:limit]
 
 def get_developer_content():
     """Get developer-focused content from multiple sources"""
@@ -1059,7 +1095,8 @@ def get_developer_content():
     
     debug_log("get_developer_content", f"Returning {len(all_articles)} articles")
     limit = get_articles_limit()
-    return all_articles[:limit]
+    sorted_articles = sort_articles(all_articles)
+    return sorted_articles[:limit]
 
 def get_career_news():
     """Get career and job-related news"""
@@ -1095,7 +1132,8 @@ def get_career_news():
     
     debug_log("get_career_news", f"Returning {len(all_articles)} articles")
     limit = get_articles_limit()
-    return all_articles[:limit]
+    sorted_articles = sort_articles(all_articles)
+    return sorted_articles[:limit]
     
 
 def get_ai_ml_news():
@@ -1133,7 +1171,8 @@ def get_ai_ml_news():
     
     debug_log("get_ai_ml_news", f"Returning {len(all_articles)} articles")
     limit = get_articles_limit()
-    return all_articles[:limit]
+    sorted_articles = sort_articles(all_articles)
+    return sorted_articles[:limit]
 
 def get_startup_news():
     """Get startup and entrepreneurship news"""
@@ -1169,7 +1208,8 @@ def get_startup_news():
     
     debug_log("get_startup_news", f"Returning {len(all_articles)} articles")
     limit = get_articles_limit()
-    return all_articles[:limit]
+    sorted_articles = sort_articles(all_articles)
+    return sorted_articles[:limit]
 
 def get_general_trends():
     """Get general trending topics with refined queries"""
@@ -1213,7 +1253,8 @@ def get_general_trends():
     
     debug_log("get_general_trends", f"Returning {len(unique_articles)} unique articles")
     limit = get_articles_limit()
-    return unique_articles[:limit]
+    sorted_articles = sort_articles(unique_articles)
+    return sorted_articles[:limit]
 
 # ============================================
 # CACHE INTEGRATION
