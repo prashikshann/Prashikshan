@@ -2,15 +2,17 @@ import os
 import time
 import logging
 from dotenv import load_dotenv
+
+# Load environment variables FIRST before any other imports that need them
+load_dotenv()
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from supabase import create_client, Client
 import google.generativeai as genai  # <--- Essential Import
 from news import news_bp  # Import the news blueprint
 from admin import admin_bp, NewsCache  # Import admin blueprint and cache
-
-# Load environment variables
-load_dotenv()
+from internships import internship_bp  # Import internships blueprint
 
 # --- Filter out Render's internal health check logs ---
 class HealthCheckFilter(logging.Filter):
@@ -52,11 +54,13 @@ else:
 
 # --- SETUP 4: FLASK ---
 app = Flask(__name__)
+app.url_map.strict_slashes = False  # Allow URLs with or without trailing slashes
 CORS(app)
 
 # Register blueprints
 app.register_blueprint(news_bp)
 app.register_blueprint(admin_bp)
+app.register_blueprint(internship_bp)
 
 @app.route("/")
 def index():
